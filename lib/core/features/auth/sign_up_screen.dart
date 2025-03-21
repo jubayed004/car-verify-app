@@ -152,7 +152,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                 ),
               ),
-
               CustomText(text: "Date of Birth", top: 14, bottom: 8,fontSize: 16.sp,fontWeight: FontWeight.w600,),
               CustomTextField(
                 prefixIcon: Icon(Icons.calendar_month, color: AppColors.appColors),

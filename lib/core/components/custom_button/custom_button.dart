@@ -1,5 +1,8 @@
-/*
+import 'package:car_verify_app/core/components/custom_text/custom_text.dart';
+import 'package:car_verify_app/core/utils/app_colors/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class CustomButton extends StatelessWidget {
   const CustomButton({
     super.key,
@@ -56,10 +59,8 @@ class CustomButton extends StatelessWidget {
           color: textColor,
           textAlign: TextAlign.center,
           text: title,
-
         ),
       ),
     );
   }
 }
-*/

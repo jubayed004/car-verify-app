@@ -1,11 +1,7 @@
-/*
+import 'package:car_verify_app/core/utils/app_colors/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:service_provider_app/core/utils/app_colors/app_colors.dart';
-
-
-
 
 class CustomTextField extends StatefulWidget {
   const CustomTextField({
@@ -25,11 +21,11 @@ class CustomTextField extends StatefulWidget {
     this.validator,
     this.hintText,
     this.hintStyle,
-    this.fillColor = AppColors.white_50,
+    this.fillColor = AppColors.textFiledBorderColor,
     this.suffixIcon,
     this.suffixIconColor,
     this.fieldBorderRadius = 12,
-    this.fieldBorderColor = Colors.transparent, //const Color(0xffB5D8EE),
+    this.fieldBorderColor = AppColors.textFiledBorderColor, //const Color(0xffB5D8EE),
     this.isPassword = false,
     this.isPrefixIcon = true,
     this.readOnly = false,
@@ -92,7 +88,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
           GoogleFonts.roboto(
               fontSize: 16,
               fontWeight: FontWeight.w400,
-              color: AppColors.neutral_03),
+              color: AppColors.main),
       onChanged: widget.onChanged,
       maxLines: widget.maxLines,
       obscureText: widget.isPassword ? obscureText : false,
@@ -108,9 +104,9 @@ class _CustomTextFieldState extends State<CustomTextField> {
             GoogleFonts.poppins(
                 fontSize: 16,
                 fontWeight: FontWeight.w400,
-                color: AppColors.neutral_03),
-      //  fillColor: widget.fillColor,
-        fillColor: Colors.white,
+                color: AppColors.main),
+        fillColor: widget.fillColor,
+       // fillColor: Colors.white,
         filled: true,
         prefixIcon: widget.prefixIcon,
         suffixIcon: widget.isPassword
@@ -122,20 +118,20 @@ class _CustomTextFieldState extends State<CustomTextField> {
         suffixIconColor: widget.suffixIconColor,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(widget.fieldBorderRadius),
-        //  borderSide: BorderSide(color: widget.fieldBorderColor, width: 1),
-          borderSide: BorderSide.none,
+         borderSide: BorderSide(color: widget.fieldBorderColor, width: 1),
+          //borderSide: BorderSide.none,
           gapPadding: 0,
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(widget.fieldBorderRadius),
-         // borderSide: BorderSide(color: widget.fieldBorderColor, width: 1),
-          borderSide: BorderSide.none,
+          borderSide: BorderSide(color: widget.fieldBorderColor, width: 1),
+          //borderSide: BorderSide.none,
           gapPadding: 0,
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(widget.fieldBorderRadius),
-         // borderSide: BorderSide(color: widget.fieldBorderColor, width: 1),
-          borderSide: BorderSide.none,
+         borderSide: BorderSide(color: widget.fieldBorderColor, width: 1),
+          //borderSide: BorderSide.none,
           gapPadding: 0,
 
         ),
@@ -149,4 +145,3 @@ class _CustomTextFieldState extends State<CustomTextField> {
     });
   }
 }
-*/

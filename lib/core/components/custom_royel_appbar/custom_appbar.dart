@@ -1,9 +1,9 @@
-/*
+import 'package:car_verify_app/core/app_routes/app_routes.dart';
+import 'package:car_verify_app/core/components/custom_image/custom_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:service_provider_app/core/app_routes/app_routes.dart';
-import 'package:service_provider_app/core/components/custom_image/custom_image.dart';
+
 
 
 import '../../utils/app_colors/app_colors.dart';
@@ -52,7 +52,7 @@ class CustomAppbar extends StatelessWidget {
               if (actionImageOne != null)
                 GestureDetector(
                   onTap: (){
-                    Get.toNamed(AppRoutes.searchScreen);
+                    // Get.toNamed(AppRoutes.searchScreen);
                   },
                   child: CircleAvatar(
                     radius: 20,
@@ -100,4 +100,3 @@ class CustomAppbar extends StatelessWidget {
     );
   }
 }
-*/

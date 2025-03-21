@@ -2,12 +2,20 @@ import 'dart:ui';
 
 class AppColors {
   //======================== App Color ====================
+  static const Color main = Color(0xff595D62);
+  static const Color textFiledBorderColor = Color(0xffCACACA);
+  static const Color appColors = Color(0xff0077CC);
+  static const Color n2 = Color(0xff6F6F6F);
+  static const Color textFieldColor = Color(0xffE2E8F0);
+
+
+
 
   static const Color primary = Color(0xff00C0B5);
+
   static const Color servicePrimary = Color(0xff0084BF);
   static const Color primary2 = Color(0xff1C3E64);
   static const Color primary3 = Color(0xffE6FAF9);
-  static const Color textFieldColor = Color(0xffF7F8F9);
   static const Color fullWhite = Color(0xffFFFFFF);
   static const Color socialButtonColor = Color(0xffDEEFEF);
   static const Color appWhite = Color(0xffFFFFFF);

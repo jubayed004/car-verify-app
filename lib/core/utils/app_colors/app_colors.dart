@@ -7,6 +7,7 @@ class AppColors {
   static const Color appColors = Color(0xff0077CC);
   static const Color n2 = Color(0xff6F6F6F);
   static const Color textFieldColor = Color(0xffE2E8F0);
+  static const Color textColor_01 = Color(0xff1C1C1C);
 
 
 
@@ -26,7 +27,6 @@ class AppColors {
   static const greywhite = Color(0xffF5F5F5);
   static const Color naviBlue = Color(0xff1C3E64);
   static const Color black_02 = Color(0xff181818);
-  static const Color textColor = Color(0xff6A6D76);
   static const Color white = Color(0xffF2F2F2);
   static const Color white02 = Color(0xffF4F4F4);
   static const Color white_50 = Color(0xffF4F4F4);

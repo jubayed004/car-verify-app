@@ -1,56 +1,24 @@
-import 'package:car_verify_app/core/utils/app_colors/app_colors.dart';
 import 'package:flutter/material.dart';
+import '../../core/utils/app_colors/app_colors.dart';
 
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          HeaderCard(),
-          const SizedBox(height: 16),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: Row(
-              children: const [
-                Expanded(
-                    child: ActionCard(
-                  image: 'assets/images/carverifyimage_1.png',
-                  title: 'View report',
-                )),
-                SizedBox(width: 16),
-                Expanded(
-                    child: ActionCard(
-                  image: 'assets/images/carverifyimage_1.png',
-                  title: 'Manage car',
-                )),
-              ],
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.only(bottom: 32),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const HeaderCard(),
+            const SizedBox(height: 24),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16),
+              child: DashboardSection(), // ⬅️ Dashboard integrated here
             ),
-          ),
-          const SizedBox(height: 16),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: Row(
-              children: const [
-                Expanded(
-                    child: ActionCard(
-                  image: 'assets/images/carverifyimage.png',
-                  title: 'Manage Fleet',
-                )),
-                SizedBox(width: 16),
-                Expanded(
-                    child: ActionCard(
-                  image: 'assets/images/carverifyimage.png',
-                  title: 'Manage Employee',
-                )),
-              ],
-            ),
-          ),
-          // You can add a ListView or similar widget below for activity
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -85,8 +53,7 @@ class HeaderCard extends StatelessWidget {
                 height: 30,
               ),
               CircleAvatar(
-                backgroundImage:
-                    AssetImage('assets/images/carverifyimage_1.png'),
+                backgroundImage: AssetImage('assets/images/carverifyimage_1.png'),
                 radius: 20,
               )
             ],
@@ -113,59 +80,108 @@ class HeaderCard extends StatelessWidget {
     );
   }
 }
+class DashboardSection extends StatelessWidget {
+  const DashboardSection({super.key});
 
-class ActionCard extends StatelessWidget {
-  final String image;
-  final String title;
-
-  const ActionCard({
-    super.key,
-    required this.image,
-    required this.title,
-  });
+  final List<_DashboardItem> items = const [
+    _DashboardItem(
+      title: 'View report',
+      imagePath: 'assets/images/carverifyimage_1.png',
+    ),
+    _DashboardItem(
+      title: 'All Inspection',
+      imagePath: 'assets/images/carverifyimage_1.png',
+    ),
+    _DashboardItem(
+      title: 'Manage Fleet',
+      imagePath: 'assets/images/carverifyimage.png',
+    ),
+    _DashboardItem(
+      title: 'Manage Employee',
+      imagePath: 'assets/images/carverifyimage.png',
+    ),
+    _DashboardItem(
+      title: 'Manage Employee',
+      imagePath: 'assets/images/carverifyimage.png',
+    ),
+    _DashboardItem(
+      title: 'Manage Employee',
+      imagePath: 'assets/images/carverifyimage.png',
+    ),
+    _DashboardItem(
+      title: 'Manage Employee',
+      imagePath: 'assets/images/carverifyimage.png',
+    ),
+    _DashboardItem(
+      title: 'Manage Employee',
+      imagePath: 'assets/images/carverifyimage.png',
+    ),
+    _DashboardItem(
+      title: 'Manage Employee',
+      imagePath: 'assets/images/carverifyimage.png',
+    ),
+  ];
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      color: Colors.white,
-      elevation: 5,
-      shadowColor: AppColors.textFiledBorderColor,
-      surfaceTintColor: AppColors.textFiledBorderColor,
-      shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(0),
-              topRight: Radius.circular(0),
-              bottomRight: Radius.circular(20),
-              bottomLeft: Radius.circular(20),
-
-          )),
-      child: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(16),
-            child: Image.asset(image, height: 100),
-          ),
-          Container(
-            width: double.infinity,
-            decoration: const BoxDecoration(
-              color: AppColors.appColors,
-              borderRadius: BorderRadius.vertical(
-                bottom: Radius.circular(12),
-              ),
-            ),
-            child: TextButton(
-              onPressed: () {},
-              child: Text(
-                title,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
+    return GridView.count(
+      crossAxisCount: 2,
+      crossAxisSpacing: 16,
+      mainAxisSpacing: 20,
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      children: items.map((item) => _DashboardCard(item: item)).toList(),
     );
   }
+}
+class _DashboardCard extends StatelessWidget {
+  final _DashboardItem item;
+
+  const _DashboardCard({required this.item});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Expanded(
+          child: Container(
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(12),
+              border: Border.all(width: 2,color: AppColors.textFiledBorderColor),
+             // boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 6)],
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: Image.asset(item.imagePath),
+            ),
+          ),
+        ),
+        const SizedBox(height: 8),
+        ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: AppColors.appColors,
+            foregroundColor: Colors.white,
+            minimumSize: const Size.fromHeight(40),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8),
+            ),
+          ),
+          onPressed: () {
+            // Perform action here
+          },
+          child: Text(item.title),
+        ),
+      ],
+    );
+  }
+}
+class _DashboardItem {
+  final String title;
+  final String imagePath;
+
+  const _DashboardItem({
+    required this.title,
+    required this.imagePath,
+  });
 }

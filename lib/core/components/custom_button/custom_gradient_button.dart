@@ -3,8 +3,19 @@ import 'package:flutter/material.dart';
 class CustomGradientButton extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
+  final double hight;
+  final double? size;
+  final FontWeight? fontWeight;
 
-  const CustomGradientButton({super.key, required this.text, required this.onPressed});
+  const CustomGradientButton(
+      {super.key,
+      required this.text,
+      required this.onPressed,
+      this.hight = 50,
+        this.size,
+        this.fontWeight,
+
+      });
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +23,7 @@ class CustomGradientButton extends StatelessWidget {
       onTap: onPressed,
       child: Container(
         width: MediaQuery.of(context).size.width,
-        height: 50,
+        height: hight,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           gradient: LinearGradient(
@@ -25,7 +36,6 @@ class CustomGradientButton extends StatelessWidget {
               color: Colors.black26,
               blurRadius: 4,
               offset: Offset(2, 2),
-
             ),
           ],
         ),
@@ -34,8 +44,8 @@ class CustomGradientButton extends StatelessWidget {
             text,
             style: TextStyle(
               color: Colors.white,
-              fontWeight: FontWeight.w600,
-              fontSize: 16,
+              fontWeight: fontWeight ?? FontWeight.w600 ,
+              fontSize: size ?? 16,
             ),
           ),
         ),

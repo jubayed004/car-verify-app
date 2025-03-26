@@ -1,18 +1,18 @@
 import 'package:car_verify_app/core/app_routes/app_routes.dart';
 import 'package:car_verify_app/core/components/device_utils/device_utils.dart';
 import 'package:car_verify_app/core/dependency/dependency_injection.dart';
+import 'package:car_verify_app/core/features/user_section/user_home/controller/user_home_controller.dart';
 import 'package:car_verify_app/core/utils/app_colors/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get_navigation/src/root/get_material_app.dart';
-import 'package:get/get_navigation/src/routes/transitions_type.dart';
+import 'package:get/get.dart';
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   DeviceUtils.lockDevicePortrait();
   DependencyInjection di = DependencyInjection();
   di.dependencies();
   // SocketApi.init();
-
+  Get.put(HomeController());
   // Get.put(NetworkController());
 
   runApp(const MyApp());
@@ -45,10 +45,10 @@ class MyApp extends StatelessWidget {
                 backgroundColor: AppColors.white,
                 iconTheme: IconThemeData(color: AppColors.white))),
         debugShowCheckedModeBanner: false,
-        //defaultTransition: Transition.fadeIn,
+        defaultTransition: Transition.fadeIn,
         transitionDuration: const Duration(milliseconds: 200),
         initialRoute: AppRoutes.loginScreen,
-        //navigatorKey: Get.key,
+        navigatorKey: Get.key,
         getPages: AppRoutes.routes,
       ),
     );

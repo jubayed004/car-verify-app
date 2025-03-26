@@ -1,10 +1,13 @@
+import 'package:car_verify_app/core/app_routes/app_routes.dart';
 import 'package:car_verify_app/core/components/custom_button/custom_gradient_button.dart';
 import 'package:car_verify_app/core/components/custom_image/custom_image.dart';
 import 'package:car_verify_app/core/components/custom_text/custom_text.dart';
+import 'package:car_verify_app/core/features/my_test_screen.dart';
 import 'package:car_verify_app/core/utils/app_colors/app_colors.dart';
 import 'package:car_verify_app/core/utils/app_images/app_images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class InspectionCard extends StatelessWidget {
   final Map<String, dynamic> data;
@@ -50,7 +53,10 @@ class InspectionCard extends StatelessWidget {
                 CustomText(text: "Brand : ${data['brand']}", bottom: 4),
                 CustomGradientButton(
                   text: "View details",
-                  onPressed: () {},
+                  onPressed: () {
+                    //Get.toNamed(AppRoutes.viewDetailsScreen);
+                    Get.toNamed(AppRoutes.viewDetailsScreen);
+                  },
                   hight: 30.h,
                   size: 14,
                   fontWeight: FontWeight.w400,

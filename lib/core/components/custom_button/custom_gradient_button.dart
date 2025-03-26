@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class CustomGradientButton extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
+  final double? width;
   final double hight;
   final double? size;
   final FontWeight? fontWeight;
@@ -14,6 +15,7 @@ class CustomGradientButton extends StatelessWidget {
       this.hight = 50,
         this.size,
         this.fontWeight,
+        this.width,
 
       });
 
@@ -22,7 +24,7 @@ class CustomGradientButton extends StatelessWidget {
     return GestureDetector(
       onTap: onPressed,
       child: Container(
-        width: MediaQuery.of(context).size.width,
+        width: width ??MediaQuery.of(context).size.width,
         height: hight,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),

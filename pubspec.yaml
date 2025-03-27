@@ -58,6 +58,17 @@ dependencies:
   flutter_asset_generator: ^1.2.0
   country_code_picker: ^3.2.0
   font_awesome_flutter: ^10.8.0
+  appinio_social_share: ^0.3.2
+  share_plus: ^10.1.4
+  # File Management
+  file_picker: ^9.0.2
+  path_provider: ^2.1.5
+  permission_handler: ^11.3.1
+  open_file: ^3.0.5
+
+  # PDF Handling
+  pdf: ^3.11.2
+  flutter_pdfview: ^1.4.0
 
 
 dev_dependencies:

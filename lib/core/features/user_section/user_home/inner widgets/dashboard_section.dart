@@ -1,3 +1,4 @@
+import 'package:car_verify_app/core/app_routes/app_routes.dart';
 import 'package:car_verify_app/core/components/custom_button/custom_gradient_button.dart';
 import 'package:car_verify_app/core/components/custom_image/custom_image.dart';
 import 'package:car_verify_app/core/features/my_test_screen.dart';
@@ -40,9 +41,9 @@ class _DashboardCard extends StatelessWidget {
 
   void _handleNavigation(BuildContext context, String title) {
     if (title == 'View report') {
-      Get.to(() => const AllReportsScreen()); // ✅ View report screen
+      Get.toNamed(AppRoutes.allReportsScreen);// ✅ View report screen
     } else if (title == 'Manage car') {
-     // Get.to(() => const ManageCarScreen()); // ✅ Manage car screen
+     Get.toNamed(AppRoutes.manageCarScreen);// ✅ Manage car screen
     }
   }
 
@@ -52,6 +53,7 @@ class _DashboardCard extends StatelessWidget {
       children: [
         Expanded(
           child: Container(
+            padding: EdgeInsets.all(8),
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(12),

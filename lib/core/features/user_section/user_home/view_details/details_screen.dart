@@ -1,4 +1,8 @@
+import 'package:car_verify_app/core/components/custom_button/custom_gradient_button.dart';
 import 'package:car_verify_app/core/components/custom_royel_appbar/custom_royel_appbar.dart';
+import 'package:car_verify_app/core/features/user_section/user_home/view_details/inner_widgets/inforow.dart';
+import 'package:car_verify_app/core/features/user_section/user_home/view_details/inner_widgets/post_verification_tab.dart';
+import 'package:car_verify_app/core/features/user_section/user_home/view_details/inner_widgets/pre_verification_tab.dart';
 import 'package:car_verify_app/core/utils/app_colors/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:car_verify_app/core/components/custom_image/custom_image.dart';
@@ -11,9 +15,7 @@ import 'package:car_verify_app/core/components/custom_tab_selected/custom_tab_ba
 import 'package:car_verify_app/core/components/custom_text/custom_text.dart';
 import 'package:car_verify_app/core/utils/app_colors/app_colors.dart';
 import 'package:get/get.dart';
-import 'widgets/inforow.dart';
-import 'widgets/post_verification_tab.dart';
-import 'widgets/pre_verification_tab.dart';
+
 
 class ViewDetailsScreen extends StatelessWidget {
   ViewDetailsScreen({super.key});
@@ -79,6 +81,7 @@ class ViewDetailsScreen extends StatelessWidget {
               return PostVerificationTab();
             }
           }),
+
         ],
       ),
     );

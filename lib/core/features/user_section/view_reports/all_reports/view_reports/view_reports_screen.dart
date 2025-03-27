@@ -1,19 +1,23 @@
+import 'package:car_verify_app/core/app_routes/app_routes.dart';
+import 'package:car_verify_app/core/components/custom_button/custom_gradient_button.dart';
 import 'package:car_verify_app/core/components/custom_image/custom_image.dart';
 import 'package:car_verify_app/core/components/custom_royel_appbar/custom_royel_appbar.dart';
 import 'package:car_verify_app/core/components/custom_text/custom_text.dart';
-import 'package:car_verify_app/core/features/user_section/user_home/view_details/widgets/Info_card.dart';
-import 'package:car_verify_app/core/features/user_section/user_home/view_details/widgets/inforow.dart';
-import 'package:car_verify_app/core/features/user_section/view_reports/all_reports/view_reports/widgets/info_row_report.dart';
+import 'package:car_verify_app/core/features/user_section/user_home/view_details/inner_widgets/Info_card.dart';
+import 'package:car_verify_app/core/features/user_section/user_home/view_details/inner_widgets/inforow.dart';
+import 'package:car_verify_app/core/features/user_section/view_reports/all_reports/view_reports/inner_widgets/info_row_report.dart';
+
 import 'package:car_verify_app/core/utils/app_colors/app_colors.dart';
 import 'package:car_verify_app/core/utils/app_images/app_images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
-import '../all_reports_screen.dart';
+import 'package:get/get.dart';
 
 class ViewReportsScreen extends StatelessWidget {
   const ViewReportsScreen({super.key});
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -26,9 +30,12 @@ class ViewReportsScreen extends StatelessWidget {
           FontAwesomeIcons.shareFromSquare,
           color: AppColors.appColors,
         ),
-        rightOnPressed: () {},
+        rightOnPressed: () {
+
+        },
       ),
       body: SingleChildScrollView(
+        padding: EdgeInsets.symmetric(vertical: 20.h),
         child: Column(
           children: [
             CustomImage(
@@ -54,10 +61,18 @@ class ViewReportsScreen extends StatelessWidget {
                   left: 16,
                 )),
             const SizedBox(height: 14),
-            const InfoRowReport(title: 'Pre-handover condition : ', value: 'No damages found',color: AppColors.green, ),
-            const InfoRowReport(title: 'Post-Handover condition :', value: '2 damage found',color: Colors.red,),
-            const InfoRowReport(title: 'Existing damages :', value: 'Unchanged'),
-        
+            const InfoRowReport(
+              title: 'Pre-handover condition : ',
+              value: 'No damages found',
+              color: AppColors.green,
+            ),
+            const InfoRowReport(
+              title: 'Post-Handover condition :',
+              value: '2 damage found',
+              color: Colors.red,
+            ),
+            const InfoRowReport(
+                title: 'Existing damages :', value: 'Unchanged'),
             ListView(
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
@@ -92,12 +107,27 @@ class ViewReportsScreen extends StatelessWidget {
                 ),
               ],
             ),
+            CustomGradientButton(
+                text: "Download PDF",
+                onPressed: () {
+
+                },
+                width: MediaQuery.of(context).size.width / 1.1),
+            SizedBox(
+              height: 56,
+            )
           ],
         ),
       ),
     );
   }
+
+
+
+
 }
+
+
 
 class DamageCard extends StatelessWidget {
   final String title;
@@ -143,25 +173,19 @@ class DamageCard extends StatelessWidget {
                   text: description,
                   fontSize: 13,
                   fontWeight: FontWeight.w400,
+                  color: AppColors.red,
                 ),
                 const SizedBox(height: 10),
-                SizedBox(
-                  height: 30,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.blue,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(6)),
-                      padding: const EdgeInsets.symmetric(horizontal: 12),
-                    ),
-                    onPressed: () {},
-                    child: const CustomText(
-                      text: 'View details',
-                      fontSize: 12,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.white,
-                    ),
-                  ),
+                CustomGradientButton(
+                  text: "View details",
+                  onPressed: () {
+                    //Get.toNamed(AppRoutes.viewDetailsScreen);
+                    Get.toNamed(AppRoutes.damageDetailsScreen);
+                  },
+                  width: 100,
+                  hight: 30.h,
+                  size: 14,
+                  fontWeight: FontWeight.w400,
                 ),
               ],
             ),
@@ -185,12 +209,13 @@ class DamageCard extends StatelessWidget {
                 alignment: Alignment.center,
                 child: const CustomText(
                   text: '+2 image',
-                  fontSize: 12,
+                  fontSize: 14,
+                  fontWeight: FontWeight.w600,
                   color: Colors.white,
                 ),
               ),
             ],
-          )
+          ),
         ],
       ),
     );

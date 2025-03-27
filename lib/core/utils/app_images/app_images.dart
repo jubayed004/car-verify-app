@@ -17,6 +17,10 @@ class AppImages {
   static const String totalCarImage = "$basePath/totalcarimage.png";
   static const String totalReportImage = "$basePath/totalreportimage.svg";
   static const String viewReportImage = "$basePath/viewreportimage.png";
+  static const String deletedIcon = "$basePath/deletedicon.svg";
+  static const String editIcon = "$basePath/editicon.svg";
+  static const String downloadIcon = "$basePath/downloadicon.svg";
+  static const String shareIcon = "$basePath/shareicon.svg";
 
 
 

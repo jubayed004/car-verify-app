@@ -1,4 +1,4 @@
-import 'package:car_verify_app/core/features/user_section/user_home/view_details/widgets/icontext.dart';
+import 'package:car_verify_app/core/features/user_section/user_home/view_details/inner_widgets/icontext.dart';
 import 'package:flutter/material.dart';
 
 class InfoCard extends StatelessWidget {

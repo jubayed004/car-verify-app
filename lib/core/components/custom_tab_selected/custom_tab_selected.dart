@@ -62,8 +62,7 @@ class CustomTabSelector extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  */
-/*Text(
+Text(
                     numberList[index],
                     style: GoogleFonts.poppins(
                       color: selectedIndex == index
@@ -74,7 +73,7 @@ class CustomTabSelector extends StatelessWidget {
                       fontSize: 22,
                       fontWeight: FontWeight.w500,
                     ),
-                  ),*//*
+                  ),
 
                   Text(
                     tabs[index],

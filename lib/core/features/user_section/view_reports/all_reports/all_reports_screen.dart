@@ -19,7 +19,9 @@ class AllReportsScreen extends StatelessWidget {
         leftIcon: true,
         colors: AppColors.appColors,
         rightIcon: Icon(Icons.search,color: AppColors.appColors,size: 26,),
-        rightOnPressed: (){},
+        rightOnPressed: (){
+          Get.toNamed(AppRoutes.searchReportScreen);
+        },
       ),
       body: ListView(
         padding: const EdgeInsets.all(16),
@@ -183,6 +185,7 @@ class HistoryReportCard extends StatelessWidget {
               ],
             ),
           ),
+
         ],
       ),
     );

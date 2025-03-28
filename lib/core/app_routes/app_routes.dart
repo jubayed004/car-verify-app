@@ -6,10 +6,12 @@ import 'package:car_verify_app/core/features/auth/sign_up_screen.dart';
 import 'package:car_verify_app/core/features/auth/verify_code_screen.dart';
 import 'package:car_verify_app/core/features/my_test_screen.dart';
 import 'package:car_verify_app/core/features/user_section/manage_car/car_details/car_details_screen.dart';
+import 'package:car_verify_app/core/features/user_section/manage_car/edit_car_details/edit_car_details_screen.dart';
 import 'package:car_verify_app/core/features/user_section/manage_car/manage_car_screen.dart';
 import 'package:car_verify_app/core/features/user_section/manage_car/search_car/search_car_screen.dart';
 import 'package:car_verify_app/core/features/user_section/user_home/user_home_screen.dart';
 import 'package:car_verify_app/core/features/user_section/user_home/view_details/details_screen.dart';
+import 'package:car_verify_app/core/features/user_section/user_profile/user_profile_screen.dart';
 import 'package:car_verify_app/core/features/user_section/view_reports/all_reports/all_reports_screen.dart';
 import 'package:car_verify_app/core/features/user_section/view_reports/all_reports/search_report/search_report_screen.dart';
 import 'package:car_verify_app/core/features/user_section/view_reports/all_reports/view_reports/damage_details/damage_details_screen.dart';
@@ -32,6 +34,8 @@ class AppRoutes {
   static const String allReportsScreen = "/AllReportsScreen";
   static const String searchCarScreen = "/SearchCarScreen";
   static const String carDetailsScreen = "/CarDetailsScreen";
+  static const String editCarDetailsScreen = "/EditCarDetailsScreen";
+  static const String userProfileScreen = "/UserProfileScreen";
 
   static List<GetPage> routes = [
     GetPage(name: loginScreen, page: () => const LoginScreen()),
@@ -52,6 +56,8 @@ class AppRoutes {
     GetPage(name: manageCarScreen, page: () => ManageCarScreen()),
     GetPage(name: searchCarScreen, page: () => SearchCarScreen()),
     GetPage(name: carDetailsScreen, page: () => CarDetailsScreen()),
+    GetPage(name: editCarDetailsScreen, page: () => EditCarDetailsScreen()),
+    GetPage(name: userProfileScreen, page: () => UserProfileScreen()),
   ];
 }
 

@@ -1,3 +1,4 @@
+import 'package:car_verify_app/core/components/custom_nav_bar/user_navbar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -85,6 +86,7 @@ class UserHomeScreen extends StatelessWidget {
           ),
         ],
       ),
+      bottomNavigationBar: UserNavbar(currentIndex: 0,),
     );
   }
 }

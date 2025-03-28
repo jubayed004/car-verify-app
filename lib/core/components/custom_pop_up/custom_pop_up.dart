@@ -1,9 +1,9 @@
-/*
+import 'package:car_verify_app/core/components/custom_button/custom_button.dart';
+import 'package:car_verify_app/core/components/custom_text/custom_text.dart';
+import 'package:car_verify_app/core/utils/app_colors/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:service_provider_app/core/components/custom_button/custom_button.dart';
-import 'package:service_provider_app/core/components/custom_text/custom_text.dart';
-import 'package:service_provider_app/core/utils/app_colors/app_colors.dart';
+
 
 
 
@@ -56,6 +56,7 @@ class CustomShowDialog extends StatelessWidget {
   final bool? showColumnButton;
   final bool? showCloseButton;
   final Color? textColor;
+  final Color? discriptionTextColor;
   const CustomShowDialog(
       {super.key,
       required this.title,
@@ -67,7 +68,9 @@ class CustomShowDialog extends StatelessWidget {
       this.showRowButton = false,
       this.showColumnButton = false,
       this.textColor = Colors.black,
-      this.showCloseButton = true});
+      this.showCloseButton = true,
+        this.discriptionTextColor = AppColors.appColors
+      });
 
   @override
   Widget build(BuildContext context) {
@@ -105,7 +108,7 @@ class CustomShowDialog extends StatelessWidget {
             text: "$discription",
             fontSize: 14,
             fontWeight: FontWeight.w400,
-            color: textColor ?? AppColors.black_80,
+            color: discriptionTextColor ?? AppColors.black_80,
             bottom: 18.h,
           ),
           showRowButton == true
@@ -174,4 +177,3 @@ class CustomShowDialog extends StatelessWidget {
     );
   }
 }
-*/

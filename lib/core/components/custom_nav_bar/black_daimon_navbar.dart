@@ -1,15 +1,12 @@
 /*
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+import 'package:car_verify_app/core/utils/app_icons/app_icons.dart';
+import 'package:car_verify_app/core/utils/app_images/app_images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:tractivity_app/core/app_routes/app_routes.dart';
-import 'package:tractivity_app/utils/app_icons/app_icons.dart';
-import 'package:tractivity_app/utils/app_strings/app_strings.dart';
-import 'package:tractivity_app/view/components/custom_image/custom_image.dart';
-import 'package:tractivity_app/view/components/custom_text/custom_text.dart';
-import '../../../utils/app_colors/app_colors.dart';
+
 
 class BlackDaimonNavbar extends StatefulWidget {
   final int currentIndex;
@@ -24,7 +21,7 @@ class _UserNavBarState extends State<BlackDaimonNavbar> {
   late int bottomNavIndex;
 
   final List<String> selectedIcon = [
-    AppIcons.home,
+
     AppIcons.users,
     AppIcons.mail,
     AppIcons.person,

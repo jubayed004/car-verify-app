@@ -1,13 +1,15 @@
+import 'package:car_verify_app/core/app_routes/app_routes.dart';
 import 'package:car_verify_app/core/components/custom_image/custom_image.dart';
+import 'package:car_verify_app/core/components/custom_pop_up/custom_pop_up.dart';
 import 'package:car_verify_app/core/components/custom_royel_appbar/custom_royel_appbar.dart';
 import 'package:car_verify_app/core/components/custom_text/custom_text.dart';
-import 'package:car_verify_app/core/features/my_test_screen.dart';
 import 'package:car_verify_app/core/features/user_section/manage_car/car_details/inner_widgets/all_car_reports_screen.dart';
 import 'package:car_verify_app/core/features/user_section/user_home/view_details/inner_widgets/inforow.dart';
 import 'package:car_verify_app/core/utils/app_colors/app_colors.dart';
 import 'package:car_verify_app/core/utils/app_images/app_images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class CarDetailsScreen extends StatelessWidget {
   const CarDetailsScreen({super.key});
@@ -17,7 +19,7 @@ class CarDetailsScreen extends StatelessWidget {
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: SizedBox(
-        width: MediaQuery.of(context).size.width/1.3,
+        width: MediaQuery.of(context).size.width / 1.3,
         child: FloatingActionButton(
           onPressed: () {},
           backgroundColor: AppColors.appColors,
@@ -27,7 +29,6 @@ class CarDetailsScreen extends StatelessWidget {
             fontSize: 18,
             fontWeight: FontWeight.w700,
           ),
-
         ),
       ),
       appBar: CustomRoyelAppbar(
@@ -35,16 +36,38 @@ class CarDetailsScreen extends StatelessWidget {
         leftIcon: true,
         colors: AppColors.appColors,
         actions: [
-          CustomImage(
-            imageSrc: AppImages.editIcon,
-            sizeWidth: 24,
+          GestureDetector(
+            onTap: () {
+              Get.toNamed(AppRoutes.editCarDetailsScreen);
+            },
+            child: CustomImage(
+              imageSrc: AppImages.editIcon,
+              sizeWidth: 24,
+            ),
           ),
           SizedBox(
             width: 6.w,
           ),
-          CustomImage(
-            imageSrc: AppImages.deletedIcon,
-            sizeWidth: 24,
+          GestureDetector(
+            onTap: () {
+              showModalBottomSheet(
+                  context: context,
+                  builder: (context) {
+                    return SizedBox(
+                      height: MediaQuery.of(context).size.height/4,
+                      child: CustomShowDialog(
+                        title: "Are you sure !!  ",
+                        discription: "Do you want to  delete this Car ?",
+                        textColor: AppColors.red,
+                        showRowButton: true,
+                      ),
+                    );
+                  });
+            },
+            child: CustomImage(
+              imageSrc: AppImages.deletedIcon,
+              sizeWidth: 24,
+            ),
           ),
           SizedBox(
             width: 10.w,

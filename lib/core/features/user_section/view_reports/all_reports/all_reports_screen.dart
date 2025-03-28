@@ -1,5 +1,6 @@
 import 'package:car_verify_app/core/app_routes/app_routes.dart';
 import 'package:car_verify_app/core/components/custom_button/custom_gradient_button.dart';
+import 'package:car_verify_app/core/components/custom_nav_bar/user_navbar.dart';
 import 'package:car_verify_app/core/components/custom_royel_appbar/custom_royel_appbar.dart';
 import 'package:car_verify_app/core/utils/app_colors/app_colors.dart';
 import 'package:flutter/material.dart';
@@ -60,6 +61,7 @@ class AllReportsScreen extends StatelessWidget {
           ),
         ],
       ),
+      bottomNavigationBar: UserNavbar(currentIndex: 1,),
     );
   }
 }

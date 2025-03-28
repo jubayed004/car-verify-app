@@ -52,7 +52,8 @@ class AllReportsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 4,
+      color: Colors.white,
+      elevation: 2,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(16),
       ),
@@ -94,7 +95,7 @@ class AllReportsCard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       CustomGradientButton(
-                        text: "Car details",
+                        text: "View details",
                         onPressed: () {
                           //Get.toNamed(AppRoutes.viewDetailsScreen);
                           Get.toNamed(AppRoutes.carDetailsScreen);

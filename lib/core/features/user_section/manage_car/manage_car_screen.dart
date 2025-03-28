@@ -1,6 +1,7 @@
 import 'package:car_verify_app/core/app_routes/app_routes.dart';
 import 'package:car_verify_app/core/components/custom_button/custom_gradient_button.dart';
 import 'package:car_verify_app/core/components/custom_image/custom_image.dart';
+import 'package:car_verify_app/core/components/custom_nav_bar/user_navbar.dart';
 import 'package:car_verify_app/core/components/custom_royel_appbar/custom_royel_appbar.dart';
 import 'package:car_verify_app/core/components/custom_text/custom_text.dart';
 import 'package:car_verify_app/core/utils/app_colors/app_colors.dart';
@@ -51,6 +52,7 @@ class ManageCarScreen extends StatelessWidget {
           ],
         ),
       ),
+      bottomNavigationBar: UserNavbar(currentIndex: 3,),
     );
   }
 }
@@ -92,7 +94,7 @@ class CarVerificationCard extends StatelessWidget {
                 CustomText(text: "Making year : 2022", bottom: 6),
                 CustomText(text: "Brand : Toyota", bottom: 10),
                 CustomGradientButton(
-                  text: "Car details",
+                  text: "View details",
                   onPressed: () {
                     //Get.toNamed(AppRoutes.viewDetailsScreen);
                     Get.toNamed(AppRoutes.carDetailsScreen);

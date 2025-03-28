@@ -15,12 +15,33 @@ class AppImages {
   static const String profileImage = "$basePath/profileimage.svg";
   static const String scanCarImage = "$basePath/scancarimage.png";
   static const String totalCarImage = "$basePath/totalcarimage.png";
-  static const String totalReportImage = "$basePath/totalreportimage.svg";
+  static const String reportCard = "$basePath/reportcard.png";
   static const String viewReportImage = "$basePath/viewreportimage.png";
   static const String deletedIcon = "$basePath/deletedicon.svg";
   static const String editIcon = "$basePath/editicon.svg";
   static const String downloadIcon = "$basePath/downloadicon.svg";
   static const String shareIcon = "$basePath/shareicon.svg";
+
+  ///============= nav bar ============///
+  static const String homeIcon = "$basePath/homeicon.svg";
+  static const String carReportsIcon = "$basePath/carreportsicon.svg";
+  static const String carManageIcon = "$basePath/carmanageicon.svg";
+  static const String profileIcon = "$basePath/profileicon.png";
+  static const String unProfile = "$basePath/unprofile.svg";
+  static const String unSeletdCarManage = "$basePath/unseletdcarmanage.svg";
+  static const String unSeletedCarReports = "$basePath/unseletedcarreports.svg";
+  static const String unSeletedHome = "$basePath/unseletedhome.svg";
+  static const String unprofile = "$basePath/unprofile.svg";
+  static const String scanIcon = "$basePath/scanicon.svg";
+
+
+  ///============= User Profile  ============///
+  //static const String totalCarImage = "$basePath/totalcarimage.png";
+
+
+
+
+
 
 
 

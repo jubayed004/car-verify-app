@@ -16,6 +16,7 @@ class CustomRoyelAppbar extends StatelessWidget implements PreferredSizeWidget {
   final Color colors;
   final Color iconColors;
   final VoidCallback? rightOnPressed;
+  final VoidCallback? leftOnPressed;
 
   const CustomRoyelAppbar(
       {super.key,
@@ -27,7 +28,8 @@ class CustomRoyelAppbar extends StatelessWidget implements PreferredSizeWidget {
         this.fontSize = 22,
         this.colors = AppColors.white,
         this.iconColors = AppColors.white,
-        this.rightOnPressed});
+        this.rightOnPressed,
+        this.leftOnPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +56,7 @@ class CustomRoyelAppbar extends StatelessWidget implements PreferredSizeWidget {
         backgroundColor: Colors.transparent,
         leading: leftIcon == true
             ? IconButton(
-          onPressed: () {
+          onPressed: leftOnPressed  ?? (){
             Get.back();
           },
           icon: Container(

@@ -21,6 +21,7 @@ class AppImages {
   static const String editIcon = "$basePath/editicon.svg";
   static const String downloadIcon = "$basePath/downloadicon.svg";
   static const String shareIcon = "$basePath/shareicon.svg";
+  static const String carVrifyTwo = "$basePath/carvrifytwo.svg";
 
   ///============= nav bar ============///
   static const String homeIcon = "$basePath/homeicon.svg";

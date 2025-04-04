@@ -28,15 +28,12 @@ class LoginScreen extends StatelessWidget {
         fontWeight: FontWeight.w700,
       )),
       body: SingleChildScrollView(
-        padding: EdgeInsets.only(top: 100, left: 20, right: 20),
+        padding: EdgeInsets.only(top: 24, left: 20, right: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Center(
-                child: CustomImage(
-              imageSrc: AppImages.carverifyimage,
-            )),
+            Center(child: CustomImage(imageSrc: AppImages.carVrifyTwo)),
             CustomText(
               text: "Email",
               top: 24,

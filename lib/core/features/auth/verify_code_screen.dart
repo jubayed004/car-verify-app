@@ -23,11 +23,11 @@ class VerifyCodeScreen extends StatelessWidget {
         iconColors: AppColors.appColors,
       ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.only(top: 100,left: 20,right: 20),
+        padding: EdgeInsets.only(top: 24,left: 20,right: 20),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Center(child: CustomImage(imageSrc: AppImages.carverifyimage)),
+            Center(child: CustomImage(imageSrc: AppImages.carVrifyTwo)),
             CustomText(
               text: "Enter Verification Code",
               fontWeight: FontWeight.w600,

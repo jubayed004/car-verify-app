@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:car_verify_app/core/app_routes/app_routes.dart';
 import 'package:car_verify_app/core/components/custom_nav_bar/user_navbar.dart';
 import 'package:car_verify_app/core/components/custom_netwrok_image/custom_network_image.dart';
 import 'package:car_verify_app/core/components/custom_royel_appbar/custom_royel_appbar.dart';
@@ -8,23 +11,64 @@ import 'package:car_verify_app/core/utils/app_const/app_const.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
+import 'package:image_picker/image_picker.dart';
+
 class UserProfileScreen extends StatelessWidget {
   UserProfileScreen({super.key});
 
-  final UserProfileController userProfileController = Get.find<UserProfileController>();
+  final UserProfileController userProfileController = Get.put(UserProfileController());
 
   final List<_MenuItem> menuItems = [
-    _MenuItem(icon: Icons.person_outline, title: 'Edit Profile'),
-    _MenuItem(icon: Icons.subscriptions_outlined, title: 'Subscription'),
-    _MenuItem(icon: Icons.support_agent_outlined, title: 'Contact Support'),
-    _MenuItem(icon: Icons.settings_outlined, title: 'Settings'),
-    _MenuItem(icon: Icons.logout, title: 'Log Out'),
+    _MenuItem(
+      icon: Icons.person_outline,
+      title: 'Edit Profile',
+      onTap: () => Get.toNamed(AppRoutes.editProfileScreen),
+    ),
+    _MenuItem(
+      icon: Icons.subscriptions_outlined,
+      title: 'Subscription',
+      onTap: () => Get.toNamed('/subscription'),
+    ),
+    _MenuItem(
+      icon: Icons.support_agent_outlined,
+      title: 'Contact Support',
+      onTap: () => Get.toNamed('/contact-support'),
+    ),
+    _MenuItem(
+      icon: Icons.settings_outlined,
+      title: 'Settings',
+      onTap: () => Get.toNamed('/settings'),
+    ),
+    _MenuItem(
+      icon: Icons.logout,
+      title: 'Log Out',
+      onTap: () {
+        Get.defaultDialog(
+          title: "Log Out",
+          middleText: "Are you sure you want to log out?",
+          textConfirm: "Yes",
+          textCancel: "No",
+          confirmTextColor: Colors.white,
+          onConfirm: () {
+            Get.back();
+            // Implement logout logic here
+          },
+        );
+      },
+    ),
   ];
+
   final List<_MenuItem> legalMenuItems = [
-    _MenuItem(icon: Icons.gavel_outlined, title: 'Terms & Conditions'),
-    _MenuItem(icon: Icons.privacy_tip_outlined, title: 'Privacy Policy'),
+    _MenuItem(
+      icon: Icons.gavel_outlined,
+      title: 'Terms & Conditions',
+      onTap: () => Get.toNamed('/terms-conditions'),
+    ),
+    _MenuItem(
+      icon: Icons.privacy_tip_outlined,
+      title: 'Privacy Policy',
+      onTap: () => Get.toNamed('/privacy-policy'),
+    ),
   ];
 
   @override
@@ -35,7 +79,7 @@ class UserProfileScreen extends StatelessWidget {
         colors: AppColors.appColors,
       ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.symmetric(vertical: 20, horizontal: 16),
+        padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 16),
         child: Column(
           children: [
             SizedBox(height: 20.h),
@@ -43,46 +87,39 @@ class UserProfileScreen extends StatelessWidget {
               child: Stack(
                 children: [
                   Obx(() {
-                    if (userProfileController.selectedImage.value != null) {
-                      return Container(
-                        height: 120.h,
-                        width: 120.w,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          image: DecorationImage(
-                            image: FileImage(userProfileController.selectedImage.value!),
-                            fit: BoxFit.cover,
-                          ),
+                    final image = userProfileController.selectedImage.value;
+                    return image != null
+                        ? Container(
+                      height: 120.h,
+                      width: 120.w,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        image: DecorationImage(
+                          image: FileImage(image),
+                          fit: BoxFit.cover,
                         ),
-                      );
-                    } else {
-                      return CustomNetworkImage(
-                        imageUrl: AppConstants.girlsPhoto,
-                        height: 120.h,
-                        width: 120.w,
-                        boxShape: BoxShape.circle,
-                      );
-                    }
+                      ),
+                    )
+                        : CustomNetworkImage(
+                      imageUrl: AppConstants.girlsPhoto,
+                      height: 120.h,
+                      width: 120.w,
+                      boxShape: BoxShape.circle,
+                    );
                   }),
                   Positioned(
                     bottom: 5,
                     right: 0,
                     child: GestureDetector(
-                      onTap: () {
-                        userProfileController.pickImageFromGallery();
-                      },
+                      onTap: userProfileController.pickImageFromGallery,
                       child: Container(
                         height: 30,
                         width: 30,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           color: AppColors.servicePrimary,
                           shape: BoxShape.circle,
                         ),
-                        child: const Icon(
-                          Icons.camera_alt,
-                          size: 18,
-                          color: AppColors.white,
-                        ),
+                        child: const Icon(Icons.camera_alt, size: 18, color: AppColors.white),
                       ),
                     ),
                   ),
@@ -90,14 +127,14 @@ class UserProfileScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: 20.h),
-            CustomText(
+            const CustomText(
               text: 'Abner Cruz',
               fontSize: 20,
               fontWeight: FontWeight.w600,
             ),
             SizedBox(height: 20.h),
             Row(
-              children: [
+              children: const [
                 _StatCard(
                   title: 'Total car',
                   value: '03',
@@ -111,19 +148,13 @@ class UserProfileScreen extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 24),
-            Padding(
-              padding: const EdgeInsets.all(0),
-              child: ListView.separated(
-
-                shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
-                itemCount: menuItems.length,
-                separatorBuilder: (context, index) => Divider(height: 1),
-                itemBuilder: (context, index) {
-                  return _MenuTile(item: menuItems[index]);
-                },
-              ),
+            SizedBox(height: 24.h),
+            ListView.separated(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              itemCount: menuItems.length,
+              separatorBuilder: (_, __) => const Divider(height: 1),
+              itemBuilder: (_, index) => _MenuTile(item: menuItems[index]),
             ),
             Align(
               alignment: Alignment.centerLeft,
@@ -134,22 +165,17 @@ class UserProfileScreen extends StatelessWidget {
                 left: 6,
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(0),
-              child: ListView.separated(
-                shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
-                itemCount: legalMenuItems.length,
-                separatorBuilder: (context, index) => Divider(height: 1),
-                itemBuilder: (context, index) {
-                  return _MenuTile(item: legalMenuItems[index]);
-                },
-              ),
+            ListView.separated(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              itemCount: legalMenuItems.length,
+              separatorBuilder: (_, __) => const Divider(height: 1),
+              itemBuilder: (_, index) => _MenuTile(item: legalMenuItems[index]),
             ),
           ],
         ),
       ),
-      bottomNavigationBar: UserNavbar(currentIndex: 4,),
+      bottomNavigationBar: UserNavbar(currentIndex: 4),
     );
   }
 }
@@ -170,7 +196,7 @@ class _StatCard extends StatelessWidget {
     return Expanded(
       child: Container(
         height: 100,
-        padding: EdgeInsets.all(12),
+        padding: const EdgeInsets.all(12),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
           gradient: LinearGradient(
@@ -183,9 +209,9 @@ class _StatCard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(icon, height: 30),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             CustomText(
-              text: '$title :$value',
+              text: '$title : $value',
               fontWeight: FontWeight.w600,
             ),
           ],
@@ -198,8 +224,13 @@ class _StatCard extends StatelessWidget {
 class _MenuItem {
   final IconData icon;
   final String title;
+  final VoidCallback onTap;
 
-  _MenuItem({required this.icon, required this.title});
+  _MenuItem({
+    required this.icon,
+    required this.title,
+    required this.onTap,
+  });
 }
 
 class _MenuTile extends StatelessWidget {
@@ -210,17 +241,15 @@ class _MenuTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      contentPadding: EdgeInsets.all(0),
+      contentPadding: EdgeInsets.zero,
       leading: Icon(item.icon, size: 28),
       title: CustomText(
         text: item.title,
         fontSize: 16,
         textAlign: TextAlign.start,
       ),
-      trailing: Icon(Icons.chevron_right),
-      onTap: () {
-        // Handle tap here
-      },
+      trailing: const Icon(Icons.chevron_right),
+      onTap: item.onTap,
     );
   }
 }

@@ -11,6 +11,7 @@ import 'package:car_verify_app/core/features/user_section/manage_car/manage_car_
 import 'package:car_verify_app/core/features/user_section/manage_car/search_car/search_car_screen.dart';
 import 'package:car_verify_app/core/features/user_section/user_home/user_home_screen.dart';
 import 'package:car_verify_app/core/features/user_section/user_home/view_details/details_screen.dart';
+import 'package:car_verify_app/core/features/user_section/user_profile/edit_profile/edit_profile_screen.dart';
 import 'package:car_verify_app/core/features/user_section/user_profile/user_profile_screen.dart';
 import 'package:car_verify_app/core/features/user_section/view_reports/all_reports/all_reports_screen.dart';
 import 'package:car_verify_app/core/features/user_section/view_reports/all_reports/search_report/search_report_screen.dart';
@@ -36,6 +37,7 @@ class AppRoutes {
   static const String carDetailsScreen = "/CarDetailsScreen";
   static const String editCarDetailsScreen = "/EditCarDetailsScreen";
   static const String userProfileScreen = "/UserProfileScreen";
+  static const String editProfileScreen = "/EditProfileScreen";
 
   static List<GetPage> routes = [
     GetPage(name: loginScreen, page: () => const LoginScreen()),
@@ -57,7 +59,9 @@ class AppRoutes {
     GetPage(name: searchCarScreen, page: () => SearchCarScreen()),
     GetPage(name: carDetailsScreen, page: () => CarDetailsScreen()),
     GetPage(name: editCarDetailsScreen, page: () => EditCarDetailsScreen()),
+    ///=================> User Profile ============////
     GetPage(name: userProfileScreen, page: () => UserProfileScreen()),
+    GetPage(name: editProfileScreen, page: () => EditProfileScreen()),
   ];
 }
 

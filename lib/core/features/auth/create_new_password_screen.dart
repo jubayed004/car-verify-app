@@ -25,16 +25,12 @@ class CreateNewPasswordScreen extends StatelessWidget {
         iconColors: AppColors.appColors,
       ),
       body:SingleChildScrollView(
-        padding: EdgeInsets.only(top: 100, left: 20, right: 20),
+        padding: EdgeInsets.only(top: 24, left: 20, right: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Center(
-                child: CustomImage(
-                  imageSrc: AppImages.carverifyimage,
-                )
-            ),
+            Center(child: CustomImage(imageSrc: AppImages.carVrifyTwo)),
             CustomText(
               text: "New password",
               top: 24,
@@ -65,10 +61,10 @@ class CreateNewPasswordScreen extends StatelessWidget {
             CustomGradientButton(
               text: 'Submit',
               onPressed: () {
-
+               Get.toNamed(AppRoutes.loginScreen);
               },
             ),
-            SizedBox(height: 14.h,),
+
           ],
         ),
       ),

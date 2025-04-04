@@ -190,7 +190,9 @@ class EditProfileScreen extends StatelessWidget {
               CustomGradientButton(
 
                   text: "Save Changes",
-                  onPressed: () {}
+                  onPressed: () {
+                    Get.back();
+                  }
               )
             ],
           );

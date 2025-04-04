@@ -32,21 +32,23 @@ class UserProfileScreen extends StatelessWidget {
     _MenuItem(
       icon: Icons.support_agent_outlined,
       title: 'Contact Support',
-      onTap: () => Get.toNamed('/contact-support'),
+      onTap: () => Get.toNamed(AppRoutes.contactSupportScreen),
     ),
     _MenuItem(
       icon: Icons.settings_outlined,
       title: 'Settings',
-      onTap: () => Get.toNamed('/settings'),
+      onTap: () => Get.toNamed(AppRoutes.settingScreen),
     ),
     _MenuItem(
       icon: Icons.logout,
       title: 'Log Out',
       onTap: () {
         Get.defaultDialog(
+          backgroundColor: Colors.white,
           title: "Log Out",
           middleText: "Are you sure you want to log out?",
           textConfirm: "Yes",
+          buttonColor: AppColors.appColors,
           textCancel: "No",
           confirmTextColor: Colors.white,
           onConfirm: () {
@@ -62,18 +64,19 @@ class UserProfileScreen extends StatelessWidget {
     _MenuItem(
       icon: Icons.gavel_outlined,
       title: 'Terms & Conditions',
-      onTap: () => Get.toNamed('/terms-conditions'),
+      onTap: () => Get.toNamed(AppRoutes.termsAndConditionScreen),
     ),
     _MenuItem(
       icon: Icons.privacy_tip_outlined,
       title: 'Privacy Policy',
-      onTap: () => Get.toNamed('/privacy-policy'),
+      onTap: () => Get.toNamed(AppRoutes.privacyPolicyScreen),
     ),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: CustomRoyelAppbar(
         titleName: "Profile",
         colors: AppColors.appColors,
@@ -161,8 +164,10 @@ class UserProfileScreen extends StatelessWidget {
               child: CustomText(
                 text: 'Legal',
                 fontWeight: FontWeight.w600,
-                fontSize: 18,
+                fontSize: 18.sp,
                 left: 6,
+                bottom: 8,
+              top: 8,
               ),
             ),
             ListView.separated(

@@ -24,12 +24,12 @@ class ForgetPasswordScreen extends StatelessWidget {
         iconColors: AppColors.appColors,
       ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.only(top: 80,left: 20,right: 20),
+        padding: EdgeInsets.only(top: 24,left: 20,right: 20),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Center(child: CustomImage(imageSrc: AppImages.carverifyimage)),
+            Center(child: CustomImage(imageSrc: AppImages.carVrifyTwo)),
             Align(
               alignment: Alignment.center,
               child: CustomText(

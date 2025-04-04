@@ -1,4 +1,6 @@
 import 'package:car_verify_app/core/app_routes/app_routes.dart';
+import 'package:car_verify_app/core/components/custom_button/custom_button.dart';
+import 'package:car_verify_app/core/components/custom_button/custom_gradient_button.dart';
 import 'package:car_verify_app/core/components/custom_image/custom_image.dart';
 import 'package:car_verify_app/core/components/custom_pop_up/custom_pop_up.dart';
 import 'package:car_verify_app/core/components/custom_text/custom_text.dart';
@@ -70,9 +72,8 @@ class _UserNavBarState extends State<UserNavbar> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: List.generate(
-
                 selectedIcon.length,
-                    (index) => Row(
+                (index) => Row(
                   children: [
                     if (index == 2)
                       SizedBox(width: 60.w)
@@ -118,20 +119,7 @@ class _UserNavBarState extends State<UserNavbar> {
           right: 0,
           child: GestureDetector(
             onTap: () {
-              showModalBottomSheet(
-                context: context,
-                builder: (context) {
-                  return SizedBox(
-                    height: MediaQuery.of(context).size.height / 4,
-                    child: CustomShowDialog(
-                      title: "Are you sure !!",
-                      discription: "Do you want to delete this Car?",
-                      textColor: AppColors.red,
-                      showRowButton: true,
-                    ),
-                  );
-                },
-              );
+              buildShowDialog(context);
             },
             child: Container(
               height: 70.w,
@@ -147,10 +135,15 @@ class _UserNavBarState extends State<UserNavbar> {
               child: Padding(
                 padding: EdgeInsets.all(12.w),
                 child: Center(
-                  child: CustomImage(
-                    imageSrc: AppImages.scanIcon,
-                    height: 30.w,
-                    width: 30.w,
+                  child: GestureDetector(
+                    onTap: () {
+                      buildShowDialog(context);
+                    },
+                    child: CustomImage(
+                      imageSrc: AppImages.scanIcon,
+                      height: 30.w,
+                      width: 30.w,
+                    ),
                   ),
                 ),
               ),
@@ -159,6 +152,49 @@ class _UserNavBarState extends State<UserNavbar> {
         )
       ],
     );
+  }
+
+  Future<dynamic> buildShowDialog(BuildContext context) {
+    return showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return AlertDialog(
+                    actionsPadding: EdgeInsets.symmetric(vertical: 20,horizontal: 16),
+                    backgroundColor: Colors.white,
+                    actions: [
+                      SizedBox(
+                          height: MediaQuery.of(context).size.height / 6,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Flexible(
+                                child: CustomButton(
+                                  onTap: () => Get.toNamed(AppRoutes.allCarScreen),
+                                  title: "Select car",
+                                  height: 50.h,
+                                  fillColor: AppColors.white,
+                                  textColor: AppColors.appColors,
+                                  isBorder: true,
+                                  borderWidth: 1,
+                                ),
+                              ),
+                              SizedBox(
+                                height: 12.h,
+                              ),
+                              Flexible(
+                                child: CustomGradientButton(
+                                    text: "Add Car",
+                                    onPressed: (){
+                                      Get.toNamed(AppRoutes.addCarScreen);
+                                    }
+                                )
+                              ),
+                            ],
+                          ))
+                    ],
+                  );
+                });
   }
 
   void onTap(int index) {

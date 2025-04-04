@@ -53,6 +53,7 @@ class CustomShowDialog extends StatelessWidget {
   final Function()? leftOnTap;
   final Function()? rightOnTap;
   final bool? showRowButton;
+  final bool? showRowButtonTwo;
   final bool? showColumnButton;
   final bool? showCloseButton;
   final Color? textColor;
@@ -69,7 +70,8 @@ class CustomShowDialog extends StatelessWidget {
       this.showColumnButton = false,
       this.textColor = Colors.black,
       this.showCloseButton = true,
-        this.discriptionTextColor = AppColors.appColors
+        this.discriptionTextColor = AppColors.appColors,
+        this.showRowButtonTwo
       });
 
   @override
@@ -141,6 +143,41 @@ class CustomShowDialog extends StatelessWidget {
                           borderWidth: 1,
                         ),
                       )
+                    ],
+                  ),
+                )
+              : SizedBox(),
+          showRowButtonTwo == true
+              ? Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                  child: Row(
+                    children: [
+                      Flexible(
+                        child: CustomButton(
+                          onTap:
+                          rightOnTap ?? () => Navigator.of(context).pop(),
+                          title: rightTextButton ?? "Cancel",
+                          height: 50.h,
+                          fillColor: AppColors.white,
+                          textColor: AppColors.servicePrimary,
+                          isBorder: true,
+                          borderWidth: 1,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 12.w,
+                      ),
+                      Flexible(
+                        child: CustomButton(
+                          onTap: leftOnTap ?? () => Navigator.of(context).pop(),
+                          title: leftTextButton ?? "Delete Account",
+                          height: 50.h,
+                          textColor: AppColors.appWhite ,
+                          fillColor: AppColors.servicePrimary,
+                          // fillColor:  widget.textColor ?? AppColors.black_80,
+                        ),
+                      ),
+
                     ],
                   ),
                 )

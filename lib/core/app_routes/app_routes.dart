@@ -1,16 +1,18 @@
 // ignore_for_file: prefer_const_constructors
-import 'package:car_verify_app/core/features/auth/create_new_password_screen.dart';
-import 'package:car_verify_app/core/features/auth/forget_password_screen.dart';
-import 'package:car_verify_app/core/features/auth/login_screen.dart';
-import 'package:car_verify_app/core/features/auth/sign_up_screen.dart';
-import 'package:car_verify_app/core/features/auth/verify_code_screen.dart';
-import 'package:car_verify_app/core/features/my_test_screen.dart';
+import 'package:car_verify_app/core/features/business_section/business_home/business_home_screen.dart';
+import 'package:car_verify_app/core/features/business_section/business_home/business_view_report/business_view_report_screen.dart';
+import 'package:car_verify_app/core/features/common_section/auth/create_new_password_screen.dart';
+import 'package:car_verify_app/core/features/common_section/auth/forget_password_screen.dart';
+import 'package:car_verify_app/core/features/common_section/auth/login_screen.dart';
+import 'package:car_verify_app/core/features/common_section/auth/sign_up_screen.dart';
+import 'package:car_verify_app/core/features/common_section/auth/verify_code_screen.dart';
 import 'package:car_verify_app/core/features/user_section/add_car/add_car_screen.dart';
 import 'package:car_verify_app/core/features/user_section/car_list/all_car_screen.dart';
 import 'package:car_verify_app/core/features/user_section/manage_car/car_details/car_details_screen.dart';
 import 'package:car_verify_app/core/features/user_section/manage_car/edit_car_details/edit_car_details_screen.dart';
 import 'package:car_verify_app/core/features/user_section/manage_car/manage_car_screen.dart';
 import 'package:car_verify_app/core/features/user_section/manage_car/search_car/search_car_screen.dart';
+import 'package:car_verify_app/core/features/user_section/scan_now/scan_now_screen.dart';
 import 'package:car_verify_app/core/features/user_section/user_home/user_home_screen.dart';
 import 'package:car_verify_app/core/features/user_section/user_home/view_details/details_screen.dart';
 import 'package:car_verify_app/core/features/user_section/user_profile/contact_support/contact_support_screen.dart';
@@ -52,6 +54,9 @@ class AppRoutes {
   static const String contactSupportScreen = "/ContactSupportScreen";
   static const String allCarScreen = "/AllCarScreen";
   static const String addCarScreen = "/AddCarScreen";
+  static const String scanNowScreen = "/ScanNowScreen";
+  static const String businessHomeScreen = "/BusinessHomeScreen";
+  static const String businessViewReportScreen = "/BusinessViewReportScreen";
 
   static List<GetPage> routes = [
     GetPage(name: loginScreen, page: () => const LoginScreen()),
@@ -61,10 +66,9 @@ class AppRoutes {
     GetPage(name: signUpScreen, page: () => const SignUpScreen()),
 
 
-    ///=================> User Home ============////
+    ///=================> User Section ============////
     GetPage(name: userHomeScreen, page: () => UserHomeScreen()),
     GetPage(name: allReportsScreen, page: () => AllReportsScreen()),
-
     GetPage(name: viewDetailsScreen, page: () => ViewDetailsScreen()),
     GetPage(name: viewReportsScreen, page: () => ViewReportsScreen()),
     GetPage(name: damageDetailsScreen, page: () => DamageDetailsScreen()),
@@ -75,7 +79,7 @@ class AppRoutes {
     GetPage(name: editCarDetailsScreen, page: () => EditCarDetailsScreen()),
     GetPage(name: allCarScreen, page: () => AllCarScreen()),
     GetPage(name: addCarScreen, page: () => AddCarScreen()),
-
+    GetPage(name: scanNowScreen, page: () => ScanNowScreen()),
 
     ///=================> User Profile ============////
     GetPage(name: userProfileScreen, page: () => UserProfileScreen()),
@@ -85,6 +89,16 @@ class AppRoutes {
     GetPage(name: termsAndConditionScreen, page: () => TermsAndConditionScreen()),
     GetPage(name: privacyPolicyScreen, page: () => PrivacyPolicyScreen()),
     GetPage(name: contactSupportScreen, page: () => ContactSupportScreen()),
+
+    ///=================> Business Section ============////
+    GetPage(name: businessHomeScreen, page: () => BusinessHomeScreen()),
+    GetPage(name: businessViewReportScreen, page: () => BusinessViewReportScreen()),
+
+
+
+
+
+
   ];
 }
 

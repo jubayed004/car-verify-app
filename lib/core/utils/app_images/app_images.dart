@@ -11,7 +11,7 @@ class AppImages {
   static const String detailsCar = "$basePath/detailscar.png";
   static const String maskGroup = "$basePath/Maskgroup.png";
   static const String manageCar = "$basePath/managecar.png";
-  static const String ongoingCarView = "$basePath/ongoingcarview.png";
+  static const String oongoingcar = "$basePath/ongoingcar.png";
   static const String profileImage = "$basePath/profileimage.svg";
   static const String scanCarImage = "$basePath/scancarimage.png";
   static const String totalCarImage = "$basePath/totalcarimage.png";
@@ -22,6 +22,8 @@ class AppImages {
   static const String downloadIcon = "$basePath/downloadicon.svg";
   static const String shareIcon = "$basePath/shareicon.svg";
   static const String carVrifyTwo = "$basePath/carvrifytwo.svg";
+  static const String scanNowCar = "$basePath/scannowcar.png";
+  static const String sortMenuIcon = "$basePath/sortmenuicon.svg";
 
   ///============= nav bar ============///
   static const String homeIcon = "$basePath/homeicon.svg";

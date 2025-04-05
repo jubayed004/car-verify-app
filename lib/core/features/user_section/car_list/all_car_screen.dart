@@ -11,6 +11,7 @@ class AllCarScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: CustomRoyelAppbar(
         titleName: "All Car",
         colors: AppColors.appColors,

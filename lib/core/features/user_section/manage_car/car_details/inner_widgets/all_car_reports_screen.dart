@@ -66,10 +66,10 @@ class AllReportsCard extends StatelessWidget {
             // Car Image
             ClipRRect(
               borderRadius: BorderRadius.circular(8),
-              child: Image.asset(
-                AppImages.ongoingCarView, // Replace with actual image asset
-                fit: BoxFit.cover,
-              ),
+              child:  CustomImage(
+                  height: 150.h,
+                  imageSrc: AppImages.oongoingcar,
+                  fit: BoxFit.fill),
             ),
             SizedBox(width: 16.w),
             // Inspection Details
@@ -107,7 +107,6 @@ class AllReportsCard extends StatelessWidget {
                       ),
                       CustomImage(imageSrc: AppImages.downloadIcon),
                       CustomImage(imageSrc: AppImages.shareIcon),
-
                     ],
                   ),
                 ],

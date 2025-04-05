@@ -36,20 +36,18 @@ class CustomRoyelAppbar extends StatelessWidget implements PreferredSizeWidget {
     return Padding(
       padding: const EdgeInsets.only(left: 14.0, right: 14),
       child: AppBar(
+
         toolbarHeight: 50,
         elevation: 0,
         foregroundColor: Colors.transparent,
         centerTitle: true,
         scrolledUnderElevation: 0,
         actions: actions ?? [
+
           IconButton(
             onPressed: rightOnPressed,
             icon: Center(
-              child: rightIcon ??
-                  Icon(
-                    Icons.search, // Default icon if none provided
-                    color: iconColors,
-                  ),
+              child: rightIcon
             ),
           )
         ], // Custom actions or default one if none passed

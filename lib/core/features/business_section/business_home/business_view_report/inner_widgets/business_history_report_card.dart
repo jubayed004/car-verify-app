@@ -1,72 +1,9 @@
-import 'package:car_verify_app/core/app_routes/app_routes.dart';
 import 'package:car_verify_app/core/components/custom_button/custom_gradient_button.dart';
-import 'package:car_verify_app/core/components/custom_nav_bar/user_navbar.dart';
-import 'package:car_verify_app/core/components/custom_royel_appbar/custom_royel_appbar.dart';
-import 'package:car_verify_app/core/utils/app_colors/app_colors.dart';
-import 'package:flutter/material.dart';
 import 'package:car_verify_app/core/components/custom_text/custom_text.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
 
-class AllReportsScreen extends StatelessWidget {
-  const AllReportsScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color(0xFFF9F9F9),
-      appBar: CustomRoyelAppbar(
-        titleName: "All Reports",
-        leftIcon: true,
-        colors: AppColors.appColors,
-        rightIcon: Icon(Icons.search,color: AppColors.appColors,size: 26,),
-        rightOnPressed: (){
-          Get.toNamed(AppRoutes.searchReportScreen);
-        },
-      ),
-      body: ListView(
-        padding: const EdgeInsets.all(16),
-        children: const [
-          HistoryReportCard(
-            imageUrl: 'assets/images/ongoingcar.png',
-            regNo: '12545206',
-            model: 'Landcruiser',
-            inspectedOn: '25,Feb 2025',
-            damageText: '2 damage found',
-            isDamage: true,
-          ),
-          HistoryReportCard(
-            imageUrl: 'assets/images/ongoingcar.png',
-            regNo: '12545206',
-            model: 'Landcruiser',
-            inspectedOn: '25,Feb 2025',
-            damageText: 'No damages found',
-            isDamage: false,
-          ),
-          HistoryReportCard(
-            imageUrl: 'assets/images/ongoingcar.png',
-            regNo: '12545206',
-            model: 'Landcruiser',
-            inspectedOn: '25,Feb 2025',
-            damageText: '2 damage found',
-            isDamage: true,
-          ),
-          HistoryReportCard(
-            imageUrl: 'assets/images/ongoingcar.png',
-            regNo: '12545206',
-            model: 'Landcruiser',
-            inspectedOn: '25,Feb 2025',
-            damageText: '2 damage found',
-            isDamage: true,
-          ),
-        ],
-      ),
-      bottomNavigationBar: UserNavbar(currentIndex: 1,),
-    );
-  }
-}
-
-class HistoryReportCard extends StatelessWidget {
+class BusinessHistoryReportCard extends StatelessWidget {
   final String imageUrl;
   final String regNo;
   final String model;
@@ -74,7 +11,7 @@ class HistoryReportCard extends StatelessWidget {
   final String damageText;
   final bool isDamage;
 
-  const HistoryReportCard({
+  const BusinessHistoryReportCard({
     super.key,
     required this.imageUrl,
     required this.regNo,
@@ -109,7 +46,7 @@ class HistoryReportCard extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-          const SizedBox(width: 12),
+           SizedBox(width: 12.w),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -118,9 +55,9 @@ class HistoryReportCard extends StatelessWidget {
                   children: [
                     Expanded(
                       flex: 0,
-                      child: const CustomText(
+                      child:  CustomText(
                         text: 'Registration no : ',
-                        fontSize: 13,
+                        fontSize: 13.sp,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
@@ -128,7 +65,7 @@ class HistoryReportCard extends StatelessWidget {
                       flex: 2,
                       child: CustomText(
                         text: regNo,
-                        fontSize: 13,
+                        fontSize: 13.sp,
                         fontWeight: FontWeight.w600,
                         color: Colors.blue,
                       ),
@@ -137,14 +74,14 @@ class HistoryReportCard extends StatelessWidget {
                 ),
                 CustomText(
                   text: 'Model :  $model',
-                  fontSize: 13,
+                  fontSize: 13.sp,
                   fontWeight: FontWeight.w500,
                   left: 2,
                 ),
 
                 CustomText(
                   text: 'Inspected on:  $inspectedOn',
-                  fontSize: 13,
+                  fontSize: 13.sp,
                   fontWeight: FontWeight.w500,
                   left: 2,
                 ),
@@ -152,9 +89,9 @@ class HistoryReportCard extends StatelessWidget {
                   children: [
                     Expanded(
                       flex: 0,
-                      child: const CustomText(
+                      child:  CustomText(
                         text: 'Damage : ',
-                        fontSize: 13,
+                        fontSize: 13.sp,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
@@ -162,25 +99,25 @@ class HistoryReportCard extends StatelessWidget {
                       flex: 2,
                       child: CustomText(
                         text: damageText,
-                        fontSize: 13,
+                        fontSize: 13.sp,
                         fontWeight: FontWeight.w600,
                         color: isDamage ? Colors.red : Colors.green,
                       ),
                     ),
                   ],
                 ),
-                const SizedBox(height: 8),
+                 SizedBox(height: 8.h),
                 SizedBox(
-                  height: 30,
+                  height: 30.h,
                   child:  CustomGradientButton(
                     text: "View details",
                     onPressed: () {
                       //Get.toNamed(AppRoutes.viewDetailsScreen);
-                      Get.toNamed(AppRoutes.viewReportsScreen);
+                      //Get.toNamed(AppRoutes.viewReportsScreen);
                     },
-                    width: 100,
+                    width: 100.w,
                     hight: 30.h,
-                    size: 14,
+                    size: 14.sp,
                     fontWeight: FontWeight.w400,
                   ),
                 )

@@ -25,7 +25,7 @@ class CarVerifyCard extends StatelessWidget {
         children: [
           CustomImage(
               height: 150.h,
-              imageSrc: AppImages.ongoingCarView,
+              imageSrc: AppImages.oongoingcar,
               fit: BoxFit.fill),
           const SizedBox(width: 12),
           Expanded(
@@ -48,8 +48,8 @@ class CarVerifyCard extends StatelessWidget {
                 CustomGradientButton(
                   text: "Scan now",
                   onPressed: () {
-                    //Get.toNamed(AppRoutes.viewDetailsScreen);
-                    //Get.toNamed(AppRoutes.carDetailsScreen);
+
+                    Get.toNamed(AppRoutes.scanNowScreen);
                   },
                   width: 100.w,
                   hight: 30.h,

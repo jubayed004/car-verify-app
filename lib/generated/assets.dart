@@ -2,17 +2,37 @@
 class Assets {
   Assets._();
 
+  static const String imagesAllInspection = 'assets/images/all_inspection.svg';
   static const String imagesBumperdamagecar = 'assets/images/bumperdamagecar.png';
+  static const String imagesCarmanageicon = 'assets/images/carmanageicon.svg';
+  static const String imagesCarreportsicon = 'assets/images/carreportsicon.svg';
   static const String imagesCarverifyimage = 'assets/images/carverifyimage.png';
   static const String imagesCarverifyimage1 = 'assets/images/carverifyimage_1.png';
-  static const String imagesDetailscar = 'assets/images/detailscar.png';
+  static const String imagesCarvrifytwo = 'assets/images/carvrifytwo.svg';
+  static const String imagesDeletedicon = 'assets/images/deletedicon.svg';
+  static const String imagesDownloadicon = 'assets/images/downloadicon.svg';
+  static const String imagesEditicon = 'assets/images/editicon.svg';
   static const String imagesHeadphoneimage = 'assets/images/headphoneimage.png';
-  static const String imagesManagecar = 'assets/images/managecar.png';
+  static const String imagesHomeicon = 'assets/images/homeicon.svg';
+  static const String imagesManagecar = 'assets/images/managecar.svg';
+  static const String imagesManageemployee = 'assets/images/manageemployee.svg';
+  static const String imagesManagefleet = 'assets/images/managefleet.svg';
   static const String imagesMaskgroup = 'assets/images/Maskgroup.png';
-  static const String imagesOngoingcarview = 'assets/images/ongoingcarview.png';
+  static const String imagesOngoingcar = 'assets/images/ongoingcar.png';
+  static const String imagesProfileicon = 'assets/images/profileicon.png';
+  static const String imagesReportcard = 'assets/images/reportcard.png';
   static const String imagesScancarimage = 'assets/images/scancarimage.png';
+  static const String imagesScanicon = 'assets/images/scanicon.svg';
+  static const String imagesScannowcar = 'assets/images/scannowcar.png';
+  static const String imagesShareicon = 'assets/images/shareicon.svg';
   static const String imagesTotalcarimage = 'assets/images/totalcarimage.png';
   static const String imagesTotalreportimage = 'assets/images/totalreportimage.svg';
+  static const String imagesUnprofile = 'assets/images/unprofile.svg';
+  static const String imagesUnseletdcarmanage = 'assets/images/unseletdcarmanage.svg';
+  static const String imagesUnseletedcarreports = 'assets/images/unseletedcarreports.svg';
+  static const String imagesUnseletedhome = 'assets/images/unseletedhome.svg';
+  static const String imagesVerifycar = 'assets/images/verifycar.png';
+  static const String imagesViewreport = 'assets/images/viewreport.svg';
   static const String imagesViewreportimage = 'assets/images/viewreportimage.png';
 
 }

@@ -3,7 +3,7 @@ import 'package:car_verify_app/core/components/custom_button/custom_gradient_but
 import 'package:car_verify_app/core/components/custom_royel_appbar/custom_royel_appbar.dart';
 import 'package:car_verify_app/core/components/custom_text/custom_text.dart';
 import 'package:car_verify_app/core/components/custom_text_field/custom_text_field.dart';
-import 'package:car_verify_app/core/features/auth/controller/auth_controller.dart';
+import 'package:car_verify_app/core/features/common_section/auth/controller/auth_controller.dart';
 import 'package:car_verify_app/core/utils/app_colors/app_colors.dart';
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/gestures.dart';

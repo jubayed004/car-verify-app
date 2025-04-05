@@ -45,7 +45,7 @@ class SearchReportScreen extends StatelessWidget {
               bottom: 24,
             ),
             HistoryReportCard(
-              imageUrl: 'assets/images/ongoingcarview.png',
+              imageUrl: 'assets/images/ongoingcar.png',
               regNo: '12545206',
               model: 'Landcruiser',
               inspectedOn: '25,Feb 2025',

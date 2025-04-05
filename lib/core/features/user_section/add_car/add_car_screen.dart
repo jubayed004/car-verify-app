@@ -14,6 +14,7 @@ class AddCarScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: CustomRoyelAppbar(
         titleName: "Add Car",
         colors: AppColors.appColors,
@@ -91,7 +92,9 @@ class AddCarScreen extends StatelessWidget {
 
             ),
             SizedBox(height:MediaQuery.of(context).size.height/5),
-            CustomGradientButton(text: "Save & Scan ", onPressed: (){})
+            CustomGradientButton(text: "Save & Scan ", onPressed: (){
+              Get.toNamed(AppRoutes.scanNowScreen);
+            })
           ],
         ),
       ),

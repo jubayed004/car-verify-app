@@ -96,7 +96,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
       textAlign: widget.textAlign,
       textAlignVertical: widget.textAlignVertical,
       decoration: InputDecoration(
-        contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+        contentPadding: EdgeInsets.symmetric(horizontal: 14, vertical: 14),
         isDense: widget.isDens,
         errorMaxLines: 2,
         hintText: widget.hintText,

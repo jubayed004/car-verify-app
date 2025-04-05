@@ -73,7 +73,7 @@ class CarVerificationCard extends StatelessWidget {
         children: [
           CustomImage(
               height: 150.h,
-              imageSrc: AppImages.ongoingCarView,
+              imageSrc: AppImages.oongoingcar,
               fit: BoxFit.fill),
           const SizedBox(width: 12),
           Expanded(

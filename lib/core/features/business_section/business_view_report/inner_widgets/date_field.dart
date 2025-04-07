@@ -49,7 +49,7 @@ class _DateFieldState extends State<DateField> {
         textAlignVertical: TextAlignVertical.center,
         onTap: () => _selectDate(context),
         decoration: const InputDecoration(
-          contentPadding: EdgeInsets.only(left: 20, right: 20, bottom: 3),
+          contentPadding: EdgeInsets.only(left: 10, right: 10, ),
           border: InputBorder.none,
           filled: false,
           focusedBorder: InputBorder.none,

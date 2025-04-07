@@ -18,6 +18,7 @@ class InspectionCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      margin: EdgeInsets.only(bottom: 14),
       color: Colors.white,
       elevation: 1,
       shape: RoundedRectangleBorder(
@@ -29,7 +30,6 @@ class InspectionCard extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           CustomImage(
-
               height: 150.h,
               imageSrc: AppImages.oongoingcar,
               fit: BoxFit.fill),
@@ -61,9 +61,7 @@ class InspectionCard extends StatelessWidget {
                   size: 14,
                   fontWeight: FontWeight.w400,
                 ),
-                SizedBox(
-                  height: 8,
-                )
+
               ],
             ),
           ),

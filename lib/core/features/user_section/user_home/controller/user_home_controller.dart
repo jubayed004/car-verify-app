@@ -29,6 +29,27 @@ class HomeController extends GetxController {
         'year': 2019,
         'brand': 'Honda',
       },
+      {
+        'image': 'assets/images/carverifyimage_1.png',
+        'regNo': 'XYZ456',
+        'model': 'Civic',
+        'year': 2019,
+        'brand': 'Honda',
+      },
+      {
+        'image': 'assets/images/carverifyimage_1.png',
+        'regNo': 'XYZ456',
+        'model': 'Civic',
+        'year': 2019,
+        'brand': 'Honda',
+      },
+      {
+        'image': 'assets/images/carverifyimage_1.png',
+        'regNo': 'XYZ456',
+        'model': 'Civic',
+        'year': 2019,
+        'brand': 'Honda',
+      },
     ]);
 
     completedInspections.assignAll([
@@ -36,6 +57,27 @@ class HomeController extends GetxController {
         'image': 'assets/images/carverifyimage_1.png',
         'regNo': '12545206',
         'model': 'Landcruiser',
+        'year': 2022,
+        'brand': 'Toyota',
+      },
+      {
+        'image': 'assets/images/carverifyimage_1.png',
+        'regNo': '12545206',
+        'model': 'Corolla cross',
+        'year': 2022,
+        'brand': 'Toyota',
+      },
+      {
+        'image': 'assets/images/carverifyimage_1.png',
+        'regNo': '12545206',
+        'model': 'Corolla cross',
+        'year': 2022,
+        'brand': 'Toyota',
+      },
+      {
+        'image': 'assets/images/carverifyimage_1.png',
+        'regNo': '12545206',
+        'model': 'Corolla cross',
         'year': 2022,
         'brand': 'Toyota',
       },

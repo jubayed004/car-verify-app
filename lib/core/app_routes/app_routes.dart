@@ -1,6 +1,5 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:car_verify_app/core/features/business_section/business_home/business_home_screen.dart';
-import 'package:car_verify_app/core/features/business_section/business_home/business_view_report/business_view_report_screen.dart';
 import 'package:car_verify_app/core/features/common_section/auth/create_new_password_screen.dart';
 import 'package:car_verify_app/core/features/common_section/auth/forget_password_screen.dart';
 import 'package:car_verify_app/core/features/common_section/auth/login_screen.dart';
@@ -27,6 +26,9 @@ import 'package:car_verify_app/core/features/user_section/view_reports/all_repor
 import 'package:car_verify_app/core/features/user_section/view_reports/all_reports/view_reports/damage_details/damage_details_screen.dart';
 import 'package:car_verify_app/core/features/user_section/view_reports/all_reports/view_reports/view_reports_screen.dart';
 import 'package:get/get.dart';
+
+import '../features/business_section/business_all_inspection/business_inspection_screen.dart' show BusinessInspectionScreen;
+import '../features/business_section/business_view_report/business_view_report_screen.dart' show BusinessViewReportScreen;
 
 
 class AppRoutes {
@@ -57,8 +59,11 @@ class AppRoutes {
   static const String scanNowScreen = "/ScanNowScreen";
   static const String businessHomeScreen = "/BusinessHomeScreen";
   static const String businessViewReportScreen = "/BusinessViewReportScreen";
+  static const String businessInspectionScreen = "/BusinessInspectionScreen";
 
   static List<GetPage> routes = [
+
+    ///====================Common Screen======================///
     GetPage(name: loginScreen, page: () => const LoginScreen()),
     GetPage(name: forgetPasswordScreen, page: () => const ForgetPasswordScreen()),
     GetPage(name: verifyCodeScreen, page: () => const VerifyCodeScreen()),
@@ -93,10 +98,7 @@ class AppRoutes {
     ///=================> Business Section ============////
     GetPage(name: businessHomeScreen, page: () => BusinessHomeScreen()),
     GetPage(name: businessViewReportScreen, page: () => BusinessViewReportScreen()),
-
-
-
-
+    GetPage(name: businessInspectionScreen, page: () => BusinessInspectionScreen()),
 
 
   ];

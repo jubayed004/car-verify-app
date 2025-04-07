@@ -1,3 +1,4 @@
+import 'package:car_verify_app/core/components/custom_text/custom_text.dart';
 import 'package:flutter/material.dart';
 
 class CustomGradientButton extends StatelessWidget {
@@ -42,14 +43,10 @@ class CustomGradientButton extends StatelessWidget {
           ],
         ),
         child: Center(
-          child: Text(
-            text,
-            style: TextStyle(
-              color: Colors.white,
-              fontWeight: fontWeight ?? FontWeight.w600 ,
-              fontSize: size ?? 16,
-            ),
-          ),
+          child: CustomText(text: text,
+            color: Colors.white,
+            fontWeight: fontWeight ?? FontWeight.w600 ,
+            fontSize: size ?? 16,),
         ),
       ),
     );

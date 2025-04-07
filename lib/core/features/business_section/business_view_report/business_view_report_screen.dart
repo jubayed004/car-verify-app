@@ -2,8 +2,8 @@ import 'package:car_verify_app/core/components/custom_image/custom_image.dart';
 import 'package:car_verify_app/core/components/custom_royel_appbar/custom_royel_appbar.dart';
 import 'package:car_verify_app/core/components/custom_text/custom_text.dart';
 import 'package:car_verify_app/core/components/custom_text_field/custom_text_field.dart';
-import 'package:car_verify_app/core/features/business_section/business_home/business_view_report/inner_widgets/date_field.dart';
 import 'package:car_verify_app/core/features/business_section/business_home/controller/business_home_controller.dart';
+import 'package:car_verify_app/core/features/business_section/business_view_report/inner_widgets/date_field.dart';
 import 'package:car_verify_app/core/features/user_section/view_reports/all_reports/all_reports_screen.dart';
 import 'package:car_verify_app/core/utils/app_colors/app_colors.dart';
 import 'package:car_verify_app/core/utils/app_images/app_images.dart';
@@ -56,27 +56,27 @@ class BusinessViewReportScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: CustomRoyelAppbar(
+
         titleName: "All reports",
         colors: AppColors.appColors,
         leftIcon: true,
         actions: [
-          Obx(() => PopupMenuButton<String>(
-            onSelected: (String newValue) {
-              controller.selectedItem.value = newValue;
-            },
-            icon: CustomImage(
-              imageSrc: AppImages.sortMenuIcon,
-              height: 30,
-            ),
-            itemBuilder: (BuildContext context) {
-              return controller.items.map((String item) {
-                return PopupMenuItem<String>(
-                  value: item,
-                  child: Text(item),
-                );
-              }).toList();
-            },
-          )),
+          // Only wrap PopupMenuButton with Obx if it needs to update when selectedItem changes
+      PopupMenuButton<String>(
+        color: AppColors.white,
+      onSelected: (String newValue) {
+    controller.selectedItem.value = newValue;
+    },
+      icon: CustomImage(
+        imageSrc: AppImages.sortMenuIcon,
+        height: 30,
+      ),
+      itemBuilder: (BuildContext context) {
+        return controller.items.map((String item) {
+          return PopupMenuItem<String>(value: item, child: Text(item));
+        }).toList();
+      },
+    ),
           SizedBox(width: 10),
         ],
       ),
@@ -91,7 +91,6 @@ class BusinessViewReportScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     CustomTextField(
-
                       isDens: true,
                       fillColor: Color(0xffE5F4FF),
                       hintText: "Search report...",
@@ -131,6 +130,7 @@ class BusinessViewReportScreen extends StatelessWidget {
                         Expanded(child: DateField()),
                       ],
                     ),
+                    // Only wrap the CustomText displaying the selectedItem in Obx
                     Obx(() {
                       return CustomText(
                         text: controller.selectedItem.value,
@@ -153,7 +153,7 @@ class BusinessViewReportScreen extends StatelessWidget {
                   childCount: item.length,
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),

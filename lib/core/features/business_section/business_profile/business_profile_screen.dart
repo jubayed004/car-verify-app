@@ -1,7 +1,4 @@
-import 'dart:io';
-
 import 'package:car_verify_app/core/app_routes/app_routes.dart';
-import 'package:car_verify_app/core/components/custom_nav_bar/user_navbar.dart';
 import 'package:car_verify_app/core/components/custom_netwrok_image/custom_network_image.dart';
 import 'package:car_verify_app/core/components/custom_royel_appbar/custom_royel_appbar.dart';
 import 'package:car_verify_app/core/components/custom_text/custom_text.dart';
@@ -11,12 +8,9 @@ import 'package:car_verify_app/core/utils/app_const/app_const.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:image_picker/image_picker.dart';
 
-class UserProfileScreen extends StatelessWidget {
-  UserProfileScreen({super.key,  this.isUser = false});
-
-  final bool isUser;
+class BusinessProfileScreen extends StatelessWidget {
+   BusinessProfileScreen({super.key});
 
   final UserProfileController userProfileController = Get.put(UserProfileController());
 
@@ -74,7 +68,6 @@ class UserProfileScreen extends StatelessWidget {
       onTap: () => Get.toNamed(AppRoutes.privacyPolicyScreen),
     ),
   ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -158,7 +151,7 @@ class UserProfileScreen extends StatelessWidget {
               ],
             ),
             SizedBox(height: 20.h),
-          isUser ? SizedBox():_StatCard(
+            _StatCard(
               width: MediaQuery.of(context).size.width,
               title: 'Total reports',
               value: '10',
@@ -193,11 +186,9 @@ class UserProfileScreen extends StatelessWidget {
           ],
         ),
       ),
-    // bottomNavigationBar: UserNavbar(currentIndex: 4),
     );
   }
 }
-
 class _StatCard extends StatelessWidget {
   final String title;
   final String value;
@@ -265,7 +256,7 @@ class _MenuTile extends StatelessWidget {
       leading: Icon(item.icon, size: 28),
       title: CustomText(
         text: item.title,
-        fontSize: 16,
+        fontSize: 18,
         textAlign: TextAlign.start,
       ),
       trailing: const Icon(Icons.chevron_right),

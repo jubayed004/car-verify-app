@@ -13,7 +13,7 @@ class InspectionCard extends StatelessWidget {
   final Map<String, dynamic> data;
   final String status;
 
-  const InspectionCard({required this.data, required this.status});
+  const InspectionCard({super.key, required this.data, required this.status});
 
   @override
   Widget build(BuildContext context) {

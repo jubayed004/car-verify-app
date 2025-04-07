@@ -61,7 +61,7 @@ class AllReportsScreen extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: UserNavbar(currentIndex: 1,),
+      // bottomNavigationBar: UserNavbar(currentIndex: 1,),
     );
   }
 }

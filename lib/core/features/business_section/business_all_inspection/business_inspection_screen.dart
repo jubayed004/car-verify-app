@@ -6,7 +6,6 @@ import 'package:car_verify_app/core/utils/app_colors/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-
 class BusinessInspectionScreen extends StatelessWidget {
    BusinessInspectionScreen({super.key});
   final HomeController controller = Get.find<HomeController>();
@@ -17,14 +16,12 @@ class BusinessInspectionScreen extends StatelessWidget {
         titleName: "Inspection",
         colors: AppColors.appColors,
         leftIcon: true,
-
       ),
       body: Column(
         children: [
           SizedBox(height: 20),
           // TabBar for Switching between Ongoing/Completed Inspections
-          Obx(
-                () => Padding(
+          Obx(() => Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0,),
               child: CustomTabBar(
                 tabs: const ["Ongoing inspection", "Completed inspection"],
@@ -47,9 +44,7 @@ class BusinessInspectionScreen extends StatelessWidget {
                 final inspections = controller.selectedTabIndex.value == 0
                     ? controller.ongoingInspections
                     : controller.completedInspections;
-
                 return ListView.builder(
-
                   padding: const EdgeInsets.symmetric(horizontal: 16),
                   itemCount: inspections.length,
                   itemBuilder: (context, index) {

@@ -52,7 +52,7 @@ class ManageCarScreen extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: UserNavbar(currentIndex: 3,),
+      // bottomNavigationBar: UserNavbar(currentIndex: 3,),
     );
   }
 }

@@ -15,6 +15,8 @@ void main() async{
   Get.put(HomeController());
   // Get.put(NetworkController());
 
+
+
   runApp(const MyApp());
 /*   runApp(DevicePreview(
      enabled: !kReleaseMode,

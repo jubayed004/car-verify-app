@@ -39,10 +39,12 @@ class BusinessManageFleetScreen extends StatelessWidget {
             // Car List
             Column(
               children: List.generate(
-                30, // Number of cars you want to display
+                3, // Number of cars you want to display
                     (index) => CarVerificationCard(),
               ),
             ),
+            SizedBox(height: 52.h,),
+            CustomGradientButton(text: "Add New Car", onPressed: (){})
           ],
         ),
       ),
@@ -64,7 +66,6 @@ class _StatCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Container(
       height: 56,
       width: width,
@@ -89,7 +90,6 @@ class _StatCard extends StatelessWidget {
             fontWeight: FontWeight.w600,
             fontSize: 16,
           ),
-
         ],
       ),
     );

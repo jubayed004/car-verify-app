@@ -78,7 +78,7 @@ class LoginScreen extends StatelessWidget {
             ),
             CustomGradientButton(text: 'Log in', onPressed: () {
 
-              Get.toNamed(AppRoutes.userHomeScreen);
+              Get.toNamed(AppRoutes.userNavbar);
             },),
             SizedBox(height: 14.h,),
             Center(

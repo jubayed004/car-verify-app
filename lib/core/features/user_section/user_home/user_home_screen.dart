@@ -86,7 +86,7 @@ class UserHomeScreen extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: UserNavbar(currentIndex: 0,),
+      // bottomNavigationBar: UserNavbar(currentIndex: 0,),
     );
   }
 }

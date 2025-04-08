@@ -41,7 +41,7 @@ class ManageCarScreen extends StatelessWidget {
                   fontSize: 18,
                   fontWeight: FontWeight.w600,
                 )),
-             SizedBox(height: 20,),
+             SizedBox(height: 20.h,),
             // Car List
             Column(
               children: List.generate(
@@ -52,7 +52,7 @@ class ManageCarScreen extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: UserNavbar(currentIndex: 3,),
+      // bottomNavigationBar: UserNavbar(currentIndex: 3,),
     );
   }
 }
@@ -72,7 +72,7 @@ class CarVerificationCard extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           CustomImage(
-              height: 150.h,
+              height: 160.h,
               imageSrc: AppImages.oongoingcar,
               fit: BoxFit.fill),
           const SizedBox(width: 12),

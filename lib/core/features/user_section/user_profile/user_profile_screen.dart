@@ -14,7 +14,9 @@ import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 
 class UserProfileScreen extends StatelessWidget {
-  UserProfileScreen({super.key});
+  UserProfileScreen({super.key,  this.isUser = false});
+
+  final bool isUser;
 
   final UserProfileController userProfileController = Get.put(UserProfileController());
 
@@ -138,18 +140,29 @@ class UserProfileScreen extends StatelessWidget {
             SizedBox(height: 20.h),
             Row(
               children: const [
-                _StatCard(
-                  title: 'Total car',
-                  value: '03',
-                  icon: 'assets/images/totalcarimage.png',
+                Expanded(
+                  child: _StatCard(
+                    title: 'Total car',
+                    value: '03',
+                    icon: 'assets/images/totalcarimage.png',
+                  ),
                 ),
                 SizedBox(width: 16),
-                _StatCard(
-                  title: 'Total reports',
-                  value: '10',
-                  icon: 'assets/images/reportcard.png',
+                Expanded(
+                  child: _StatCard(
+                    title: 'Total reports',
+                    value: '10',
+                    icon: 'assets/images/reportcard.png',
+                  ),
                 ),
               ],
+            ),
+            SizedBox(height: 20.h),
+          isUser ? SizedBox():_StatCard(
+              width: MediaQuery.of(context).size.width,
+              title: 'Total reports',
+              value: '10',
+              icon: 'assets/images/reportcard.png',
             ),
             SizedBox(height: 24.h),
             ListView.separated(
@@ -167,7 +180,7 @@ class UserProfileScreen extends StatelessWidget {
                 fontSize: 18.sp,
                 left: 6,
                 bottom: 8,
-              top: 8,
+                top: 8,
               ),
             ),
             ListView.separated(
@@ -180,7 +193,7 @@ class UserProfileScreen extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: UserNavbar(currentIndex: 4),
+    // bottomNavigationBar: UserNavbar(currentIndex: 4),
     );
   }
 }
@@ -189,38 +202,40 @@ class _StatCard extends StatelessWidget {
   final String title;
   final String value;
   final String icon;
+  final double? width;
 
   const _StatCard({
     required this.title,
     required this.value,
     required this.icon,
+    this.width,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Container(
-        height: 100,
-        padding: const EdgeInsets.all(12),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12),
-          gradient: LinearGradient(
-            colors: [Colors.blue.shade300, Colors.blue.shade100],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
+
+    return Container(
+      height: 100,
+      width: width,
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(12),
+        gradient: LinearGradient(
+          colors: [Colors.blue.shade300, Colors.blue.shade100],
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+        ),
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Image.asset(icon, height: 30),
+          const SizedBox(height: 8),
+          CustomText(
+            text: '$title : $value',
+            fontWeight: FontWeight.w600,
           ),
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset(icon, height: 30),
-            const SizedBox(height: 8),
-            CustomText(
-              text: '$title : $value',
-              fontWeight: FontWeight.w600,
-            ),
-          ],
-        ),
+        ],
       ),
     );
   }

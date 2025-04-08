@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
 class BusinessHomeController extends GetxController{
-  var selectedItem = ''.obs;
+  var selectedItem = 'All reports'.obs;
   final items = ['Sort by employe', 'Sort by vehicle',];
   var selectedTabIndex = 0.obs;
   var userName = 'John Doe'.obs;

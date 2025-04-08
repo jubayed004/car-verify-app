@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:car_verify_app/core/components/custom_nav_bar/user_navbar.dart';
 import 'package:car_verify_app/core/features/business_section/business_home/business_home_screen.dart';
+import 'package:car_verify_app/core/features/business_section/business_manage_fleet/manage_fleet_screen.dart';
 import 'package:car_verify_app/core/features/business_section/business_profile/business_edit_profile/business_edit_profile_screen.dart';
 import 'package:car_verify_app/core/features/business_section/business_profile/business_profile_screen.dart';
 import 'package:car_verify_app/core/features/business_section/business_profile/business_settings/business_setting_screen.dart';
@@ -68,6 +69,7 @@ class AppRoutes {
   static const String businessProfileScreen = "/BusinessProfileScreen";
   static const String businessEditProfileScreen = "/BusinessEditProfileScreen";
   static const String businessSettingScreen = "/BusinessSettingScreen";
+  static const String businessManageFleetScreen = "/BusinessManageFleetScreen";
 
   static List<GetPage> routes = [
 
@@ -113,6 +115,7 @@ class AppRoutes {
     GetPage(name: businessProfileScreen, page: () => BusinessProfileScreen()),
     GetPage(name: businessEditProfileScreen, page: () => BusinessEditProfileScreen()),
     GetPage(name: businessSettingScreen, page: () => BusinessSettingScreen()),
+    GetPage(name: businessManageFleetScreen, page: () => BusinessManageFleetScreen()),
 
 
 

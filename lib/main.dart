@@ -47,7 +47,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         defaultTransition: Transition.fadeIn,
         transitionDuration: const Duration(milliseconds: 200),
-        initialRoute: AppRoutes.loginScreen,
+        initialRoute: AppRoutes.businessManageFleetScreen,
         navigatorKey: Get.key,
         getPages: AppRoutes.routes,
       ),

@@ -21,56 +21,59 @@ class UserHomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          // Header Section
-          HeaderCard(),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // Header Section
+            HeaderCard(),
 
-          // Dashboard Section
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16),
-            child: DashboardSection(),
-          ),
-
-          // Recent Activity Title
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16),
-            child: CustomText(
-              text: "Recent Activity",
-              fontSize: 18,
-              fontWeight: FontWeight.w600,
+            // Dashboard Section
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16),
+              child: DashboardSection(),
             ),
-          ),
-          const SizedBox(height: 12),
 
-          // TabBar for Switching between Ongoing/Completed Inspections
-          Obx(
-                () => Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: CustomTabBar(
-                tabs: const ["Ongoing inspection", "Completed inspection"],
-                fontSize: 14.sp, // Responsive font size
-                selectedIndex: controller.selectedTabIndex.value,
-                onTabSelected: (index) => controller.selectedTabIndex.value = index,
-                selectedColor: AppColors.appColors, // Custom color for selected tab
-                unselectedColor: Colors.grey, // Unselected tab color
-                textColor: Colors.black,
-                isTextColorActive: true,
+            // Recent Activity Title
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16),
+              child: CustomText(
+                text: "Recent Activity",
+                fontSize: 18,
+                fontWeight: FontWeight.w600,
+                bottom: 12,
               ),
             ),
-          ),
-          const SizedBox(height: 16), // Spacing below TabBar
 
-          // Inspection List (Ongoing or Completed)
-          Expanded(
-            child: Obx(
+
+            // TabBar for Switching between Ongoing/Completed Inspections
+            Obx(
+                  () => Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: CustomTabBar(
+                  tabs: const ["Ongoing inspection", "Completed inspection"],
+                  fontSize: 14.sp, // Responsive font size
+                  selectedIndex: controller.selectedTabIndex.value,
+                  onTabSelected: (index) => controller.selectedTabIndex.value = index,
+                  selectedColor: AppColors.appColors, // Custom color for selected tab
+                  unselectedColor: Colors.grey, // Unselected tab color
+                  textColor: Colors.black,
+                  isTextColorActive: true,
+                ),
+              ),
+            ),
+             SizedBox(height: 16.h), // Spacing below TabBar
+
+            // Inspection List (Ongoing or Completed)
+            Obx(
                   () {
                 final inspections = controller.selectedTabIndex.value == 0
                     ? controller.ongoingInspections
                     : controller.completedInspections;
 
                 return ListView.builder(
+                  physics: NeverScrollableScrollPhysics(),
+                  shrinkWrap:true,
                   padding: const EdgeInsets.symmetric(horizontal: 16),
                   itemCount: inspections.length,
                   itemBuilder: (context, index) {
@@ -83,8 +86,8 @@ class UserHomeScreen extends StatelessWidget {
                 );
               },
             ),
-          ),
-        ],
+          ],
+        ),
       ),
       // bottomNavigationBar: UserNavbar(currentIndex: 0,),
     );

@@ -57,16 +57,16 @@ class _DashboardCard extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(12),
-              border: Border.all(width: 2, color: Colors.grey.shade300),
+              border: Border.all(width: 2.w, color: Colors.grey.shade300),
             ),
-            child: CustomImage(imageSrc: item.imagePath, width: 200.w),
+            child: CustomImage(imageSrc: item.imagePath,boxFit: BoxFit.fill, ),
           ),
         ),
         const SizedBox(height: 8),
         CustomGradientButton(
           text: item.title,
           onPressed: () => _handleNavigation(context, item.title),
-          hight: 40,
+          hight: 40.h,
         ),
       ],
     );

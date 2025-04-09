@@ -20,7 +20,7 @@ class AddCarScreen extends StatelessWidget {
         colors: AppColors.appColors,
         leftIcon: true,
         leftOnPressed: (){
-          Get.offAllNamed(AppRoutes.userHomeScreen);
+          Get.offAllNamed(AppRoutes.userNavbar);
         },
       ),
       body: SingleChildScrollView(

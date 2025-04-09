@@ -16,9 +16,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
-class UserNavbar extends StatelessWidget {
-  UserNavbar({super.key});
+class UserNavbar extends StatefulWidget {
+  UserNavbar({super.key, this.currentIndex =0});
 
+  final int currentIndex;
+  @override
+  State<UserNavbar> createState() => _UserNavbarState();
+}
+
+class _UserNavbarState extends State<UserNavbar> {
   final ValueNotifier<int> bottomNavIndex = ValueNotifier(0);
 
   final List<String> selectedIcon = [
@@ -48,6 +54,11 @@ class UserNavbar extends StatelessWidget {
     ManageCarScreen(),
     UserProfileScreen()
   ];
+  @override
+  void initState() {
+     bottomNavIndex.value =widget.currentIndex;
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

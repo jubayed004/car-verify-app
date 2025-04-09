@@ -14,6 +14,8 @@ class AppStrings {
   static const String report = "Report";
   static const String manageCar = "Manage Car";
   static const String profile = "Profile";
+  static const String inspection = "Inspection";
+  static const String employee = "Employee";
 
   ///============================ Commom Auth =========================//
 

@@ -154,13 +154,8 @@ class UserProfileScreen extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 20.h),
-      _StatCard(
-              width: MediaQuery.of(context).size.width,
-              title: 'Total reports',
-              value: '10',
-              icon: 'assets/images/reportcard.png',
-            ),
+
+
             SizedBox(height: 24.h),
             ListView.separated(
               shrinkWrap: true,

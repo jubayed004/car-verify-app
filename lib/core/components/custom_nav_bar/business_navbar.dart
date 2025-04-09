@@ -25,22 +25,28 @@ class BusinessNavbar extends StatelessWidget {
 
   final List<String> selectedIcon = [
     AppImages.homeIcon,
+    AppImages.inspectionIcon,
     AppImages.carReportsIcon,
     AppImages.carManageIcon,
+    AppImages.emaployeeIcon,
     AppImages.unProfile,
   ];
 
   final List<String> unselectedIcon = [
     AppImages.unSeletedHome,
+    AppImages.inspectionIcon,
     AppImages.unSeletedCarReports,
     AppImages.unSeletdCarManage,
+    AppImages.emaployeeIcon,
     AppImages.unProfile,
   ];
 
   final List<String> userNavText = [
     AppStrings.home,
+    AppStrings.inspection,
     AppStrings.report,
     AppStrings.manageCar,
+    AppStrings.employee,
     AppStrings.profile,
   ];
 

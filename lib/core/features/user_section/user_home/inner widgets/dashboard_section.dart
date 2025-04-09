@@ -41,9 +41,10 @@ class _DashboardCard extends StatelessWidget {
 
   void _handleNavigation(BuildContext context, String title) {
     if (title == 'View report') {
-      Get.toNamed(AppRoutes.allReportsScreen);// ✅ View report screen
+      Get.offAllNamed(AppRoutes.userNavbar,arguments: 1);// ✅ View report screen
     } else if (title == 'Manage car') {
-     Get.toNamed(AppRoutes.manageCarScreen);// ✅ Manage car screen
+      print( "Click-================");
+     Get.offAllNamed(AppRoutes.userNavbar,arguments: 2);// ✅ Manage car screen
     }
   }
 

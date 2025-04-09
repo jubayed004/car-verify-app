@@ -24,6 +24,8 @@ class AppImages {
   static const String carVrifyTwo = "$basePath/carvrifytwo.svg";
   static const String scanNowCar = "$basePath/scannowcar.png";
   static const String sortMenuIcon = "$basePath/sortmenuicon.svg";
+  static const String inspectionIcon = "$basePath/inspectionicon.svg";
+  static const String emaployeeIcon = "$basePath/emaployeeicon.svg";
 
   ///============= nav bar ============///
   static const String homeIcon = "$basePath/homeicon.svg";

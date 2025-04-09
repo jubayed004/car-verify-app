@@ -83,7 +83,7 @@ class AppRoutes {
 
     ///=================> User Section ============////
     GetPage(name: userHomeScreen, page: () => UserHomeScreen()),
-    GetPage(name: userNavbar, page: () => UserNavbar(currentIndex: 0)),
+    GetPage(name: userNavbar, page: () => UserNavbar()),
     GetPage(name: allReportsScreen, page: () => AllReportsScreen()),
     GetPage(name: viewDetailsScreen, page: () => ViewDetailsScreen()),
     GetPage(name: viewReportsScreen, page: () => ViewReportsScreen()),

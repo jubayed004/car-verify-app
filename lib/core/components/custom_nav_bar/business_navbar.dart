@@ -16,8 +16,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
-class UserNavbar extends StatelessWidget {
-  UserNavbar({super.key});
+class BusinessNavbar extends StatelessWidget {
+
+
+  BusinessNavbar({ super.key});
 
   final ValueNotifier<int> bottomNavIndex = ValueNotifier(0);
 
@@ -54,7 +56,7 @@ class UserNavbar extends StatelessWidget {
     return Scaffold(
       body: ValueListenableBuilder(
         valueListenable: bottomNavIndex,
-        builder: (_, int i, __) {
+        builder: (_, int i, __){
           return allWidgets[bottomNavIndex.value];
         },
       ),
@@ -94,10 +96,10 @@ class UserNavbar extends StatelessWidget {
                 height: 70.w,
                 width: 70.w,
                 decoration: BoxDecoration(
-                  color: AppColors.appColors,
+                  color: AppColors.primary,
                   shape: BoxShape.circle,
                   border: Border.all(
-                    color: Color(0xfff3f4f6),
+                    color: AppColors.white,
                     width: 8.w,
                   ),
                 ),
@@ -131,13 +133,13 @@ class UserNavbar extends StatelessWidget {
       },
       child: ValueListenableBuilder(
         valueListenable: bottomNavIndex,
-        builder: (_, int i, __) {
+        builder: (_, int i, __){
           return Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Padding(
-                padding: EdgeInsets.only(top: 10.0, left: 5, right: 5),
+                padding: EdgeInsets.all(10.0),
                 child: SvgPicture.asset(
                   index == bottomNavIndex.value
                       ? selectedIcon[index]
@@ -155,15 +157,6 @@ class UserNavbar extends StatelessWidget {
                   fontSize: 12.w,
                   fontWeight: FontWeight.w500,
                   color: AppColors.appColors,
-                ),
-              if (index == bottomNavIndex.value)
-                ClipPath(
-                  clipper: CustomWaveClipper(),
-                  child: Container(
-                    width: 50,
-                    height: 20,
-                    color: Colors.blue,
-                  ),
                 )
             ],
           );
@@ -211,37 +204,5 @@ class UserNavbar extends StatelessWidget {
             ],
           );
         });
-  }
-}
-
-class CustomWaveClipper extends CustomClipper<Path> {
-  @override
-  Path getClip(Size size) {
-    Path path = Path();
-
-    // Starting point at bottom-left
-    path.moveTo(0, size.height);
-
-    // Move 5 pixels upwards on the left side
-    path.lineTo(4, size.height - 2);
-
-    // Move right 8 pixels
-    path.lineTo(8, size.height - 4);
-
-    // Create a curve to the right 8 pixels
-    path.quadraticBezierTo(size.width * 0.5, size.height * 0.25, size.width - 10, size.height - 4);
-
-    // Close the path to the top-right corner
-    path.lineTo(size.width, size.height);
-
-    // Close the path to the starting point
-    path.close();
-
-    return path;
-  }
-
-  @override
-  bool shouldReclip(CustomClipper<Path> oldClipper) {
-    return false;
   }
 }

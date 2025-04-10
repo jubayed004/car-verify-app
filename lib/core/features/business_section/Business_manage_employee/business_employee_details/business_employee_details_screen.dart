@@ -49,6 +49,8 @@ class _BusinessEmployeeDetailsScreenState
                   ),
                 ),
               );
+
+
             },
             child:
                 CustomImage(imageSrc: AppImages.deletedIcon, sizeWidth: 24.w),

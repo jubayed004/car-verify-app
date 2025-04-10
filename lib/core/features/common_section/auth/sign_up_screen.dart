@@ -32,87 +32,67 @@ class _SignUpScreenState extends State<SignUpScreen> {
         iconColors: AppColors.appColors,
       ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.symmetric(vertical: 24, horizontal: 20),
+        padding: EdgeInsets.symmetric(vertical: 20, horizontal: 16),
         child: Obx(() {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-
                   ///======================> Create Account Section <=====================///
-                  Radio<String>(
-                    value: "Car Owner",
-                    groupValue: authController.chooseUser.value,
-                    onChanged: (value) {
-                      authController.chooseUser.value = value!;
-                    },
-                    fillColor: WidgetStatePropertyAll(AppColors.appColors),
+                  Row(
+                    children: [
+                      Radio<String>(
+                        value: "Car Owner",
+                        groupValue: authController.chooseUser.value,
+                        onChanged: (value) {
+                          authController.chooseUser.value = value!;
+                        },
+                        fillColor: WidgetStatePropertyAll(AppColors.appColors),
+                      ),
+                      CustomText(
+                        text: "Car Owner",
+
+                        fontWeight: FontWeight.w600,
+                        fontSize: 16.sp,
+                      ),
+                    ],
                   ),
-                  CustomText(
-                    text: "Car Owner",
-                    right: 56,
+                  Row(
+                    children: [
+                      Radio<String>(
+                        value: "Business",
+                        groupValue: authController.chooseUser.value,
+                        onChanged: (value) {
+                          authController.chooseUser.value = value!;
+                          Get.toNamed(AppRoutes.businessCreateAccountScreen);
+                        },
+
+                        fillColor: WidgetStatePropertyAll(AppColors.appColors),
+                      ),
+                      CustomText(text: "Business"   ,  fontWeight: FontWeight.w600,
+                        fontSize: 16.sp,),
+                    ],
                   ),
-                  Radio<String>(
-                    value: "Business",
-                    groupValue: authController.chooseUser.value,
-                    onChanged: (value) {
-                      authController.chooseUser.value = value!;
-                    },
-                    fillColor: WidgetStatePropertyAll(AppColors.appColors),
-                  ),
-                  CustomText(text: "Business"),
                 ],
               ),
-              SizedBox(height: 24.h),
+
 
               ///=================> Name  Section <==============///
+              CustomText(
+                text: "Business Name",
+                top: 20,
+                bottom: 8,
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w600,
+              ),
+              CustomTextField(
 
-              Row(
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      CustomText(
-                        text: "First Name",
-                        bottom: 8,
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w600,
-                      ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width / 2.4,
-                        child: CustomTextField(
-                          fieldBorderColor: AppColors.textFiledBorderColor,
-                          fieldBorderRadius: 10,
-                          fillColor: Colors.white,
-                          keyboardType: TextInputType.name,
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(width: 24),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      CustomText(
-                        text: "Last Name",
-                        bottom: 8,
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w600,
-                      ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width / 2.4,
-                        child: CustomTextField(
-                          fieldBorderColor: AppColors.textFiledBorderColor,
-                          fieldBorderRadius: 10,
-                          fillColor: Colors.white,
-                          keyboardType: TextInputType.name,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
+                fieldBorderColor: AppColors.textFiledBorderColor,
+                fieldBorderRadius: 10,
+                fillColor: Colors.white,
+                keyboardType: TextInputType.name,
               ),
               ///====================> Email Section <=====================///
               CustomText(
@@ -154,81 +134,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 fillColor: Colors.white,
                 keyboardType: TextInputType.phone,
               ),
-              ///====================> Gender Section <=====================///
-              CustomText(
-                text: "Gender",
-                top: 14,
-                bottom: 8,
-                fontSize: 16.sp,
-                fontWeight: FontWeight.w600,
-              ),
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 20),
-                decoration: BoxDecoration(
-                  border: Border.all(color: AppColors.textFiledBorderColor),
-                  borderRadius: BorderRadius.circular(10),
-                  color: Colors.white,
-                ),
-                child: DropdownButtonHideUnderline(
-                  child: DropdownButton<String>(
-                    icon: Icon(Icons.keyboard_arrow_down),
-                    iconEnabledColor: AppColors.appColors,
-                    borderRadius: BorderRadius.all(Radius.circular(10)),
-                    dropdownColor: Colors.white,
-                    value: authController.selectedGender.value.isEmpty
-                        ? null
-                        : authController.selectedGender.value,
-                    hint: Text("Select Gender"),
-                    isExpanded: true,
-                    items: ["Male", "Female"].map((String value) {
-                      return DropdownMenuItem<String>(
-                        value: value,
-                        child: Text(value),
-                      );
-                    }).toList(),
-                    onChanged: (value) {
-                      authController.selectedGender.value = value!;
-                    },
-                  ),
-                ),
-              ),
-              ///====================> Date of Birth Section <=====================///
-              CustomText(
-                text: "Date of Birth",
-                top: 14,
-                bottom: 8,
-                fontSize: 16.sp,
-                fontWeight: FontWeight.w600,
-              ),
-              CustomTextField(
-                prefixIcon: Row(
-                  children: [
-                   IconButton(
-                          onPressed: () async {
-                            await authController.pickDate();
-                          },
-                          icon: Icon(
-                            Icons.calendar_month,
-                            color: AppColors.appColors,
-                          ),
-                        )
-                    ,
-                    CustomText(
-                      text: authController.selectedDate.value != null
-                          ? DateFormat('dd/MM/yyyy')
-                              .format(authController.selectedDate.value!)
-                          : "Today",
-                      fontSize: 12.w,
-                      fontWeight: FontWeight.w400,
-                      color: AppColors.textColor_01,
-                    )
-                  ],
-                ),
-                fieldBorderColor: AppColors.textFiledBorderColor,
-                fieldBorderRadius: 10,
-                fillColor: Colors.white,
-                keyboardType: TextInputType.emailAddress,
-              ),
               ///====================> Password Section <=====================///
               CustomText(
                 text: "Password",
@@ -238,11 +143,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 fontWeight: FontWeight.w600,
               ),
               CustomTextField(
-                suffixIcon: Icon(Icons.remove_red_eye_rounded),
+                suffixIcon:Icon(Icons.remove_red_eye_outlined),
                 fieldBorderColor: AppColors.textFiledBorderColor,
                 fieldBorderRadius: 10,
                 fillColor: Colors.white,
                 keyboardType: TextInputType.emailAddress,
+
+
               ),
               ///====================> Confirm password Section <=====================///
               CustomText(
@@ -253,7 +160,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 fontWeight: FontWeight.w600,
               ),
               CustomTextField(
-                suffixIcon: Icon(Icons.remove_red_eye_rounded),
+                suffixIcon: Icon(Icons.remove_red_eye_outlined),
                 fieldBorderColor: AppColors.textFiledBorderColor,
                 fieldBorderRadius: 10,
                 fillColor: Colors.white,
@@ -264,8 +171,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ),
               ///====================> Sign Up Section <=====================///
               CustomGradientButton(
-                text: 'Sign Up',
-                onPressed: () {},
+                text: 'Next',
+                onPressed: () {
+                  Get.toNamed(AppRoutes.userNavbar);
+                },
               ),
               SizedBox(
                 height: 14.h,
@@ -284,7 +193,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         style: TextStyle(color: AppColors.appColors),
                         recognizer: TapGestureRecognizer()
                           ..onTap = () {
-                            // Get.toNamed(AppRoutes.signUpScreen);
+                           Get.toNamed(AppRoutes.loginScreen);
                           },
                       ),
                     ],

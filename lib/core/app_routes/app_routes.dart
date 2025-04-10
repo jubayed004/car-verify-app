@@ -1,11 +1,13 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:car_verify_app/core/components/custom_nav_bar/user_navbar.dart';
+import 'package:car_verify_app/core/features/business_section/Business_manage_employee/business_employee_details/business_employee_details_screen.dart';
 import 'package:car_verify_app/core/features/business_section/Business_manage_employee/business_manage_employee.dart';
 import 'package:car_verify_app/core/features/business_section/business_home/business_home_screen.dart';
 import 'package:car_verify_app/core/features/business_section/business_manage_fleet/manage_fleet_screen.dart';
 import 'package:car_verify_app/core/features/business_section/business_profile/business_edit_profile/business_edit_profile_screen.dart';
 import 'package:car_verify_app/core/features/business_section/business_profile/business_profile_screen.dart';
 import 'package:car_verify_app/core/features/business_section/business_profile/business_settings/business_setting_screen.dart';
+import 'package:car_verify_app/core/features/common_section/auth/business_create_account_screen.dart';
 import 'package:car_verify_app/core/features/common_section/auth/create_new_password_screen.dart';
 import 'package:car_verify_app/core/features/common_section/auth/forget_password_screen.dart';
 import 'package:car_verify_app/core/features/common_section/auth/login_screen.dart';
@@ -43,6 +45,7 @@ class AppRoutes {
   static const String verifyCodeScreen = "/VerifyCodeScreen";
   static const String createNewPasswordScreen = "/CreateNewPasswordScreen";
   static const String signUpScreen = "/SignUpScreen";
+  static const String businessCreateAccountScreen = "/BusinessCreateAccountScreen";
 
   static const String userNavbar = "/userNavbar";
   static const String viewDetailsScreen = "/ViewDetailsScreen";
@@ -71,7 +74,8 @@ class AppRoutes {
   static const String businessEditProfileScreen = "/BusinessEditProfileScreen";
   static const String businessSettingScreen = "/BusinessSettingScreen";
   static const String businessManageFleetScreen = "/BusinessManageFleetScreen";
-  static const String businessManageEmployee = "/BusinessManageEmployee";
+  static const String businessManageEmployeeScreen = "/BusinessManageEmployee";
+  static const String businessEmployeeDetailsScreen = "/BusinessEmployeeDetailsScreen";
 
   static List<GetPage> routes = [
 
@@ -81,6 +85,7 @@ class AppRoutes {
     GetPage(name: verifyCodeScreen, page: () => const VerifyCodeScreen()),
     GetPage(name: createNewPasswordScreen, page: () => const CreateNewPasswordScreen()),
     GetPage(name: signUpScreen, page: () => const SignUpScreen()),
+    GetPage(name: businessCreateAccountScreen, page: () => BusinessCreateAccountScreen()),
 
 
     ///=================> User Section ============////
@@ -117,9 +122,13 @@ class AppRoutes {
     GetPage(name: businessProfileScreen, page: () => BusinessProfileScreen()),
     GetPage(name: businessEditProfileScreen, page: () => BusinessEditProfileScreen()),
     GetPage(name: businessSettingScreen, page: () => BusinessSettingScreen()),
-    GetPage(name: businessManageFleetScreen, page: () => BusinessManageFleetScreen()),
-    GetPage(name: businessManageEmployee, page: () => BusinessManageEmployee()),
 
+
+    ///=================> Business Manage Employee ============////
+
+    GetPage(name: businessManageFleetScreen, page: () => BusinessManageFleetScreen()),
+    GetPage(name: businessManageEmployeeScreen, page: () => BusinessManageEmployeeScreen()),
+    GetPage(name: businessEmployeeDetailsScreen, page: () => BusinessEmployeeDetailsScreen()),
 
 
 

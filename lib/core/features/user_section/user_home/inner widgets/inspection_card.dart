@@ -60,7 +60,6 @@ class InspectionCard extends StatelessWidget {
                   size: 14,
                   fontWeight: FontWeight.w400,
                 ),
-
               ],
             ),
           ),

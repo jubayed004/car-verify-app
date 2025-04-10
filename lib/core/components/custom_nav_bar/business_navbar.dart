@@ -4,6 +4,12 @@ import 'package:car_verify_app/core/components/custom_button/custom_gradient_but
 import 'package:car_verify_app/core/components/custom_image/custom_image.dart';
 import 'package:car_verify_app/core/components/custom_pop_up/custom_pop_up.dart';
 import 'package:car_verify_app/core/components/custom_text/custom_text.dart';
+import 'package:car_verify_app/core/features/business_section/Business_manage_employee/business_manage_employee.dart';
+import 'package:car_verify_app/core/features/business_section/business_all_inspection/business_inspection_screen.dart';
+import 'package:car_verify_app/core/features/business_section/business_home/business_home_screen.dart';
+import 'package:car_verify_app/core/features/business_section/business_manage_fleet/manage_fleet_screen.dart';
+import 'package:car_verify_app/core/features/business_section/business_profile/business_profile_screen.dart';
+import 'package:car_verify_app/core/features/business_section/business_view_report/business_view_report_screen.dart';
 import 'package:car_verify_app/core/features/user_section/manage_car/manage_car_screen.dart';
 import 'package:car_verify_app/core/features/user_section/user_home/user_home_screen.dart';
 import 'package:car_verify_app/core/features/user_section/user_profile/user_profile_screen.dart';
@@ -51,10 +57,12 @@ class BusinessNavbar extends StatelessWidget {
   ];
 
   final allWidgets = [
-    UserHomeScreen(),
-    AllReportsScreen(),
-    ManageCarScreen(),
-    UserProfileScreen()
+    BusinessHomeScreen(),
+    BusinessInspectionScreen(),
+    BusinessViewReportScreen(),
+    BusinessManageFleetScreen(),
+    BusinessManageEmployeeScreen(),
+    BusinessProfileScreen()
   ];
 
   @override

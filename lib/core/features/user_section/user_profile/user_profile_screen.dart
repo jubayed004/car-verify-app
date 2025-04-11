@@ -3,6 +3,7 @@ import 'package:car_verify_app/core/app_routes/app_routes.dart';
 import 'package:car_verify_app/core/components/custom_netwrok_image/custom_network_image.dart';
 import 'package:car_verify_app/core/components/custom_royel_appbar/custom_royel_appbar.dart';
 import 'package:car_verify_app/core/components/custom_text/custom_text.dart';
+import 'package:car_verify_app/core/dependency/get_controllers.dart';
 import 'package:car_verify_app/core/features/user_section/user_profile/controller/user_profile_controller.dart';
 import 'package:car_verify_app/core/utils/app_colors/app_colors.dart';
 import 'package:car_verify_app/core/utils/app_const/app_const.dart';
@@ -14,8 +15,7 @@ class UserProfileScreen extends StatelessWidget {
   UserProfileScreen({super.key,  });
 
 
-
-  final UserProfileController userProfileController = Get.put(UserProfileController());
+  final controller = GetControllers.instance.getUserProfileController();
 
   final List<_MenuItem> menuItems = [
     _MenuItem(
@@ -89,7 +89,7 @@ class UserProfileScreen extends StatelessWidget {
               child: Stack(
                 children: [
                   Obx(() {
-                    final image = userProfileController.selectedImage.value;
+                    final image = controller.selectedImage.value;
                     return image != null
                         ? Container(
                       height: 120.h,
@@ -113,7 +113,7 @@ class UserProfileScreen extends StatelessWidget {
                     bottom: 5,
                     right: 0,
                     child: GestureDetector(
-                      onTap: userProfileController.pickImageFromGallery,
+                      onTap: controller.pickImageFromGallery,
                       child: Container(
                         height: 30,
                         width: 30,

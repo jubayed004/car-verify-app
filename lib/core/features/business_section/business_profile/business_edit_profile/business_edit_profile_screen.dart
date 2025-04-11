@@ -2,6 +2,7 @@ import 'package:car_verify_app/core/components/custom_button/custom_gradient_but
 import 'package:car_verify_app/core/components/custom_royel_appbar/custom_royel_appbar.dart';
 import 'package:car_verify_app/core/components/custom_text/custom_text.dart';
 import 'package:car_verify_app/core/components/custom_text_field/custom_text_field.dart';
+import 'package:car_verify_app/core/dependency/get_controllers.dart';
 import 'package:car_verify_app/core/features/user_section/user_profile/controller/user_profile_controller.dart';
 import 'package:car_verify_app/core/utils/app_colors/app_colors.dart';
 import 'package:country_code_picker/country_code_picker.dart'
@@ -12,8 +13,7 @@ import 'package:get/get.dart';
 
 class BusinessEditProfileScreen extends StatelessWidget {
   BusinessEditProfileScreen({super.key});
-  final UserProfileController userProfileController =
-      Get.find<UserProfileController>();
+  final controller = GetControllers.instance.getUserProfileController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -69,7 +69,7 @@ class BusinessEditProfileScreen extends StatelessWidget {
               isDens: true,
               prefixIcon: CountryCodePicker(
                 onChanged: (code) {
-                  userProfileController.selectedCountryCode.value =
+                  controller.selectedCountryCode.value =
                       code.dialCode!;
                 },
                 initialSelection: 'BD',
@@ -136,7 +136,7 @@ class BusinessEditProfileScreen extends StatelessWidget {
               prefixIcon: CountryCodePicker(
 
 
-                onChanged: (code) {userProfileController.selectedCountryCode.value = code.dialCode!;},
+                onChanged: (code) {controller.selectedCountryCode.value = code.dialCode!;},
                 initialSelection: 'BD',
                 favorite: ['+880', 'US', 'IN'],
                 showFlag: true,

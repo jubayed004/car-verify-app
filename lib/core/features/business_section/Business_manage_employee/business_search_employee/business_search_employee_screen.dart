@@ -1,126 +1,72 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
-
 import 'package:car_verify_app/core/app_routes/app_routes.dart';
 import 'package:car_verify_app/core/components/custom_image/custom_image.dart';
 import 'package:car_verify_app/core/components/custom_royel_appbar/custom_royel_appbar.dart';
 import 'package:car_verify_app/core/components/custom_text/custom_text.dart';
+import 'package:car_verify_app/core/components/custom_text_field/custom_text_field.dart';
+import 'package:car_verify_app/core/features/user_section/view_reports/all_reports/all_reports_screen.dart';
 import 'package:car_verify_app/core/utils/app_colors/app_colors.dart';
 import 'package:car_verify_app/core/utils/app_images/app_images.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
-class BusinessManageEmployeeScreen extends StatelessWidget {
-  const BusinessManageEmployeeScreen({super.key});
+class BusinessSearchEmployeeScreen extends StatelessWidget {
+  const BusinessSearchEmployeeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomRoyelAppbar(
-        titleName: "Manage Employee",
+        titleName: "Search reports",
         leftIcon: true,
         colors: AppColors.appColors,
-        rightIcon: Icon(Icons.search, color: AppColors.appColors, size: 26.sp),
-        rightOnPressed: (){
-          Get.toNamed(AppRoutes.businessSearchEmployeeScreen);
-        },
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: SizedBox(
-        width: 0.75.sw,
-        child: FloatingActionButton(
-          onPressed: () {
-            Get.toNamed(AppRoutes.businessAddNewEmployeeScreen);
-          },
-          backgroundColor: AppColors.appColors,
-          child: CustomText(
-            text: "Add New Employee",
-            color: Colors.white,
-            fontSize: 18.sp,
-            fontWeight: FontWeight.w700,
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(left: 16.0,right: 16,top: 20,bottom: 20),
+            child: CustomTextField(
+              hintText: "12344",
+              fillColor: Color(0xffE5F4FF),
+              isDens: true,
+              prefixIcon: Icon(
+                Icons.search,
+                size: 25.sp,
+                color: AppColors.black,
+              ),
+              suffixIcon: Icon(
+                Icons.close,
+                size: 25.sp,
+                color: AppColors.appColors,
+              ),
+            ),
           ),
-        ),
-      ),
-      body: SingleChildScrollView(
-        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 20.h),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            _StatCard(
-              width: 1.sw,
-              title: 'Total Employee',
-              value: '10',
-              icon: AppImages.totalEmployeeIcon,
-            ),
-            CustomText(
-              text: "All Employee",
-              fontSize: 20.sp,
-              fontWeight: FontWeight.w600,
-              bottom: 14.h,
-              top: 20.h,
-            ),
-            ListView.builder(
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
+          CustomText(
+            text: "Search result for “1234”",
+            fontWeight: FontWeight.w600,
+            fontSize: 18.sp,
+
+            left: 16,
+          ),
+          Expanded(
+            child: ListView.builder(
               itemCount: 30,
               itemBuilder: (_, index) => const DriverCard(),
             ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class _StatCard extends StatelessWidget {
-  final String title;
-  final String value;
-  final String icon;
-  final double? width;
-
-  const _StatCard({
-    required this.title,
-    required this.value,
-    required this.icon,
-    this.width,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 56.h,
-      width: width,
-      padding: EdgeInsets.all(12.r),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(12.r),
-        gradient: LinearGradient(
-          colors: [Colors.blue.shade300, Colors.blue.shade100],
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-        ),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          CustomImage(imageSrc: icon, height: 36.h),
-          SizedBox(width: 8.w),
-          CustomText(
-            text: '$title : $value',
-            fontWeight: FontWeight.w600,
-            fontSize: 16.sp,
           ),
         ],
       ),
     );
   }
 }
-
 class DriverCard extends StatelessWidget {
   const DriverCard({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: 14.h),
+      margin: EdgeInsets.only(left: 16.w,right: 16.w,top: 14.h),
       padding: EdgeInsets.all(12.r),
       decoration: BoxDecoration(
         color: Colors.white,
@@ -195,9 +141,9 @@ class DriverCard extends StatelessWidget {
         Row(
           children: [
             GestureDetector(
-              onTap: (){
-                Get.toNamed(AppRoutes.businessEmployeeDetailsScreen);
-              },
+                onTap: (){
+                  Get.toNamed(AppRoutes.businessEmployeeDetailsScreen);
+                },
                 child: Icon(Icons.remove_red_eye_outlined,
                     color: AppColors.appColors, size: 24.sp)),
             SizedBox(width: 12.w),

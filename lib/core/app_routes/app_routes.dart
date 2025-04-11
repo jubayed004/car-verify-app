@@ -1,7 +1,10 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:car_verify_app/core/components/custom_nav_bar/user_navbar.dart';
+import 'package:car_verify_app/core/features/business_section/Business_manage_employee/business_add_new_employee/business_add_new_employee_screen.dart';
+import 'package:car_verify_app/core/features/business_section/Business_manage_employee/business_employee_details/business_edit_employee_details/business_edit_employee_details_screen.dart';
 import 'package:car_verify_app/core/features/business_section/Business_manage_employee/business_employee_details/business_employee_details_screen.dart';
 import 'package:car_verify_app/core/features/business_section/Business_manage_employee/business_manage_employee.dart';
+import 'package:car_verify_app/core/features/business_section/Business_manage_employee/business_search_employee/business_search_employee_screen.dart';
 import 'package:car_verify_app/core/features/business_section/business_home/business_home_screen.dart';
 import 'package:car_verify_app/core/features/business_section/business_manage_fleet/manage_fleet_screen.dart';
 import 'package:car_verify_app/core/features/business_section/business_profile/business_edit_profile/business_edit_profile_screen.dart';
@@ -76,6 +79,9 @@ class AppRoutes {
   static const String businessManageFleetScreen = "/BusinessManageFleetScreen";
   static const String businessManageEmployeeScreen = "/BusinessManageEmployee";
   static const String businessEmployeeDetailsScreen = "/BusinessEmployeeDetailsScreen";
+  static const String businessAddNewEmployeeScreen = "/BusinessAddNewEmployeeScreen";
+  static const String businessEditEmployeeDetailsScreen = "/BusinessEditEmployeeDetailsScreen";
+  static const String businessSearchEmployeeScreen = "/BusinessSearchEmployeeScreen";
 
   static List<GetPage> routes = [
 
@@ -83,20 +89,17 @@ class AppRoutes {
     GetPage(name: loginScreen, page: () => const LoginScreen()),
     GetPage(name: forgetPasswordScreen, page: () => const ForgetPasswordScreen()),
     GetPage(name: verifyCodeScreen, page: () => const VerifyCodeScreen()),
-    GetPage(name: createNewPasswordScreen, page: () => const CreateNewPasswordScreen()),
+    GetPage(name: createNewPasswordScreen, page: () =>  CreateNewPasswordScreen()),
     GetPage(name: signUpScreen, page: () => const SignUpScreen()),
     GetPage(name: businessCreateAccountScreen, page: () => BusinessCreateAccountScreen()),
-
 
     ///=================> User Section ============////
 
     GetPage(name: userNavbar, page: () => UserNavbar(currentIndex: Get.arguments??0,)),
-
     GetPage(name: viewDetailsScreen, page: () => ViewDetailsScreen()),
     GetPage(name: viewReportsScreen, page: () => ViewReportsScreen()),
     GetPage(name: damageDetailsScreen, page: () => DamageDetailsScreen()),
     GetPage(name: searchReportScreen, page: () => SearchReportScreen()),
-
     GetPage(name: searchCarScreen, page: () => SearchCarScreen()),
     GetPage(name: carDetailsScreen, page: () => CarDetailsScreen()),
     GetPage(name: editCarDetailsScreen, page: () => EditCarDetailsScreen()),
@@ -123,12 +126,14 @@ class AppRoutes {
     GetPage(name: businessEditProfileScreen, page: () => BusinessEditProfileScreen()),
     GetPage(name: businessSettingScreen, page: () => BusinessSettingScreen()),
 
-
     ///=================> Business Manage Employee ============////
 
     GetPage(name: businessManageFleetScreen, page: () => BusinessManageFleetScreen()),
     GetPage(name: businessManageEmployeeScreen, page: () => BusinessManageEmployeeScreen()),
     GetPage(name: businessEmployeeDetailsScreen, page: () => BusinessEmployeeDetailsScreen()),
+    GetPage(name: businessAddNewEmployeeScreen, page: () => BusinessAddNewEmployeeScreen()),
+    GetPage(name: businessEditEmployeeDetailsScreen, page: () => BusinessEditEmployeeDetailsScreen()),
+    GetPage(name: businessSearchEmployeeScreen, page: () => BusinessSearchEmployeeScreen()),
 
 
 

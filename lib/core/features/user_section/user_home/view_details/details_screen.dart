@@ -1,5 +1,6 @@
 import 'package:car_verify_app/core/components/custom_button/custom_gradient_button.dart';
 import 'package:car_verify_app/core/components/custom_royel_appbar/custom_royel_appbar.dart';
+import 'package:car_verify_app/core/dependency/get_controllers.dart';
 import 'package:car_verify_app/core/features/user_section/user_home/view_details/inner_widgets/inforow.dart';
 import 'package:car_verify_app/core/features/user_section/user_home/view_details/inner_widgets/post_verification_tab.dart';
 import 'package:car_verify_app/core/features/user_section/user_home/view_details/inner_widgets/pre_verification_tab.dart';
@@ -20,7 +21,7 @@ import 'package:get/get.dart';
 class ViewDetailsScreen extends StatelessWidget {
   ViewDetailsScreen({super.key});
 
-  final ViewDetailsController controller = Get.find<ViewDetailsController>();
+  final controller = GetControllers.instance.getViewDetailsController();
 
   @override
   Widget build(BuildContext context) {

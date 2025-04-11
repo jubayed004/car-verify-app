@@ -1,3 +1,4 @@
+/*
 
 import 'package:car_verify_app/core/features/business_section/business_home/controller/business_home_controller.dart';
 import 'package:car_verify_app/core/features/user_section/user_home/controller/user_home_controller.dart';
@@ -16,3 +17,4 @@ class DependencyInjection extends Bindings {
     Get.lazyPut<BusinessHomeController>(() => BusinessHomeController(),fenix: true);
   }
 }
+*/

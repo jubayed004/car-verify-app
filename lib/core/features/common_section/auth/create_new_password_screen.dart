@@ -13,8 +13,10 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 
 class CreateNewPasswordScreen extends StatelessWidget {
-  const CreateNewPasswordScreen({super.key});
-
+   CreateNewPasswordScreen({super.key});
+final TextEditingController _newPassword =TextEditingController();
+final TextEditingController _confirmPassword =TextEditingController();
+  final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,10 +40,20 @@ class CreateNewPasswordScreen extends StatelessWidget {
             ),
             CustomTextField(
               hintText: "********",
+              textEditingController: _newPassword,
               fieldBorderColor: AppColors.textFiledBorderColor,
               fieldBorderRadius: 10,
               fillColor: Colors.white,
               keyboardType: TextInputType.emailAddress,
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Password is required';
+                }
+                if (value.length < 6) {
+                  return 'Password must be at least 6 characters';
+                }
+                return null;
+              },
             ),
             CustomText(
               text: "Confirm Password",
@@ -54,6 +66,15 @@ class CreateNewPasswordScreen extends StatelessWidget {
               fieldBorderRadius: 10,
               fillColor: Colors.white,
               keyboardType: TextInputType.phone,
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please confirm your password';
+                }
+                if (value != _newPassword.text) {
+                  return 'Passwords do not match';
+                }
+                return null;
+              },
             ),
             SizedBox(
               height: 14.h,

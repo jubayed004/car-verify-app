@@ -24,12 +24,12 @@ class _BusinessEmployeeDetailsScreenState
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomRoyelAppbar(
-        titleName: "Car details",
+        titleName: "Employee Details",
         leftIcon: true,
         colors: AppColors.appColors,
         actions: [
           GestureDetector(
-            onTap: () => Get.toNamed(AppRoutes.editCarDetailsScreen),
+            onTap: () => Get.toNamed(AppRoutes.businessEditEmployeeDetailsScreen),
             child: CustomImage(imageSrc: AppImages.editIcon, sizeWidth: 24.w),
           ),
           SizedBox(width: 6.w),
@@ -49,8 +49,6 @@ class _BusinessEmployeeDetailsScreenState
                   ),
                 ),
               );
-
-
             },
             child:
                 CustomImage(imageSrc: AppImages.deletedIcon, sizeWidth: 24.w),

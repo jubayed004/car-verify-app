@@ -117,11 +117,17 @@ class _EmployeeAccessCardState extends State<EmployeeAccessCard> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         CustomText(text: label, fontSize: 16.sp, color: Colors.black),
-        Switch(
-          value: isEnabled,
-          onChanged: (val) {},
-          activeColor: AppColors.white,
-          activeTrackColor: AppColors.appColors,
+        Transform.scale(
+          scaleX: .9,
+          scaleY: 0.8,
+          child: Switch(
+            padding: EdgeInsets.zero,
+            value: isEnabled,
+            onChanged: (val) {},
+            activeColor: AppColors.white,
+            activeTrackColor: AppColors.appColors,
+
+          ),
         ),
       ],
     );

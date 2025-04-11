@@ -3,6 +3,7 @@ import 'package:car_verify_app/core/components/custom_elevated_button/custom_ele
 import 'package:car_verify_app/core/components/custom_royel_appbar/custom_royel_appbar.dart';
 import 'package:car_verify_app/core/components/custom_text/custom_text.dart';
 import 'package:car_verify_app/core/components/custom_text_field/custom_text_field.dart';
+import 'package:car_verify_app/core/dependency/get_controllers.dart';
 import 'package:car_verify_app/core/features/user_section/user_profile/controller/user_profile_controller.dart';
 import 'package:car_verify_app/core/utils/app_colors/app_colors.dart';
 import 'package:country_code_picker/country_code_picker.dart';
@@ -14,8 +15,7 @@ import 'package:intl/intl.dart';
 class EditProfileScreen extends StatelessWidget {
   EditProfileScreen({super.key});
 
-  final UserProfileController userProfileController =
-      Get.find<UserProfileController>();
+  final controller = GetControllers.instance.getUserProfileController();
 
   @override
   Widget build(BuildContext context) {
@@ -93,7 +93,7 @@ class EditProfileScreen extends StatelessWidget {
 
                 prefixIcon: CountryCodePicker(
                   onChanged: (code) {
-                    userProfileController.selectedCountryCode.value =
+                    controller.selectedCountryCode.value =
                         code.dialCode!;
                   },
                   initialSelection: 'BD',
@@ -129,9 +129,9 @@ class EditProfileScreen extends StatelessWidget {
                     iconEnabledColor: AppColors.appColors,
                     borderRadius: BorderRadius.all(Radius.circular(10)),
                     dropdownColor: Colors.white,
-                    value: userProfileController.selectedGender.value.isEmpty
+                    value: controller.selectedGender.value.isEmpty
                         ? null
-                        : userProfileController.selectedGender.value,
+                        : controller.selectedGender.value,
                     hint: Text("Select Gender"),
                     isExpanded: true,
                     items: ["Male", "Female"].map((String value) {
@@ -141,7 +141,7 @@ class EditProfileScreen extends StatelessWidget {
                       );
                     }).toList(),
                     onChanged: (value) {
-                      userProfileController.selectedGender.value = value!;
+                      controller.selectedGender.value = value!;
                     },
                   ),
                 ),
@@ -160,7 +160,7 @@ class EditProfileScreen extends StatelessWidget {
                   children: [
                     IconButton(
                       onPressed: () async {
-                        await userProfileController.pickDate();
+                        await controller.pickDate();
                       },
                       icon: Icon(
                         Icons.calendar_month,
@@ -168,9 +168,9 @@ class EditProfileScreen extends StatelessWidget {
                       ),
                     ),
                     CustomText(
-                      text: userProfileController.selectedDate.value != null
+                      text: controller.selectedDate.value != null
                           ? DateFormat('dd/MM/yyyy')
-                              .format(userProfileController.selectedDate.value!)
+                              .format(controller.selectedDate.value!)
                           : "Today",
                       fontSize: 12.w,
                       fontWeight: FontWeight.w400,

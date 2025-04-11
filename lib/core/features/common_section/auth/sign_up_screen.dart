@@ -3,6 +3,7 @@ import 'package:car_verify_app/core/components/custom_button/custom_gradient_but
 import 'package:car_verify_app/core/components/custom_royel_appbar/custom_royel_appbar.dart';
 import 'package:car_verify_app/core/components/custom_text/custom_text.dart';
 import 'package:car_verify_app/core/components/custom_text_field/custom_text_field.dart';
+import 'package:car_verify_app/core/dependency/get_controllers.dart';
 import 'package:car_verify_app/core/features/common_section/auth/controller/auth_controller.dart';
 import 'package:car_verify_app/core/utils/app_colors/app_colors.dart';
 import 'package:country_code_picker/country_code_picker.dart';
@@ -20,7 +21,7 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
-  AuthController authController = Get.put(AuthController());
+  final controller = GetControllers.instance.getAuthController();
 
   @override
   Widget build(BuildContext context) {
@@ -45,9 +46,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     children: [
                       Radio<String>(
                         value: "Car Owner",
-                        groupValue: authController.chooseUser.value,
+                        groupValue: controller.chooseUser.value,
                         onChanged: (value) {
-                          authController.chooseUser.value = value!;
+                          controller.chooseUser.value = value!;
                         },
                         fillColor: WidgetStatePropertyAll(AppColors.appColors),
                       ),
@@ -63,9 +64,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     children: [
                       Radio<String>(
                         value: "Business",
-                        groupValue: authController.chooseUser.value,
+                        groupValue: controller.chooseUser.value,
                         onChanged: (value) {
-                          authController.chooseUser.value = value!;
+                          controller.chooseUser.value = value!;
                           Get.toNamed(AppRoutes.businessCreateAccountScreen);
                         },
 
@@ -121,7 +122,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               CustomTextField(
                 prefixIcon: CountryCodePicker(
                   onChanged: (code) {
-                    authController.selectedCountryCode.value = code.dialCode!;
+                    controller.selectedCountryCode.value = code.dialCode!;
                   },
                   initialSelection: 'BD',
                   favorite: ['+880', 'US', 'IN'],

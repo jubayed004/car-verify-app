@@ -2,6 +2,7 @@ import 'package:car_verify_app/core/components/custom_image/custom_image.dart';
 import 'package:car_verify_app/core/components/custom_royel_appbar/custom_royel_appbar.dart';
 import 'package:car_verify_app/core/components/custom_text/custom_text.dart';
 import 'package:car_verify_app/core/components/custom_text_field/custom_text_field.dart';
+import 'package:car_verify_app/core/dependency/get_controllers.dart';
 import 'package:car_verify_app/core/features/business_section/business_home/controller/business_home_controller.dart';
 import 'package:car_verify_app/core/features/business_section/business_view_report/inner_widgets/date_field.dart';
 import 'package:car_verify_app/core/features/user_section/view_reports/all_reports/all_reports_screen.dart';
@@ -14,7 +15,7 @@ import 'package:get/get.dart';
 class BusinessViewReportScreen extends StatelessWidget {
   BusinessViewReportScreen({super.key});
 
-  final BusinessHomeController controller = Get.find<BusinessHomeController>();
+  final controller = GetControllers.instance.getBusinessHomeController();
 
   @override
   Widget build(BuildContext context) {

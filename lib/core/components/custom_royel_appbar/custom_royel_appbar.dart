@@ -25,7 +25,7 @@ class CustomRoyelAppbar extends StatelessWidget implements PreferredSizeWidget {
         this.rightIcon,
         this.rightOnTap,
         this.leftIcon = false,
-        this.fontSize = 22,
+        this.fontSize = 20,
         this.colors = AppColors.white,
         this.iconColors = AppColors.white,
         this.rightOnPressed,

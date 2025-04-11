@@ -1,5 +1,6 @@
 import 'package:car_verify_app/core/components/custom_royel_appbar/custom_royel_appbar.dart';
 import 'package:car_verify_app/core/components/custom_tab_selected/custom_tab_bar.dart';
+import 'package:car_verify_app/core/dependency/get_controllers.dart';
 import 'package:car_verify_app/core/features/user_section/user_home/controller/user_home_controller.dart';
 import 'package:car_verify_app/core/features/user_section/user_home/inner%20widgets/inspection_card.dart';
 import 'package:car_verify_app/core/utils/app_colors/app_colors.dart';
@@ -8,7 +9,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 class BusinessInspectionScreen extends StatelessWidget {
    BusinessInspectionScreen({super.key});
-  final HomeController controller = Get.find<HomeController>();
+   final controller = GetControllers.instance.getHomeController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(

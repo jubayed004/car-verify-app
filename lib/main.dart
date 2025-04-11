@@ -9,10 +9,10 @@ import 'package:get/get.dart';
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   DeviceUtils.lockDevicePortrait();
-  DependencyInjection di = DependencyInjection();
-  di.dependencies();
+/* *//* DependencyInjection di = DependencyInjection();*//*
+  di.dependencies();*/
   // SocketApi.init();
-  Get.put(HomeController());
+
   // Get.put(NetworkController());
 
 

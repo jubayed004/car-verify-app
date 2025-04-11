@@ -1,4 +1,5 @@
 import 'package:car_verify_app/core/components/custom_nav_bar/user_navbar.dart';
+import 'package:car_verify_app/core/dependency/get_controllers.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -15,7 +16,7 @@ class UserHomeScreen extends StatelessWidget {
  UserHomeScreen({super.key});
 
   // Get the HomeController instance
-  final HomeController controller = Get.find<HomeController>();
+ final controller = GetControllers.instance.getHomeController();
 
   @override
   Widget build(BuildContext context) {

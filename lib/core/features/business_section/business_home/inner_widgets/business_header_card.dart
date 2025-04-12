@@ -1,6 +1,8 @@
+import 'package:car_verify_app/core/app_routes/app_routes.dart';
 import 'package:car_verify_app/core/components/custom_image/custom_image.dart';
 import 'package:car_verify_app/core/components/custom_text/custom_text.dart';
 import 'package:car_verify_app/core/dependency/get_controllers.dart';
+import 'package:car_verify_app/core/features/my_test_screen.dart';
 import 'package:car_verify_app/core/utils/app_images/app_images.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -28,16 +30,24 @@ class BusinessHeaderCard extends StatelessWidget {
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
-              CustomImage(
+            children: [
+              const CustomImage(
                 imageSrc: AppImages.verifycar,
                 height: 40,
               ),
-              CircleAvatar(
-                radius: 25,
-                child: Center(
-                  child: CustomImage(imageSrc: AppImages.maskGroup),
-                ),
+              Row(
+                children: [
+                  IconButton(onPressed: (){
+               Get.toNamed(AppRoutes.businessNotificationScreen);
+
+                  }, icon: const Icon(Icons.notifications_none,color: Colors.white,size: 26,)),
+                  const CircleAvatar(
+                    radius: 25,
+                    child: Center(
+                      child: CustomImage(imageSrc: AppImages.maskGroup),
+                    ),
+                  ),
+                ],
               )
             ],
           ),

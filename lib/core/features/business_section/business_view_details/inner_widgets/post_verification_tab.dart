@@ -8,8 +8,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class PostVerificationTab extends StatelessWidget {
-  const PostVerificationTab({super.key});
+class BusinessPostVerificationTab extends StatelessWidget {
+  const BusinessPostVerificationTab({super.key});
 
   @override
   Widget build(BuildContext context) {

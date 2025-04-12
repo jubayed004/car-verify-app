@@ -5,6 +5,7 @@ import 'package:car_verify_app/core/components/custom_text_field/custom_text_fie
 import 'package:car_verify_app/core/utils/app_colors/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class EditCarDetailsScreen extends StatelessWidget {
   const EditCarDetailsScreen({super.key});
@@ -35,7 +36,9 @@ class EditCarDetailsScreen extends StatelessWidget {
             CustomText(text: "Make",fontWeight: FontWeight.w600,fontSize: 16,bottom: 8,),
             CustomTextField(hintText: "Type here....",fillColor: Colors.white,hintStyle: TextStyle(fontSize: 16),),
             SizedBox(height: MediaQuery.of(context).size.height/6,),
-            CustomGradientButton(text: "Save Changes", onPressed: (){})
+            CustomGradientButton(text: "Save Changes", onPressed: (){
+              Get.back();
+            })
 
           ],
         ),

@@ -53,11 +53,11 @@ class _BusinessDashboardCard extends StatelessWidget {
     if (title == 'View report') {
       Get.toNamed(AppRoutes.businessViewReportScreen);// ✅ View report screen
     } else if (title == 'All Inspection') {
-      //Get.toNamed(AppRoutes.manageCarScreen);// ✅ All Inspection screen
+     Get.toNamed(AppRoutes.businessInspectionScreen);// ✅ All Inspection screen
     }else if (title == 'Manage Fleet') {
-     // Get.toNamed(AppRoutes.manageCarScreen);// ✅ Manage Fleet screen
+      Get.toNamed(AppRoutes.businessManageFleetScreen);// ✅ Manage Fleet screen
     }else if (title == 'Manage Employee') {
-      //Get.toNamed(AppRoutes.manageCarScreen);// ✅ Manage Employee screen
+      Get.toNamed(AppRoutes.businessManageEmployeeScreen);// ✅ Manage Employee screen
     }
   }
 

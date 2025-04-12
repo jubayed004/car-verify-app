@@ -1,8 +1,10 @@
 import 'package:car_verify_app/core/app_routes/app_routes.dart';
+import 'package:car_verify_app/core/components/custom_button/custom_button.dart';
 import 'package:car_verify_app/core/components/custom_button/custom_gradient_button.dart';
 import 'package:car_verify_app/core/components/custom_image/custom_image.dart';
 import 'package:car_verify_app/core/components/custom_royel_appbar/custom_royel_appbar.dart';
 import 'package:car_verify_app/core/components/custom_text/custom_text.dart';
+import 'package:car_verify_app/core/features/business_section/business_manage_fleet/inner_widgets/assign_employee_custom_alert_dialog.dart';
 import 'package:car_verify_app/core/utils/app_colors/app_colors.dart';
 import 'package:car_verify_app/core/utils/app_images/app_images.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +21,10 @@ class BusinessManageFleetScreen extends StatelessWidget {
         titleName: "Manage Fleet",
         leftIcon: true,
         colors: AppColors.appColors,
-        rightIcon: Icon(Icons.search,color: AppColors.appColors,size: 26,)
+        rightIcon: Icon(Icons.search,color: AppColors.appColors,size: 26,),
+        rightOnPressed: (){
+          Get.toNamed(AppRoutes.searchCarScreen);
+        },
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(
@@ -44,7 +49,9 @@ class BusinessManageFleetScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: 52.h,),
-            CustomGradientButton(text: "Add New Car", onPressed: (){})
+            CustomGradientButton(text: "Add New Car", onPressed: (){
+              Get.toNamed(AppRoutes.addCarScreen);
+            })
           ],
         ),
       ),
@@ -67,7 +74,6 @@ class _StatCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 56,
       width: width,
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
@@ -108,10 +114,9 @@ class CarVerificationCard extends StatelessWidget {
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.center,
+
         children: [
           CustomImage(
-              height: 160.h,
               imageSrc: AppImages.oongoingcar,
               fit: BoxFit.fill),
            SizedBox(width: 8.w),
@@ -120,52 +125,60 @@ class CarVerificationCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CustomText(
-                    top: 10,
+                    top: 8,
                     textAlign: TextAlign.start,
                     text: "Registration no : 12545206",
                     fontWeight: FontWeight.bold,
                     maxLines: 2,
-                    bottom: 6),
+                    bottom: 4),
                 CustomText(
                   text: "Model : Landcruiser ",
-                  bottom: 6,
+                  bottom: 4,
                 ),
-                CustomText(text: "Making year : 2022", bottom: 6),
+                CustomText(text: "Making year : 2022", bottom: 4),
                 CustomText(text: "Brand : Toyota", bottom: 10),
                 Row(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Expanded(
-                      child: CustomGradientButton(
-                        text: "View details",
-                        onPressed: () {
-                          //Get.toNamed(AppRoutes.viewDetailsScreen);
-                          Get.toNamed(AppRoutes.carDetailsScreen);
-                        },
-                        width: 90.w,
-                        hight: 30.h,
-                        size: 14,
-                        fontWeight: FontWeight.w400,
+                    Flexible(
+                      child: Center(
+                        child: CustomButton(
+                          onTap: () => Get.toNamed(AppRoutes.viewDetailsScreen),
+                          title: "View details",
+                          fontSize: 12.sp,
+                          height: 24.h,
+                          fillColor: AppColors.white,
+                          textColor: AppColors.appColors,
+                          isBorder: true,
+                          borderWidth: 1,
+                        ),
                       ),
                     ),
-                    SizedBox(width: 4.w,),
-                    Expanded(
+                    SizedBox(
+                      width: 12.h,
+                    ),
+                    Flexible(
                       child: CustomGradientButton(
-                        text: "View details",
-                        onPressed: () {
-                          //Get.toNamed(AppRoutes.viewDetailsScreen);
-                          Get.toNamed(AppRoutes.carDetailsScreen);
-                        },
-                        width: 90.w,
-                        hight: 30.h,
-                        size: 14,
-                        fontWeight: FontWeight.w400,
-                      ),
+                        borderRadius: BorderRadius.circular(6),
+                          fontWeight: FontWeight.w400,
+                          hight: 24.h,
+                          text: "Assign Employee",
+                          size: 12,
+                          onPressed: () {
+                            showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return AssignEmployeeCustomAlertDialog();
+                              },
+                            );
+                          }
+                          ),
                     ),
                   ],
                 ),
-                SizedBox(
-                  height: 8,
-                )
+
+
               ],
             ),
           ),

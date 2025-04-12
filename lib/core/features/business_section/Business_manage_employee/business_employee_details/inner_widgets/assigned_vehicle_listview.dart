@@ -1,11 +1,15 @@
+import 'package:car_verify_app/core/app_routes/app_routes.dart';
 import 'package:car_verify_app/core/components/custom_button/custom_gradient_button.dart';
 import 'package:car_verify_app/core/components/custom_image/custom_image.dart';
 import 'package:car_verify_app/core/components/custom_pop_up/custom_pop_up.dart';
 import 'package:car_verify_app/core/components/custom_text/custom_text.dart';
+import 'package:car_verify_app/core/features/business_section/Business_manage_employee/business_employee_details/inner_widgets/custom_alert_dialog.dart';
+import 'package:car_verify_app/core/features/my_test_screen.dart';
 import 'package:car_verify_app/core/utils/app_colors/app_colors.dart';
 import 'package:car_verify_app/core/utils/app_images/app_images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class AssignedVehicleListView extends StatefulWidget {
   const AssignedVehicleListView({super.key});
@@ -26,7 +30,14 @@ class _AssignedVehicleListViewState extends State<AssignedVehicleListView> {
           child: CustomGradientButton(
               text: 'Assign New Car',
               fontWeight: FontWeight.w600,
-              onPressed: () {}),
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return CustomAlertDialog();
+                  },
+                );
+              }),
         )
       ],
     );
@@ -119,7 +130,9 @@ class _AssignedVehicleListViewState extends State<AssignedVehicleListView> {
                       width: 110.w,
                       child: CustomGradientButton(
                         text: "View details",
-                        onPressed: () {},
+                        onPressed: () {
+                          Get.toNamed(AppRoutes.carDetailsScreen);
+                        },
                         fontWeight: FontWeight.w400,
                         size: 14.sp,
                       )

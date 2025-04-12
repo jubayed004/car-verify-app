@@ -29,7 +29,7 @@ class _EmployeeAccessCardState extends State<EmployeeAccessCard> {
           children: [
             Expanded(
               child: CustomText(
-                text: 'Mr. Fahad',
+                text: 'Mr. Jubayed',
                 fontSize: 16.sp,
                 fontWeight: FontWeight.w600,
                 color: Colors.black,
@@ -45,7 +45,7 @@ class _EmployeeAccessCardState extends State<EmployeeAccessCard> {
           ],
         ),
         SizedBox(height: 10.h),
-        _infoRow(Icons.email_outlined, 'fahad202@gmail.com'),
+        _infoRow(Icons.email_outlined, 'mommadjubayed.islam97@@gmail.com'),
         SizedBox(height: 6.h),
         _infoRow(Icons.phone_outlined, '+971265505694'),
         SizedBox(height: 6.h),

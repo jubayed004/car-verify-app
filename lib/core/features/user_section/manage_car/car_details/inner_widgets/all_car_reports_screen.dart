@@ -55,21 +55,23 @@ class AllReportsCard extends StatelessWidget {
       color: Colors.white,
       elevation: 2,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(16.r),
       ),
       //margin: EdgeInsets.symmetric(vertical: 10.h, horizontal: 16.w),
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             // Car Image
-            ClipRRect(
-              borderRadius: BorderRadius.circular(8),
-              child:  CustomImage(
-                  height: 150.h,
-                  imageSrc: AppImages.oongoingcar,
-                  fit: BoxFit.fill),
+            Center(
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(8),
+                child:  CustomImage(
+                    height: 80.h,
+                    imageSrc: AppImages.oongoingcar,
+                    fit: BoxFit.fill),
+              ),
             ),
             SizedBox(width: 16.w),
             // Inspection Details
@@ -78,18 +80,17 @@ class AllReportsCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   CustomText(
-                    top: 10,
-                    text: 'Inspected on:  $inspectionDate',
+                    text: 'Inspected on:                   $inspectionDate',
                     fontSize: 14.sp,
                     fontWeight: FontWeight.w500,
                   ),
-                  SizedBox(height: 8.h),
+
                   CustomText(
-                    text: 'Damage:  $damageStatus',
+                    text: 'Damage:                $damageStatus',
                     fontSize: 14.sp,
                     fontWeight: FontWeight.w500,
                     color: hasDamages ? Colors.red : Colors.green,
-                    bottom: 24,
+                     bottom: 20,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -105,8 +106,13 @@ class AllReportsCard extends StatelessWidget {
                         size: 14,
                         fontWeight: FontWeight.w400,
                       ),
-                      CustomImage(imageSrc: AppImages.downloadIcon),
-                      CustomImage(imageSrc: AppImages.shareIcon),
+                      Row(
+                        children: [
+                          CustomImage(imageSrc: AppImages.downloadIcon),
+                          SizedBox(width: 10.w,),
+                          CustomImage(imageSrc: AppImages.shareIcon),
+                        ],
+                      ),
                     ],
                   ),
                 ],

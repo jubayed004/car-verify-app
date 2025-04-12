@@ -24,7 +24,7 @@ class ContactSupportScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             CustomText(text: "Subject",fontWeight: FontWeight.w400,fontSize: 14.sp,bottom: 6,),
-            Divider(height: 2,color: AppColors.textFieldColor,),
+            Divider(height: 2,color: AppColors.dividerColor,),
             SizedBox(height: 24.h,),
             PrimaryContainer(
               radius: 10,

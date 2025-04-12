@@ -7,8 +7,10 @@ class AppColors {
   static const Color appColors = Color(0xff0077CC);
   static const Color n2 = Color(0xff6F6F6F);
   static const Color textFieldColor = Color(0xffE2E8F0);
+  static const Color dividerColor = Color(0xffBFBFBF);
   static const Color textColor_01 = Color(0xff1C1C1C);
   static const Color gradyColor = Color(0xffE8E8E9);
+  static const Color notificationBgColor = Color(0xffE5F4FF);
 
 
 

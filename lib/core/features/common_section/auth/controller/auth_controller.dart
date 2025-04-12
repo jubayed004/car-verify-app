@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
 class AuthController extends GetxController {
-  RxString chooseUser = "".obs;
+  RxString chooseUser = "Car Owner".obs;
   RxString selectedCountryCode = "+880".obs;
   RxString selectedGender = "".obs;
 

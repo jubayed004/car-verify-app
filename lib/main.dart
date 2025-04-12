@@ -12,11 +12,7 @@ void main() async{
 /* *//* DependencyInjection di = DependencyInjection();*//*
   di.dependencies();*/
   // SocketApi.init();
-
   // Get.put(NetworkController());
-
-
-
   runApp(const MyApp());
 /*   runApp(DevicePreview(
      enabled: !kReleaseMode,
@@ -49,7 +45,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         defaultTransition: Transition.fadeIn,
         transitionDuration: const Duration(milliseconds: 200),
-        initialRoute: AppRoutes.businessManageEmployeeScreen,
+        initialRoute: AppRoutes.loginScreen,
         navigatorKey: Get.key,
         getPages: AppRoutes.routes,
       ),

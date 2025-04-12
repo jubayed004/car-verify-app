@@ -8,6 +8,7 @@ class CustomGradientButton extends StatelessWidget {
   final double hight;
   final double? size;
   final FontWeight? fontWeight;
+  final BorderRadius? borderRadius;
 
   const CustomGradientButton(
       {super.key,
@@ -17,6 +18,7 @@ class CustomGradientButton extends StatelessWidget {
         this.size,
         this.fontWeight,
         this.width,
+        this.borderRadius,
 
       });
 
@@ -28,7 +30,7 @@ class CustomGradientButton extends StatelessWidget {
         width: width ??MediaQuery.of(context).size.width,
         height: hight,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: borderRadius?? BorderRadius.circular(10),
           gradient: LinearGradient(
             colors: [Color(0xFF0077CC), Color(0xFF0095FF)],
             begin: Alignment.topCenter,

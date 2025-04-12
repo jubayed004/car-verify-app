@@ -91,7 +91,40 @@ class AddCarScreen extends StatelessWidget {
               keyboardType: TextInputType.phone,
 
             ),
-            SizedBox(height:MediaQuery.of(context).size.height/5),
+            SizedBox(height: 14.h,),
+            CustomText(
+              text: "Add thumbnail",
+              fontSize: 16.sp,
+              fontWeight: FontWeight.w600,
+              bottom: 8,
+            ),
+            CustomTextField(
+              prefixIcon: Icon(Icons.image_outlined),
+              isDens: true,
+              hintText: "Image",
+              fieldBorderColor: AppColors.textFiledBorderColor,
+              fieldBorderRadius: 10.r,
+              fillColor: Colors.white,
+              keyboardType: TextInputType.phone,
+
+            ),
+            SizedBox(height: 14.h,),
+            CustomText(
+              text: "Assign Employee",
+              fontSize: 16.sp,
+              fontWeight: FontWeight.w600,
+              bottom: 8,
+            ),
+            CustomTextField(
+              isDens: true,
+              hintText: "Search to select employee ",
+              fieldBorderColor: AppColors.textFiledBorderColor,
+              fieldBorderRadius: 10.r,
+              fillColor: Colors.white,
+              keyboardType: TextInputType.phone,
+              suffixIcon: Icon(Icons.search,size: 24,color: AppColors.appColors,),
+            ),
+            SizedBox(height:MediaQuery.of(context).size.height/10),
             CustomGradientButton(text: "Save & Scan ", onPressed: (){
               Get.toNamed(AppRoutes.scanNowScreen);
             })

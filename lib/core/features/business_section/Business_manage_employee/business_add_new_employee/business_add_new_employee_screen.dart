@@ -7,6 +7,7 @@ import 'package:car_verify_app/core/utils/app_colors/app_colors.dart';
 import 'package:country_code_picker/country_code_picker.dart' show CountryCodePicker;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class BusinessAddNewEmployeeScreen extends StatelessWidget {
    BusinessAddNewEmployeeScreen({super.key});
@@ -141,7 +142,9 @@ class BusinessAddNewEmployeeScreen extends StatelessWidget {
               fontWeight: FontWeight.w700,
                 size: 18.sp,
                 text: "Submit",
-                onPressed: (){})
+                onPressed: (){
+                Get.back();
+                })
           ],
         ),
       ),

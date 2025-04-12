@@ -7,8 +7,8 @@ import 'package:car_verify_app/core/features/user_section/user_home/view_details
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class PreVerificationTab extends StatelessWidget {
-  const PreVerificationTab({super.key});
+class BusinessPreVerificationTab extends StatelessWidget {
+  const BusinessPreVerificationTab({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +47,7 @@ class PreVerificationTab extends StatelessWidget {
               imageUrl: 'assets/images/bumperdamagecar.png',
             ),
             const SizedBox(height: 12),
-         CustomGradientButton(text: "Compare now", onPressed: (){Get.toNamed(AppRoutes.viewReportsScreen);}),
+         CustomGradientButton(text: "Compare now", onPressed: (){Get.toNamed(AppRoutes.businessViewReportScreen);}),
             const SizedBox(height: 24),
           ],
         ),

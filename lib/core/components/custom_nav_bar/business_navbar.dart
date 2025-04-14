@@ -22,11 +22,17 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
-class BusinessNavbar extends StatelessWidget {
+class BusinessNavbar extends StatefulWidget {
 
 
-  BusinessNavbar({ super.key});
+  BusinessNavbar({ super.key,  this.currentIndex=0,  });
+final int currentIndex;
 
+  @override
+  State<BusinessNavbar> createState() => _BusinessNavbarState();
+}
+
+class _BusinessNavbarState extends State<BusinessNavbar> {
   final ValueNotifier<int> bottomNavIndex = ValueNotifier(0);
 
   final List<String> selectedIcon = [
@@ -66,6 +72,12 @@ class BusinessNavbar extends StatelessWidget {
   ];
 
   @override
+  void initState() {
+    bottomNavIndex.value =widget.currentIndex;
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: ValueListenableBuilder(
@@ -78,7 +90,7 @@ class BusinessNavbar extends StatelessWidget {
         clipBehavior: Clip.none,
         children: [
           Container(
-            height: 80.h,
+            height: 90.h,
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(color: Color(0xfff3f4f6)),
             child: Padding(
@@ -88,18 +100,17 @@ class BusinessNavbar extends StatelessWidget {
                 children: [
                   buildInkWell(0),
                   buildInkWell(1),
-                  SizedBox(),
-                  SizedBox(),
-                  SizedBox(),
-                  SizedBox(),
                   buildInkWell(2),
+                  SizedBox(),
                   buildInkWell(3),
+                  buildInkWell(4),
+                  buildInkWell(5),
                 ],
               ),
             ),
           ),
           Positioned(
-            top: -30.h,
+            top: -35.h,
             left: 0,
             right: 0,
             child: GestureDetector(
@@ -107,13 +118,13 @@ class BusinessNavbar extends StatelessWidget {
                 buildShowDialog(context);
               },
               child: Container(
-                height: 70.w,
-                width: 70.w,
+                height: 65.w,
+                width: 65.w,
                 decoration: BoxDecoration(
-                  color: AppColors.primary,
+                  color: AppColors.appColors,
                   shape: BoxShape.circle,
                   border: Border.all(
-                    color: AppColors.white,
+                    color: Color(0xfff3f4f6),
                     width: 8.w,
                   ),
                 ),
@@ -126,8 +137,8 @@ class BusinessNavbar extends StatelessWidget {
                       },
                       child: CustomImage(
                         imageSrc: AppImages.scanIcon,
-                        height: 30.w,
-                        width: 30.w,
+                        height: 24.w,
+                        width: 24.w,
                       ),
                     ),
                   ),
@@ -147,13 +158,13 @@ class BusinessNavbar extends StatelessWidget {
       },
       child: ValueListenableBuilder(
         valueListenable: bottomNavIndex,
-        builder: (_, int i, __){
+        builder: (_, int i, __) {
           return Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: EdgeInsets.only(top: 20.0, left: 5, right: 5,bottom: 0),
                 child: SvgPicture.asset(
                   index == bottomNavIndex.value
                       ? selectedIcon[index]
@@ -171,6 +182,15 @@ class BusinessNavbar extends StatelessWidget {
                   fontSize: 12.w,
                   fontWeight: FontWeight.w500,
                   color: AppColors.appColors,
+                ),
+              if (index == bottomNavIndex.value)
+                ClipPath(
+                  clipper: CustomWaveClipper(),
+                  child: Container(
+                    width: 50,
+                    height: 20,
+                    color: Colors.blue,
+                  ),
                 )
             ],
           );
@@ -218,5 +238,36 @@ class BusinessNavbar extends StatelessWidget {
             ],
           );
         });
+  }
+}
+class CustomWaveClipper extends CustomClipper<Path> {
+  @override
+  Path getClip(Size size) {
+    Path path = Path();
+
+    // Starting point at bottom-left
+    path.moveTo(0, size.height);
+
+    // Move 5 pixels upwards on the left side
+    path.lineTo(4, size.height - 2);
+
+    // Move right 8 pixels
+    path.lineTo(8, size.height - 4);
+
+    // Create a curve to the right 8 pixels
+    path.quadraticBezierTo(size.width * 0.5, size.height * 0.25, size.width - 10, size.height - 4);
+
+    // Close the path to the top-right corner
+    path.lineTo(size.width, size.height);
+
+    // Close the path to the starting point
+    path.close();
+
+    return path;
+  }
+
+  @override
+  bool shouldReclip(CustomClipper<Path> oldClipper) {
+    return false;
   }
 }

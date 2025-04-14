@@ -4,6 +4,7 @@ import 'package:car_verify_app/core/components/custom_elevated_button/custom_ele
 import 'package:car_verify_app/core/components/custom_image/custom_image.dart';
 import 'package:car_verify_app/core/components/custom_text/custom_text.dart';
 import 'package:car_verify_app/core/components/custom_text_field/custom_text_field.dart';
+import 'package:car_verify_app/core/features/common_section/auth/inner_widgets/choose_catagory_alert_dialog_screen.dart';
 import 'package:car_verify_app/core/features/my_test_screen.dart';
 import 'package:car_verify_app/core/utils/app_colors/app_colors.dart';
 import 'package:car_verify_app/core/utils/app_images/app_images.dart';
@@ -77,8 +78,15 @@ class LoginScreen extends StatelessWidget {
                 ),
             ),
             CustomGradientButton(text: 'Log in', onPressed: () {
+              showDialog(
+                  context: context,
+                  barrierDismissible:
+                  false, // Prevent closing by tapping outside
+                  builder: (BuildContext context) {
+                    return ChooseCatagoryAlertDialogScreen();
+                  });
 
-              Get.toNamed(AppRoutes.userNavbar);
+
             },),
             SizedBox(height: 14.h,),
             Center(

@@ -84,9 +84,7 @@ class _UserNavbarState extends State<UserNavbar> {
                   buildInkWell(0),
                   buildInkWell(1),
                   SizedBox(),
-                  SizedBox(),
-                  SizedBox(),
-                  SizedBox(),
+
                   buildInkWell(2),
                   buildInkWell(3),
                 ],
@@ -102,8 +100,8 @@ class _UserNavbarState extends State<UserNavbar> {
                 buildShowDialog(context);
               },
               child: Container(
-                height: 70.w,
-                width: 70.w,
+                height: 65.w,
+                width: 65.w,
                 decoration: BoxDecoration(
                   color: AppColors.appColors,
                   shape: BoxShape.circle,
@@ -121,8 +119,8 @@ class _UserNavbarState extends State<UserNavbar> {
                       },
                       child: CustomImage(
                         imageSrc: AppImages.scanIcon,
-                        height: 30.w,
-                        width: 30.w,
+                        height: 24.w,
+                        width: 24.w,
                       ),
                     ),
                   ),

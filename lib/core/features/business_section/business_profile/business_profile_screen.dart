@@ -24,7 +24,7 @@ class BusinessProfileScreen extends StatelessWidget {
     _MenuItem(
       icon: Icons.subscriptions_outlined,
       title: 'Subscription',
-      onTap: () => Get.toNamed('/subscription'),
+      onTap: () => Get.toNamed(AppRoutes.subscriptionScreen),
     ),
     _MenuItem(
       icon: Icons.support_agent_outlined,
@@ -34,7 +34,7 @@ class BusinessProfileScreen extends StatelessWidget {
     _MenuItem(
       icon: Icons.settings_outlined,
       title: 'Settings',
-      onTap: () => Get.toNamed(AppRoutes.settingScreen),
+      onTap: () => Get.toNamed(AppRoutes.businessSettingScreen),
     ),
     _MenuItem(
       icon: Icons.logout,
@@ -49,6 +49,10 @@ class BusinessProfileScreen extends StatelessWidget {
           textCancel: "No",
           confirmTextColor: Colors.white,
           onConfirm: () {
+            Get.toNamed(AppRoutes.loginScreen);
+            // Implement logout logic here
+          },
+          onCancel: () {
             Get.back();
             // Implement logout logic here
           },

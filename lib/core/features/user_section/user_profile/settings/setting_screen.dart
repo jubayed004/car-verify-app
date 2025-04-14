@@ -1,5 +1,4 @@
 import 'package:car_verify_app/core/app_routes/app_routes.dart';
-import 'package:car_verify_app/core/components/custom_button/custom_button.dart';
 import 'package:car_verify_app/core/components/custom_pop_up/custom_pop_up.dart';
 import 'package:car_verify_app/core/components/custom_royel_appbar/custom_royel_appbar.dart';
 import 'package:car_verify_app/core/components/custom_text/custom_text.dart';

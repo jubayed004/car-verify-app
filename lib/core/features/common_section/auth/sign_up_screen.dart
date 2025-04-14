@@ -287,7 +287,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 CustomGradientButton(
                   text: "Sign Up",
                   onPressed: () {
-                    Get.toNamed(AppRoutes.userNavbar);
+                    Get.toNamed(AppRoutes.loginScreen);
                   },
                 ),
                 SizedBox(height: 14.h),

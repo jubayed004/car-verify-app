@@ -50,7 +50,7 @@ class BusinessManageFleetScreen extends StatelessWidget {
             ),
             SizedBox(height: 52.h,),
             CustomGradientButton(text: "Add New Car", onPressed: (){
-              Get.toNamed(AppRoutes.addCarScreen);
+              Get.toNamed(AppRoutes.businessAddCarScreen     );
             })
           ],
         ),

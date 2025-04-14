@@ -24,7 +24,7 @@ class BusinessSettingScreen extends StatelessWidget {
           children: [
             GestureDetector(
               onTap: (){
-                Get.toNamed(AppRoutes.changePasswordScreen);
+                Get.toNamed(AppRoutes.businessChangePasswordScreen);
               },
               child: Card(
                 color: Color(0xffE5F4FF),

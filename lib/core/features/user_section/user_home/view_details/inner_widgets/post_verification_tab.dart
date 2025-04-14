@@ -2,7 +2,6 @@ import 'package:car_verify_app/core/app_routes/app_routes.dart';
 import 'package:car_verify_app/core/components/custom_button/custom_gradient_button.dart';
 import 'package:car_verify_app/core/components/custom_text/custom_text.dart';
 import 'package:car_verify_app/core/features/user_section/user_home/view_details/inner_widgets/Info_card.dart';
-
 import 'package:car_verify_app/core/utils/app_colors/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

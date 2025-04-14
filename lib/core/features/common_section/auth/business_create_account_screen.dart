@@ -125,7 +125,7 @@ class BusinessCreateAccountScreen extends StatelessWidget {
             CustomGradientButton(
               text: 'Submit',
               onPressed: () {
-                Get.toNamed(AppRoutes.userNavbar);
+                Get.toNamed(AppRoutes.businessNavbar);
               },
             ),
             SizedBox(

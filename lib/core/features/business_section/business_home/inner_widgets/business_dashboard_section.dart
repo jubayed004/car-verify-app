@@ -51,13 +51,14 @@ class _BusinessDashboardCard extends StatelessWidget {
 
   void _handleNavigation(BuildContext context, String title) {
     if (title == 'View report') {
-      Get.toNamed(AppRoutes.businessViewReportScreen);// ✅ View report screen
+      Get.offAllNamed(AppRoutes.businessNavbar,arguments: 2);// ✅ View report screen
     } else if (title == 'All Inspection') {
-     Get.toNamed(AppRoutes.businessInspectionScreen);// ✅ All Inspection screen
+     Get.offAllNamed(AppRoutes.businessNavbar,arguments: 1);// ✅ All Inspection screen
     }else if (title == 'Manage Fleet') {
-      Get.toNamed(AppRoutes.businessManageFleetScreen);// ✅ Manage Fleet screen
+      Get.offAllNamed(AppRoutes.businessNavbar,arguments: 3);// ✅ Manage Fleet screen
     }else if (title == 'Manage Employee') {
-      Get.toNamed(AppRoutes.businessManageEmployeeScreen);// ✅ Manage Employee screen
+      print( "skjf;f;g");
+      Get.offAllNamed(AppRoutes.businessNavbar,arguments: 4);// ✅ Manage Employee screen
     }
   }
 

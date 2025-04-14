@@ -18,6 +18,9 @@ class BusinessManageEmployeeScreen extends StatelessWidget {
       appBar: CustomRoyelAppbar(
         titleName: "Manage Employee",
         leftIcon: true,
+        leftOnPressed: (){
+          Get.toNamed(AppRoutes.businessNavbar,arguments: 4);
+        },
         colors: AppColors.appColors,
         rightIcon: Icon(Icons.search, color: AppColors.appColors, size: 26.sp),
         rightOnPressed: (){
@@ -27,16 +30,19 @@ class BusinessManageEmployeeScreen extends StatelessWidget {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: SizedBox(
         width: 0.75.sw,
-        child: FloatingActionButton(
-          onPressed: () {
-            Get.toNamed(AppRoutes.businessAddNewEmployeeScreen);
-          },
-          backgroundColor: AppColors.appColors,
-          child: CustomText(
-            text: "Add New Employee",
-            color: Colors.white,
-            fontSize: 18.sp,
-            fontWeight: FontWeight.w700,
+        child: Padding(
+          padding: const EdgeInsets.only(bottom: 30.0),
+          child: FloatingActionButton(
+            onPressed: () {
+              Get.toNamed(AppRoutes.businessAddNewEmployeeScreen);
+            },
+            backgroundColor: AppColors.appColors,
+            child: CustomText(
+              text: "Add New Employee",
+              color: Colors.white,
+              fontSize: 18.sp,
+              fontWeight: FontWeight.w700,
+            ),
           ),
         ),
       ),
@@ -202,7 +208,9 @@ class DriverCard extends StatelessWidget {
                     color: AppColors.appColors, size: 24.sp)),
             SizedBox(width: 12.w),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Get.toNamed(AppRoutes.businessEditEmployeeDetailsScreen);
+              },
               child: CustomImage(imageSrc: AppImages.editIcon, width: 24.w),
             ),
           ],

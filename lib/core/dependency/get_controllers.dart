@@ -1,6 +1,7 @@
 
 import 'package:car_verify_app/core/features/business_section/business_home/controller/business_home_controller.dart';
 import 'package:car_verify_app/core/features/common_section/auth/controller/auth_controller.dart';
+import 'package:car_verify_app/core/features/common_section/subscription/controller/subscription_controller.dart';
 import 'package:car_verify_app/core/features/user_section/user_home/controller/user_home_controller.dart';
 import 'package:car_verify_app/core/features/user_section/user_home/view_details/controller/view_details_controller.dart';
 import 'package:car_verify_app/core/features/user_section/user_profile/controller/user_profile_controller.dart';
@@ -70,6 +71,13 @@ class GetControllers {
       return Get.put(BusinessHomeController());
     }
     return Get.find<BusinessHomeController>();
+  }
+
+  SubscriptionController getSubscriptionController() {
+    if (!Get.isRegistered<SubscriptionController>()) {
+      return Get.put(SubscriptionController());
+    }
+    return Get.find<SubscriptionController>();
   }
 
 

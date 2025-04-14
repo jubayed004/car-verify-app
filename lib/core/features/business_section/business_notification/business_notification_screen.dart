@@ -15,7 +15,7 @@ class BusinessNotificationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomRoyelAppbar(
-        titleName: "Manage Fleet",
+        titleName: "Notification",
         leftIcon: true,
         colors: AppColors.appColors,
         rightIcon: Icon(
@@ -36,12 +36,17 @@ class BusinessNotificationScreen extends StatelessWidget {
             ///=====================Clear All Button=============///
             Align(
               alignment: Alignment.topRight,
-              child: CustomText(
-                text: "Clear All",
-                fontWeight: FontWeight.w400,
-                color: AppColors.appColors,
-                fontSize: 16.sp,
-                bottom: 6.h,
+              child: GestureDetector(
+                onTap: (){
+
+                },
+                child: CustomText(
+                  text: "Clear All",
+                  fontWeight: FontWeight.w400,
+                  color: AppColors.appColors,
+                  fontSize: 16.sp,
+                  bottom: 6.h,
+                ),
               ),
             ),
             Divider(

@@ -21,7 +21,9 @@ class CarDetailsScreen extends StatelessWidget {
       floatingActionButton: SizedBox(
         width: MediaQuery.of(context).size.width / 1.3,
         child: FloatingActionButton(
-          onPressed: () {},
+          onPressed: () {
+            Get.toNamed(AppRoutes.scanNowScreen);
+          },
           backgroundColor: AppColors.appColors,
           child: CustomText(
             text: "Scan Now",

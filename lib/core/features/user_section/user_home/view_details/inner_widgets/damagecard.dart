@@ -1,6 +1,8 @@
 import 'package:car_verify_app/core/components/custom_button/custom_gradient_button.dart';
 import 'package:car_verify_app/core/components/custom_image/custom_image.dart';
 import 'package:car_verify_app/core/components/custom_text/custom_text.dart';
+import 'package:car_verify_app/core/features/business_section/Business_manage_employee/business_employee_details/inner_widgets/custom_alert_dialog.dart';
+import 'package:car_verify_app/core/features/user_section/user_home/view_details/inner_widgets/damage_custom_alert_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -53,7 +55,12 @@ class DamageCard extends StatelessWidget {
                 CustomGradientButton(
                   text: 'View details',
                   onPressed: () {
-
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return DamageCustomAlertDialog();
+                      },
+                    );
                   },
                   hight: 30,
                   width: 100.w,

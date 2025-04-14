@@ -1,23 +1,28 @@
 // ignore_for_file: prefer_const_constructors
+import 'package:car_verify_app/core/components/custom_nav_bar/business_navbar.dart';
 import 'package:car_verify_app/core/components/custom_nav_bar/user_navbar.dart';
 import 'package:car_verify_app/core/features/business_section/Business_manage_employee/business_add_new_employee/business_add_new_employee_screen.dart';
 import 'package:car_verify_app/core/features/business_section/Business_manage_employee/business_employee_details/business_edit_employee_details/business_edit_employee_details_screen.dart';
 import 'package:car_verify_app/core/features/business_section/Business_manage_employee/business_employee_details/business_employee_details_screen.dart';
 import 'package:car_verify_app/core/features/business_section/Business_manage_employee/business_manage_employee.dart';
 import 'package:car_verify_app/core/features/business_section/Business_manage_employee/business_search_employee/business_search_employee_screen.dart';
+import 'package:car_verify_app/core/features/business_section/business_add_car/business_add_car_screen.dart';
 import 'package:car_verify_app/core/features/business_section/business_home/business_home_screen.dart';
 import 'package:car_verify_app/core/features/business_section/business_manage_fleet/manage_fleet_screen.dart';
 import 'package:car_verify_app/core/features/business_section/business_notification/business_notification_screen.dart';
 import 'package:car_verify_app/core/features/business_section/business_profile/business_edit_profile/business_edit_profile_screen.dart';
 import 'package:car_verify_app/core/features/business_section/business_profile/business_profile_screen.dart';
+import 'package:car_verify_app/core/features/business_section/business_profile/business_settings/business_change_password/Business_change_password_screen.dart';
 import 'package:car_verify_app/core/features/business_section/business_profile/business_settings/business_setting_screen.dart';
 import 'package:car_verify_app/core/features/business_section/business_view_details/business_details_screen.dart';
+import 'package:car_verify_app/core/features/business_section/business_view_report/business_view_report_screen.dart';
 import 'package:car_verify_app/core/features/common_section/auth/business_create_account_screen.dart';
 import 'package:car_verify_app/core/features/common_section/auth/create_new_password_screen.dart';
 import 'package:car_verify_app/core/features/common_section/auth/forget_password_screen.dart';
 import 'package:car_verify_app/core/features/common_section/auth/login_screen.dart';
 import 'package:car_verify_app/core/features/common_section/auth/sign_up_screen.dart';
 import 'package:car_verify_app/core/features/common_section/auth/verify_code_screen.dart';
+import 'package:car_verify_app/core/features/common_section/subscription/subscription_screen.dart';
 import 'package:car_verify_app/core/features/user_section/add_car/add_car_screen.dart';
 import 'package:car_verify_app/core/features/user_section/car_list/all_car_screen.dart';
 import 'package:car_verify_app/core/features/user_section/manage_car/car_details/car_details_screen.dart';
@@ -40,8 +45,8 @@ import 'package:car_verify_app/core/features/user_section/view_reports/all_repor
 import 'package:car_verify_app/core/features/user_section/view_reports/all_reports/view_reports/view_reports_screen.dart';
 import 'package:get/get.dart';
 
-import '../features/business_section/business_all_inspection/business_inspection_screen.dart' show BusinessInspectionScreen;
-import '../features/business_section/business_view_report/business_view_report_screen.dart' show BusinessViewReportScreen;
+
+
 
 
 class AppRoutes {
@@ -53,6 +58,7 @@ class AppRoutes {
   static const String businessCreateAccountScreen = "/BusinessCreateAccountScreen";
 
   static const String userNavbar = "/userNavbar";
+  static const String businessNavbar = "/BusinessNavbar";
   static const String viewDetailsScreen = "/ViewDetailsScreen";
   static const String viewReportsScreen = "/ViewReportsScreen";
   static const String damageDetailsScreen = "/DamageDetailsScreen";
@@ -62,6 +68,7 @@ class AppRoutes {
   static const String searchCarScreen = "/SearchCarScreen";
   static const String carDetailsScreen = "/CarDetailsScreen";
   static const String editCarDetailsScreen = "/EditCarDetailsScreen";
+  static const String subscriptionScreen = "/SubscriptionScreen";
 
   static const String editProfileScreen = "/EditProfileScreen";
   static const String settingScreen = "/SettingScreen";
@@ -75,7 +82,7 @@ class AppRoutes {
   static const String businessHomeScreen = "/BusinessHomeScreen";
   static const String businessViewReportScreen = "/BusinessViewReportScreen";
   static const String businessInspectionScreen = "/BusinessInspectionScreen";
-  static const String businessProfileScreen = "/BusinessProfileScreen";
+
   static const String businessEditProfileScreen = "/BusinessEditProfileScreen";
   static const String businessSettingScreen = "/BusinessSettingScreen";
   static const String businessManageFleetScreen = "/BusinessManageFleetScreen";
@@ -86,6 +93,8 @@ class AppRoutes {
   static const String businessSearchEmployeeScreen = "/BusinessSearchEmployeeScreen";
   static const String businessNotificationScreen = "/BusinessNotificationScreen";
   static const String businessViewDetailsScreen = "/BusinessViewDetailsScreen";
+  static const String businessAddCarScreen = "/BusinessAddCarScreen";
+  static const String businessChangePasswordScreen = "/BusinessChangePasswordScreen";
 
   static List<GetPage> routes = [
 
@@ -100,6 +109,7 @@ class AppRoutes {
     ///=================> User Section ============////
 
     GetPage(name: userNavbar, page: () => UserNavbar(currentIndex: Get.arguments??0,)),
+    GetPage(name: businessNavbar, page: () => BusinessNavbar(currentIndex: Get.arguments??0,)),
     GetPage(name: viewDetailsScreen, page: () => ViewDetailsScreen()),
     GetPage(name: viewReportsScreen, page: () => ViewReportsScreen()),
     GetPage(name: damageDetailsScreen, page: () => DamageDetailsScreen()),
@@ -121,20 +131,19 @@ class AppRoutes {
     GetPage(name: contactSupportScreen, page: () => ContactSupportScreen()),
 
     ///=================> Business Section ============////
-    GetPage(name: businessHomeScreen, page: () => BusinessHomeScreen()),
-    GetPage(name: businessViewReportScreen, page: () => BusinessViewReportScreen()),
-    GetPage(name: businessInspectionScreen, page: () => BusinessInspectionScreen()),
+
+
     GetPage(name: businessViewDetailsScreen, page: () => BusinessViewDetailsScreen()),
     GetPage(name: businessNotificationScreen, page: () => BusinessNotificationScreen()),
+    GetPage(name: subscriptionScreen, page: () => SubscriptionScreen()),
 
     ///=================> Business Profile ============////
-    GetPage(name: businessProfileScreen, page: () => BusinessProfileScreen()),
     GetPage(name: businessEditProfileScreen, page: () => BusinessEditProfileScreen()),
     GetPage(name: businessSettingScreen, page: () => BusinessSettingScreen()),
+    GetPage(name: businessChangePasswordScreen, page: () => BusinessChangePasswordScreen()),
 
     ///=================> Business Manage Employee ============////
-    GetPage(name: businessManageFleetScreen, page: () => BusinessManageFleetScreen()),
-    GetPage(name: businessManageEmployeeScreen, page: () => BusinessManageEmployeeScreen()),
+    GetPage(name: businessAddCarScreen, page: () => BusinessAddCarScreen()),
     GetPage(name: businessEmployeeDetailsScreen, page: () => BusinessEmployeeDetailsScreen()),
     GetPage(name: businessAddNewEmployeeScreen, page: () => BusinessAddNewEmployeeScreen()),
     GetPage(name: businessEditEmployeeDetailsScreen, page: () => BusinessEditEmployeeDetailsScreen()),

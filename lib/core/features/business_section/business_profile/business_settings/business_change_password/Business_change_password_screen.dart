@@ -88,7 +88,9 @@ class BusinessChangePasswordScreen extends StatelessWidget {
             SizedBox(
               height: MediaQuery.of(context).size.height / 4,
             ),
-            CustomGradientButton(text: "Confirm", onPressed: () {})
+            CustomGradientButton(text: "Confirm", onPressed: () {
+              Get.toNamed(AppRoutes.businessNavbar,arguments: 5);
+            })
           ],
         ),
       ),

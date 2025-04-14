@@ -43,6 +43,7 @@ class UserProfileScreen extends StatelessWidget {
       title: 'Log Out',
       onTap: () {
         Get.defaultDialog(
+
           backgroundColor: Colors.white,
           title: "Log Out",
           middleText: "Are you sure you want to log out?",
@@ -51,9 +52,13 @@ class UserProfileScreen extends StatelessWidget {
           textCancel: "No",
           confirmTextColor: Colors.white,
           onConfirm: () {
-            Get.back();
+            Get.toNamed(AppRoutes.loginScreen);
             // Implement logout logic here
           },
+          onCancel: (){
+            Get.back();
+          }
+
         );
       },
     ),

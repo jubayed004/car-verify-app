@@ -1,3 +1,4 @@
+import 'package:car_verify_app/core/app_routes/app_routes.dart';
 import 'package:car_verify_app/core/components/custom_button/custom_gradient_button.dart';
 import 'package:car_verify_app/core/components/custom_royel_appbar/custom_royel_appbar.dart';
 import 'package:car_verify_app/core/components/custom_text/custom_text.dart';
@@ -151,7 +152,9 @@ class BusinessEditProfileScreen extends StatelessWidget {
             SizedBox(
               height: MediaQuery.of(context).size.height / 12,
             ),
-            CustomGradientButton(text: " Save Changes", onPressed: () {})
+            CustomGradientButton(text: " Save Changes", onPressed: () {
+              Get.toNamed(AppRoutes.businessNavbar,arguments: 5);
+            })
           ],
         ),
       ),

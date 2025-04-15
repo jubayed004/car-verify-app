@@ -3,6 +3,7 @@ import 'package:car_verify_app/core/components/custom_button/custom_gradient_but
 import 'package:car_verify_app/core/components/custom_image/custom_image.dart';
 import 'package:car_verify_app/core/components/custom_royel_appbar/custom_royel_appbar.dart';
 import 'package:car_verify_app/core/components/custom_text/custom_text.dart';
+import 'package:car_verify_app/core/features/my_test_screen.dart';
 import 'package:car_verify_app/core/features/user_section/user_home/view_details/inner_widgets/Info_card.dart';
 import 'package:car_verify_app/core/features/user_section/user_home/view_details/inner_widgets/inforow.dart';
 import 'package:car_verify_app/core/features/user_section/view_reports/all_reports/view_reports/inner_widgets/info_row_report.dart';
@@ -78,29 +79,29 @@ class ViewReportsScreen extends StatelessWidget {
               physics: NeverScrollableScrollPhysics(),
               padding: const EdgeInsets.all(16),
               children: const [
-                const CustomText(
+                CustomText(
                   text: 'Damage section',
                   fontSize: 16,
                   fontWeight: FontWeight.w600,
                   textAlign: TextAlign.start,
                 ),
-                const SizedBox(height: 12),
-                const DamageCard(
+                SizedBox(height: 12),
+                DamageCard(
                   title: 'Front Bumper',
                   description: 'Major Dent on front bumper right side',
                   imageUrl: 'assets/images/bumperdamagecar.png',
                 ),
-                const DamageCard(
+                DamageCard(
                   title: 'Fenders (Left & Right)',
                   description: 'Major Dent on Fendars right side',
                   imageUrl: 'assets/images/bumperdamagecar.png',
                 ),
-                const DamageCard(
+                DamageCard(
                   title: 'Headlights',
                   description: 'Broken headlight right side',
                   imageUrl: 'assets/images/bumperdamagecar.png',
                 ),
-                const DamageCard(
+                DamageCard(
                   title: 'Grille',
                   description: 'No damage in grille',
                   imageUrl: 'assets/images/bumperdamagecar.png',
@@ -110,7 +111,7 @@ class ViewReportsScreen extends StatelessWidget {
             CustomGradientButton(
                 text: "Download PDF",
                 onPressed: () {
-
+                     /* Get.to(PdfReportScreen());*/
                 },
                 width: MediaQuery.of(context).size.width / 1.1),
             SizedBox(

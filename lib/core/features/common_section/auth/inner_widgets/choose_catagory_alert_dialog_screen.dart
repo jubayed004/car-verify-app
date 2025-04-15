@@ -87,7 +87,7 @@ class ChooseCatagoryAlertDialogScreen extends StatelessWidget {
                 height: 100.h,
                 child: GestureDetector(
                   onTap: (){
-
+                     Get.toNamed(AppRoutes.employeeNavbar);
                   },
                   child: Card(
                     color: AppColors.white,

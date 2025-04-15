@@ -5,6 +5,7 @@ import 'package:car_verify_app/core/dependency/get_controllers.dart';
 import 'package:car_verify_app/core/features/my_test_screen.dart';
 import 'package:car_verify_app/core/utils/app_images/app_images.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:car_verify_app/core/features/user_section/user_home/controller/user_home_controller.dart';
 
@@ -17,13 +18,13 @@ class BusinessHeaderCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.fromLTRB(20, 56, 20, 24),
-      decoration: const BoxDecoration(
+      decoration:  BoxDecoration(
         gradient: LinearGradient(
           colors: [Color(0xFF005BEA), Color(0xFF00C6FB)],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
-        borderRadius: BorderRadius.vertical(bottom: Radius.circular(24)),
+        borderRadius: BorderRadius.vertical(bottom: Radius.circular(24.r)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -31,18 +32,18 @@ class BusinessHeaderCard extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const CustomImage(
+               CustomImage(
                 imageSrc: AppImages.verifycar,
-                height: 40,
+                height: 40.h,
               ),
               Row(
                 children: [
                   IconButton(onPressed: (){
                Get.toNamed(AppRoutes.businessNotificationScreen);
 
-                  }, icon: const Icon(Icons.notifications_none,color: Colors.white,size: 26,)),
-                  const CircleAvatar(
-                    radius: 25,
+                  }, icon:  Icon(Icons.notifications_none,color: Colors.white,size: 26.sp,)),
+                   CircleAvatar(
+                    radius: 25.r,
                     child: Center(
                       child: CustomImage(imageSrc: AppImages.maskGroup),
                     ),
@@ -51,11 +52,11 @@ class BusinessHeaderCard extends StatelessWidget {
               )
             ],
           ),
-          const SizedBox(height: 24),
+           SizedBox(height: 24.h),
       CustomText(
                 text: "Welcome to CarVerify \n Business!",
                 textAlign: TextAlign.start,
-                fontSize: 20,
+                fontSize: 20.sp,
                 fontWeight: FontWeight.w600,
                 color: Colors.white,
               )

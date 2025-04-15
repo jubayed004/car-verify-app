@@ -30,6 +30,8 @@ class AppImages {
   static const String businessProfileImage = "$basePath/businessprofileimage.png";
   static const String vehiclesIcon = "$basePath/vehiclesicon.svg";
   static const String closeIcon = "$basePath/closeicon.svg";
+  static const String subPlanRightIcon = "$basePath/subplanrighticon.svg";
+  static const String profileImageOne = "$basePath/profileimage.png";
 
   ///============= nav bar ============///
   static const String homeIcon = "$basePath/homeicon.svg";

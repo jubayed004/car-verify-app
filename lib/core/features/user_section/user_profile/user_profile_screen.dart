@@ -7,6 +7,7 @@ import 'package:car_verify_app/core/dependency/get_controllers.dart';
 import 'package:car_verify_app/core/features/user_section/user_profile/controller/user_profile_controller.dart';
 import 'package:car_verify_app/core/utils/app_colors/app_colors.dart';
 import 'package:car_verify_app/core/utils/app_const/app_const.dart';
+import 'package:car_verify_app/core/utils/app_images/app_images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -89,7 +90,7 @@ class UserProfileScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 16),
         child: Column(
           children: [
-            SizedBox(height: 20.h),
+
             Center(
               child: Stack(
                 children: [
@@ -97,8 +98,8 @@ class UserProfileScreen extends StatelessWidget {
                     final image = controller.selectedImage.value;
                     return image != null
                         ? Container(
-                      height: 120.h,
-                      width: 120.w,
+                      height: 140.h,
+                      width: 140.w,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         image: DecorationImage(
@@ -108,9 +109,9 @@ class UserProfileScreen extends StatelessWidget {
                       ),
                     )
                         : CustomNetworkImage(
-                      imageUrl: AppConstants.girlsPhoto,
-                      height: 120.h,
-                      width: 120.w,
+                      imageUrl: AppImages.profileImageOne,
+                      height: 140.h,
+                      width: 140.w,
                       boxShape: BoxShape.circle,
                     );
                   }),

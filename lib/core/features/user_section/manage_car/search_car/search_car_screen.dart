@@ -1,3 +1,4 @@
+import 'package:car_verify_app/core/app_routes/app_routes.dart';
 import 'package:car_verify_app/core/components/custom_button/custom_gradient_button.dart';
 import 'package:car_verify_app/core/components/custom_image/custom_image.dart';
 import 'package:car_verify_app/core/components/custom_royel_appbar/custom_royel_appbar.dart';
@@ -8,6 +9,7 @@ import 'package:car_verify_app/core/utils/app_colors/app_colors.dart';
 import 'package:car_verify_app/core/utils/app_images/app_images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class SearchCarScreen extends StatelessWidget {
   const SearchCarScreen({super.key});
@@ -83,7 +85,7 @@ class SearchCarScreen extends StatelessWidget {
                       text: "View details",
                       onPressed: () {
                         //Get.toNamed(AppRoutes.viewDetailsScreen);
-                        // Get.toNamed(AppRoutes.viewDetailsScreen);
+                        Get.toNamed(AppRoutes.carDetailsScreen);
                       },
                       width: 100.w,
                       hight: 30.h,

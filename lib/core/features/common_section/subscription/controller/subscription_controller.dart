@@ -15,4 +15,8 @@ class SubscriptionController extends GetxController {
     subscriptionType.value = value; // Update the subscription type
     update(); // Manually call update to refresh the UI
   }
+  void updateSubscriptionTypeTow(String value) {
+    subscriptionType.value = value; // Update the subscription type
+    update(); // Manually call update to refresh the UI
+  }
 }

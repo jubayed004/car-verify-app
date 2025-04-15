@@ -1,0 +1,2 @@
+C:/Users/Jubayed/StudioProjects/car-verify-app/android/app/.cxx/RelWithDebInfo/4g3350u3/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/Users/Jubayed/StudioProjects/car-verify-app/android/app/.cxx/RelWithDebInfo/4g3350u3/arm64-v8a/CMakeFiles/rebuild_cache.dir

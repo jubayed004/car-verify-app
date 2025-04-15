@@ -1,4 +1,5 @@
 import 'package:car_verify_app/core/app_routes/app_routes.dart';
+import 'package:car_verify_app/core/components/custom_image/custom_image.dart';
 import 'package:car_verify_app/core/components/custom_netwrok_image/custom_network_image.dart';
 import 'package:car_verify_app/core/components/custom_royel_appbar/custom_royel_appbar.dart';
 import 'package:car_verify_app/core/components/custom_text/custom_text.dart';
@@ -19,7 +20,7 @@ class BusinessProfileScreen extends StatelessWidget {
     _MenuItem(
       icon: Icons.person_outline,
       title: 'Edit Profile',
-      onTap: () => Get.toNamed(AppRoutes.editProfileScreen),
+      onTap: () => Get.toNamed(AppRoutes.businessEditProfileScreen),
     ),
     _MenuItem(
       icon: Icons.subscriptions_outlined,
@@ -85,7 +86,7 @@ class BusinessProfileScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 16),
         child: Column(
           children: [
-            SizedBox(height: 20.h),
+
             Center(
               child: Stack(
                 children: [
@@ -93,8 +94,6 @@ class BusinessProfileScreen extends StatelessWidget {
                     final image = controller.selectedImage.value;
                     return image != null
                         ? Container(
-                      height: 120.h,
-                      width: 120.w,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         image: DecorationImage(
@@ -116,13 +115,14 @@ class BusinessProfileScreen extends StatelessWidget {
                     child: GestureDetector(
                       onTap: controller.pickImageFromGallery,
                       child: Container(
-                        height: 30,
-                        width: 30,
-                        decoration: const BoxDecoration(
-                          color: AppColors.servicePrimary,
+                        height: 30.h,
+                        width: 30.w,
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Color(0xffC2C2C2,),width: 1.w),
+                          color: AppColors.white,
                           shape: BoxShape.circle,
                         ),
-                        child: const Icon(Icons.camera_alt, size: 18, color: AppColors.white),
+                        child:  Icon(Icons.camera_alt_outlined, size: 18.sp, color: AppColors.appColors),
                       ),
                     ),
                   ),
@@ -130,14 +130,14 @@ class BusinessProfileScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: 20.h),
-            const CustomText(
+             CustomText(
               text: 'Abner Cruz',
-              fontSize: 20,
+              fontSize: 20.sp,
               fontWeight: FontWeight.w600,
             ),
             SizedBox(height: 20.h),
             Row(
-              children: const [
+              children:  [
                 Expanded(
                   child: _StatCard(
                     title: 'Total car',
@@ -145,12 +145,12 @@ class BusinessProfileScreen extends StatelessWidget {
                     icon: 'assets/images/totalcarimage.png',
                   ),
                 ),
-                SizedBox(width: 16),
+                SizedBox(width: 16.w),
                 Expanded(
                   child: _StatCard(
-                    title: 'Total reports',
+                    title: 'Total Employee',
                     value: '10',
-                    icon: 'assets/images/reportcard.png',
+                    icon: 'assets/images/totalemployeeicon.svg',
                   ),
                 ),
               ],
@@ -185,7 +185,7 @@ class BusinessProfileScreen extends StatelessWidget {
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
               itemCount: legalMenuItems.length,
-              separatorBuilder: (_, __) => const Divider(height: 1),
+              separatorBuilder: (_, __) =>  Divider(height: 1.h),
               itemBuilder: (_, index) => _MenuTile(item: legalMenuItems[index]),
             ),
           ],
@@ -211,11 +211,11 @@ class _StatCard extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Container(
-      height: 100,
+      height: 86.h,
       width: width,
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(12.r),
         gradient: LinearGradient(
           colors: [Colors.blue.shade300, Colors.blue.shade100],
           begin: Alignment.topCenter,
@@ -225,8 +225,8 @@ class _StatCard extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset(icon, height: 30),
-          const SizedBox(height: 8),
+         CustomImage(imageSrc: icon, height: 30.h),
+           SizedBox(height: 8.h),
           CustomText(
             text: '$title : $value',
             fontWeight: FontWeight.w600,
@@ -258,10 +258,10 @@ class _MenuTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       contentPadding: EdgeInsets.zero,
-      leading: Icon(item.icon, size: 28),
+      leading: Icon(item.icon, size: 28.sp),
       title: CustomText(
         text: item.title,
-        fontSize: 18,
+        fontSize: 18.sp,
         textAlign: TextAlign.start,
       ),
       trailing: const Icon(Icons.chevron_right),

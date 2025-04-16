@@ -27,7 +27,7 @@ class UserProfileScreen extends StatelessWidget {
     _MenuItem(
       icon: Icons.subscriptions_outlined,
       title: 'Subscription',
-      onTap: () => Get.toNamed('/subscription'),
+      onTap: () => Get.toNamed(AppRoutes.userSubscriptionScreen),
     ),
     _MenuItem(
       icon: Icons.support_agent_outlined,

@@ -81,7 +81,7 @@ class _EmployeeNavbarState extends State<EmployeeNavbar> {
         clipBehavior: Clip.none,
         children: [
           Container(
-            height: 92.h,
+            height: 94.h,
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(color: Color(0xfff3f4f6)),
             child: Padding(

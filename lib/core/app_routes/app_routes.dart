@@ -35,12 +35,14 @@ import 'package:car_verify_app/core/features/user_section/user_profile/contact_s
 import 'package:car_verify_app/core/features/user_section/user_profile/edit_profile/edit_profile_screen.dart';
 import 'package:car_verify_app/core/features/user_section/user_profile/settings/change_password/change_password_screen.dart';
 import 'package:car_verify_app/core/features/user_section/user_profile/settings/setting_screen.dart';
+import 'package:car_verify_app/core/features/user_section/user_profile/subscription/subscription_screen.dart';
 import 'package:car_verify_app/core/features/user_section/view_reports/all_reports/search_report/search_report_screen.dart';
 import 'package:car_verify_app/core/features/user_section/view_reports/all_reports/view_reports/damage_details/damage_details_screen.dart';
 import 'package:car_verify_app/core/features/user_section/view_reports/all_reports/view_reports/view_reports_screen.dart';
 import 'package:get/get.dart';
 import '../features/employee_section/employee_profile/privacy_policy/privacy_policy_screen.dart';
 import '../features/user_section/all_car/all_car_screen.dart';
+import '../features/user_section/user_profile/subscription/payment/payment_screen.dart';
 
 
 
@@ -96,6 +98,8 @@ class AppRoutes {
   static const String employeeViewReportScreen = "/EmployeeViewReportScreen";
   static const String employeeNotificationScreen = "/EmployeeNotificationScreen";
   static const String employeeAddCarScreen = "/EmployeeAddCarScreen";
+  static const String userSubscriptionScreen = "/UserSubscriptionScreen";
+  static const String userPaymentScreen = "/UserPaymentScreen";
 
   static List<GetPage> routes = [
 
@@ -135,6 +139,8 @@ class AppRoutes {
     GetPage(name: businessViewDetailsScreen, page: () => BusinessViewDetailsScreen()),
     GetPage(name: businessNotificationScreen, page: () => BusinessNotificationScreen()),
     GetPage(name: subscriptionScreen, page: () => SubscriptionScreen()),
+    GetPage(name: userSubscriptionScreen, page: () => UserSubscriptionScreen()),
+    GetPage(name: userPaymentScreen, page: () => UserPaymentScreen()),
     ///=================> Business Profile ============////
     GetPage(name: businessEditProfileScreen, page: () => BusinessEditProfileScreen()),
     GetPage(name: businessSettingScreen, page: () => BusinessSettingScreen()),

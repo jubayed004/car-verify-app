@@ -56,10 +56,8 @@ class BusinessViewReportScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: CustomRoyelAppbar(
-
         titleName: "All reports",
         colors: AppColors.appColors,
-        leftIcon: true,
         actions: [
           // Only wrap PopupMenuButton with Obx if it needs to update when selectedItem changes
       PopupMenuButton<String>(

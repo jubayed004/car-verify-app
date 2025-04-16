@@ -20,7 +20,7 @@ class EmployeeManageCarScreen extends StatelessWidget {
       appBar: CustomRoyelAppbar(
         titleName: "Manage car",
         colors: AppColors.appColors,
-        leftIcon: true,
+
         rightIcon: Icon(Icons.search,size: 28.sp,color: AppColors.appColors,),
         rightOnPressed: (){
           Get.toNamed(AppRoutes.searchCarScreen);

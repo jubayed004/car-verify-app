@@ -1,8 +1,6 @@
 import 'package:car_verify_app/core/app_routes/app_routes.dart';
 import 'package:car_verify_app/core/components/custom_button/custom_gradient_button.dart';
 import 'package:car_verify_app/core/components/custom_image/custom_image.dart';
-import 'package:car_verify_app/core/features/my_test_screen.dart';
-import 'package:car_verify_app/core/features/user_section/view_reports/all_reports/all_reports_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';

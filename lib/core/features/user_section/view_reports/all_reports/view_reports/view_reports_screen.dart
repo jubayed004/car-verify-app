@@ -3,13 +3,12 @@ import 'package:car_verify_app/core/components/custom_button/custom_gradient_but
 import 'package:car_verify_app/core/components/custom_image/custom_image.dart';
 import 'package:car_verify_app/core/components/custom_royel_appbar/custom_royel_appbar.dart';
 import 'package:car_verify_app/core/components/custom_text/custom_text.dart';
-import 'package:car_verify_app/core/features/my_test_screen.dart';
 import 'package:car_verify_app/core/features/user_section/user_home/view_details/inner_widgets/Info_card.dart';
 import 'package:car_verify_app/core/features/user_section/user_home/view_details/inner_widgets/inforow.dart';
 import 'package:car_verify_app/core/features/user_section/view_reports/all_reports/view_reports/inner_widgets/info_row_report.dart';
-
 import 'package:car_verify_app/core/utils/app_colors/app_colors.dart';
 import 'package:car_verify_app/core/utils/app_images/app_images.dart';
+import 'package:car_verify_app/my_test_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -111,7 +110,7 @@ class ViewReportsScreen extends StatelessWidget {
             CustomGradientButton(
                 text: "Download PDF",
                 onPressed: () {
-                     /* Get.to(PdfReportScreen());*/
+                    Get.to(WorkScheduleDownloadScreen());
                 },
                 width: MediaQuery.of(context).size.width / 1.1),
             SizedBox(

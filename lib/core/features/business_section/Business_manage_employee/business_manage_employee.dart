@@ -17,7 +17,7 @@ class BusinessManageEmployeeScreen extends StatelessWidget {
     return Scaffold(
       appBar: CustomRoyelAppbar(
         titleName: "Manage Employee",
-        leftIcon: true,
+
         leftOnPressed: (){
           Get.toNamed(AppRoutes.businessNavbar,arguments: 4);
         },

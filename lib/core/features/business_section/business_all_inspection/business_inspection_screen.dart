@@ -22,7 +22,6 @@ class BusinessInspectionScreen extends StatelessWidget {
       appBar: CustomRoyelAppbar(
         titleName: "Inspection",
         colors: AppColors.appColors,
-        leftIcon: true,
       ),
      
       body: Column(

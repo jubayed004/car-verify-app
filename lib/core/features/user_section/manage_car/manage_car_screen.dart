@@ -19,7 +19,6 @@ class ManageCarScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: CustomRoyelAppbar(
         titleName: "Manage car",
-        leftIcon: true,
         colors: AppColors.appColors,
         rightIcon: Icon(
           Icons.search,
@@ -29,6 +28,27 @@ class ManageCarScreen extends StatelessWidget {
         rightOnPressed: (){
           Get.toNamed(AppRoutes.searchCarScreen);
         },
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.only(bottom: 30),
+        child: SizedBox(
+          width: MediaQuery.of(context).size.width-60,
+
+          child: FloatingActionButton(
+
+            onPressed: () {
+              Get.toNamed(AppRoutes.scanNowScreen);
+            },
+            backgroundColor: AppColors.appColors,
+            child: CustomText(
+              text: "Add New Car",
+              color: Colors.white,
+              fontSize: 18,
+              fontWeight: FontWeight.w700,
+            ),
+          ),
+        ),
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(vertical: 20, horizontal: 16),

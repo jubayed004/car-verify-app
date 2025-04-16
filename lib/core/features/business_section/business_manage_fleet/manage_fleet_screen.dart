@@ -19,7 +19,6 @@ class BusinessManageFleetScreen extends StatelessWidget {
     return Scaffold(
       appBar: CustomRoyelAppbar(
         titleName: "Manage Fleet",
-        leftIcon: true,
         colors: AppColors.appColors,
         rightIcon: Icon(Icons.search,color: AppColors.appColors,size: 26,),
         rightOnPressed: (){

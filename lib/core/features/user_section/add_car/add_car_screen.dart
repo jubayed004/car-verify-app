@@ -72,7 +72,7 @@ class AddCarScreen extends StatelessWidget {
               fieldBorderColor: AppColors.textFiledBorderColor,
               fieldBorderRadius: 10.r,
               fillColor: Colors.white,
-              keyboardType: TextInputType.phone,
+
 
             ),
             SizedBox(height: 14.h),
@@ -88,7 +88,7 @@ class AddCarScreen extends StatelessWidget {
               fieldBorderColor: AppColors.textFiledBorderColor,
               fieldBorderRadius: 10.r,
               fillColor: Colors.white,
-              keyboardType: TextInputType.phone,
+
 
             ),
             SizedBox(height: 14.h,),
@@ -105,7 +105,7 @@ class AddCarScreen extends StatelessWidget {
               fieldBorderColor: AppColors.textFiledBorderColor,
               fieldBorderRadius: 10.r,
               fillColor: Colors.white,
-              keyboardType: TextInputType.phone,
+              keyboardType: TextInputType.url,
 
             ),
             SizedBox(height: 14.h,),
@@ -121,7 +121,6 @@ class AddCarScreen extends StatelessWidget {
               fieldBorderColor: AppColors.textFiledBorderColor,
               fieldBorderRadius: 10.r,
               fillColor: Colors.white,
-              keyboardType: TextInputType.phone,
               suffixIcon: Icon(Icons.search,size: 24,color: AppColors.appColors,),
             ),
             SizedBox(height:MediaQuery.of(context).size.height/10),

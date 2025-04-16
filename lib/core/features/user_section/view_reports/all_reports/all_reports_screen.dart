@@ -1,5 +1,6 @@
 import 'package:car_verify_app/core/app_routes/app_routes.dart';
 import 'package:car_verify_app/core/components/custom_button/custom_gradient_button.dart';
+import 'package:car_verify_app/core/components/custom_image/custom_image.dart';
 import 'package:car_verify_app/core/components/custom_nav_bar/user_navbar.dart';
 import 'package:car_verify_app/core/components/custom_royel_appbar/custom_royel_appbar.dart';
 import 'package:car_verify_app/core/utils/app_colors/app_colors.dart';
@@ -17,7 +18,7 @@ class AllReportsScreen extends StatelessWidget {
       backgroundColor: const Color(0xFFF9F9F9),
       appBar: CustomRoyelAppbar(
         titleName: "All Reports",
-        leftIcon: true,
+
         colors: AppColors.appColors,
         rightIcon: Icon(Icons.search,color: AppColors.appColors,size: 26,),
         rightOnPressed: (){
@@ -104,12 +105,12 @@ class HistoryReportCard extends StatelessWidget {
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(8),
-            child: Image.asset(
+            child: CustomImage(imageSrc:
               imageUrl,
               fit: BoxFit.cover,
             ),
           ),
-          const SizedBox(width: 12),
+           SizedBox(width: 12.w),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -173,9 +174,8 @@ class HistoryReportCard extends StatelessWidget {
                 SizedBox(
                   height: 30,
                   child:  CustomGradientButton(
-                    text: "View details",
+                    text: "View Report",
                     onPressed: () {
-                      //Get.toNamed(AppRoutes.viewDetailsScreen);
                       Get.toNamed(AppRoutes.viewReportsScreen);
                     },
                     width: 100,

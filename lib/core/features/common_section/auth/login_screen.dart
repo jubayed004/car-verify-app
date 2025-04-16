@@ -1,17 +1,14 @@
 import 'package:car_verify_app/core/app_routes/app_routes.dart';
 import 'package:car_verify_app/core/components/custom_button/custom_gradient_button.dart';
-import 'package:car_verify_app/core/components/custom_elevated_button/custom_elevated_button.dart';
 import 'package:car_verify_app/core/components/custom_image/custom_image.dart';
 import 'package:car_verify_app/core/components/custom_text/custom_text.dart';
 import 'package:car_verify_app/core/components/custom_text_field/custom_text_field.dart';
 import 'package:car_verify_app/core/features/common_section/auth/inner_widgets/choose_catagory_alert_dialog_screen.dart';
-import 'package:car_verify_app/core/features/my_test_screen.dart';
 import 'package:car_verify_app/core/utils/app_colors/app_colors.dart';
 import 'package:car_verify_app/core/utils/app_images/app_images.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 

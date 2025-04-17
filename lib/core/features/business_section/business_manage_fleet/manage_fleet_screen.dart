@@ -49,7 +49,7 @@ class BusinessManageFleetScreen extends StatelessWidget {
             ),
             SizedBox(height: 52.h,),
             CustomGradientButton(text: "Add New Car", onPressed: (){
-              Get.toNamed(AppRoutes.businessAddCarScreen     );
+              Get.toNamed(AppRoutes.businessAddCarScreen );
             })
           ],
         ),
@@ -143,8 +143,8 @@ class CarVerificationCard extends StatelessWidget {
                     Flexible(
                       child: Center(
                         child: CustomButton(
-                          onTap: () => Get.toNamed(AppRoutes.viewDetailsScreen),
-                          title: "View details",
+                          onTap: () => Get.toNamed(AppRoutes.businessCarDetailsScreen),
+                          title: "Car details",
                           fontSize: 12.sp,
                           height: 24.h,
                           fillColor: AppColors.white,

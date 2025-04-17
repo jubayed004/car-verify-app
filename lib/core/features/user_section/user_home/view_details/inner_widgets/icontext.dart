@@ -1,14 +1,17 @@
 import 'package:car_verify_app/core/components/custom_text/custom_text.dart';
+import 'package:car_verify_app/core/utils/app_colors/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class IconText extends StatelessWidget {
   final IconData icon;
   final String text;
 
+
   const IconText({
     super.key,
     required this.icon,
     required this.text,
+
   });
 
   @override

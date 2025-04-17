@@ -8,7 +8,7 @@ import 'package:car_verify_app/core/features/business_section/business_all_inspe
 import 'package:car_verify_app/core/features/business_section/business_home/business_home_screen.dart';
 import 'package:car_verify_app/core/features/business_section/business_manage_fleet/manage_fleet_screen.dart';
 import 'package:car_verify_app/core/features/business_section/business_profile/business_profile_screen.dart';
-import 'package:car_verify_app/core/features/business_section/business_view_all_report/business_view_report_screen.dart';
+import 'package:car_verify_app/core/features/business_section/business_view_all_report/business_view_all_report_screen.dart';
 
 import 'package:car_verify_app/core/utils/app_colors/app_colors.dart';
 import 'package:car_verify_app/core/utils/app_images/app_images.dart';
@@ -61,7 +61,7 @@ class _BusinessNavbarState extends State<BusinessNavbar> {
   final allWidgets = [
     BusinessHomeScreen(),
     BusinessInspectionScreen(),
-    BusinessViewReportScreen(),
+    BusinessViewAllReportScreen(),
     BusinessManageFleetScreen(),
     BusinessManageEmployeeScreen(),
     BusinessProfileScreen()

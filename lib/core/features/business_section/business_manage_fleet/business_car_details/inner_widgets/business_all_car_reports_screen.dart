@@ -10,8 +10,8 @@ import 'package:get/get.dart';
 
 
 
-class AllCarReportsScreen extends StatelessWidget {
-  const AllCarReportsScreen({Key? key}) : super(key: key);
+class BusinessAllCarReportsScreen extends StatelessWidget {
+  const BusinessAllCarReportsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class AllCarReportsScreen extends StatelessWidget {
 
           // all Report Cards
           Column(
-              children: List.generate(20, (index)=> AllReportsCard(
+              children: List.generate(20, (index)=> BusinessAllReportsCard(
                 inspectionDate: '25, Feb 2025',
                 damageStatus: 'No damages found',
                 buttonText: 'View Report',
@@ -35,13 +35,13 @@ class AllCarReportsScreen extends StatelessWidget {
     );
   }
 }
-class AllReportsCard extends StatelessWidget {
+class BusinessAllReportsCard extends StatelessWidget {
   final String inspectionDate;
   final String damageStatus;
   final String buttonText;
   final bool hasDamages;  // To toggle between "No damages found" and "damages found"
 
-  const AllReportsCard({
+  const BusinessAllReportsCard({
     super.key,
     required this.inspectionDate,
     required this.damageStatus,
@@ -99,7 +99,7 @@ class AllReportsCard extends StatelessWidget {
                         text: "View Report",
                         onPressed: () {
                           //Get.toNamed(AppRoutes.viewDetailsScreen);
-                          Get.toNamed(AppRoutes.carDetailsScreen);
+                          Get.toNamed(AppRoutes.businessViewReportsScreen);
                         },
                         width: 100.w,
                         hight: 30.h,

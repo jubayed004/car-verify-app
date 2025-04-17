@@ -4,7 +4,6 @@ import 'package:car_verify_app/core/components/custom_netwrok_image/custom_netwo
 import 'package:car_verify_app/core/components/custom_royel_appbar/custom_royel_appbar.dart';
 import 'package:car_verify_app/core/components/custom_text/custom_text.dart';
 import 'package:car_verify_app/core/dependency/get_controllers.dart';
-import 'package:car_verify_app/core/features/user_section/user_profile/controller/user_profile_controller.dart';
 import 'package:car_verify_app/core/utils/app_colors/app_colors.dart';
 import 'package:car_verify_app/core/utils/app_const/app_const.dart';
 import 'package:flutter/material.dart';
@@ -94,6 +93,8 @@ class BusinessProfileScreen extends StatelessWidget {
                     final image = controller.selectedImage.value;
                     return image != null
                         ? Container(
+                      height: 140.h,
+                      width: 140.w,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         image: DecorationImage(
@@ -104,8 +105,8 @@ class BusinessProfileScreen extends StatelessWidget {
                     )
                         : CustomNetworkImage(
                       imageUrl: AppConstants.girlsPhoto,
-                      height: 120.h,
-                      width: 120.w,
+                      height: 140.h,
+                      width: 140.w,
                       boxShape: BoxShape.circle,
                     );
                   }),
@@ -186,7 +187,8 @@ class BusinessProfileScreen extends StatelessWidget {
               physics: const NeverScrollableScrollPhysics(),
               itemCount: legalMenuItems.length,
               separatorBuilder: (_, __) =>  Divider(height: 1.h),
-              itemBuilder: (_, index) => _MenuTile(item: legalMenuItems[index]),
+              itemBuilder: (_, index) => _MenuTile(item: legalMenuItems[index]
+              ),
             ),
           ],
         ),

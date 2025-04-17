@@ -38,8 +38,9 @@ class _DateFieldState extends State<DateField> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.zero,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(15),
         border: Border.all(width: 1,color: AppColors.textFiledBorderColor)
       ),
       child: TextFormField(
@@ -57,8 +58,8 @@ class _DateFieldState extends State<DateField> {
           disabledBorder: InputBorder.none,
           enabledBorder: InputBorder.none,
           hintText: 'DD/MM/YYYY',
-          suffixIcon: Icon(Icons.calendar_today),
-          hintStyle: TextStyle(fontSize: 14, color: Colors.grey),
+          suffixIcon: Icon(Icons.calendar_month_outlined,color: AppColors.n2,),
+          hintStyle: TextStyle(fontSize: 14, color: AppColors.n2),
         ),
       ),
     );

@@ -71,9 +71,9 @@ class BusinessInspectionScreen extends StatelessWidget {
                     // Button below Completed Inspections
                     if (controller.selectedTabIndex.value == 1) // Only show button for completed inspections
                       Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+                        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 26),
                         child: CustomGradientButton(text: "Create Bulk Report", onPressed: (){
-                          Get.toNamed(AppRoutes.businessViewReportScreen);
+                          Get.toNamed(AppRoutes.businessNavbar,arguments: 2);
                         })
                       ),
                   ],

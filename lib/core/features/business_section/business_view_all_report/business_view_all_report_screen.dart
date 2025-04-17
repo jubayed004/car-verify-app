@@ -1,3 +1,5 @@
+import 'package:car_verify_app/core/app_routes/app_routes.dart';
+import 'package:car_verify_app/core/components/custom_button/custom_gradient_button.dart';
 import 'package:car_verify_app/core/components/custom_image/custom_image.dart';
 import 'package:car_verify_app/core/components/custom_royel_appbar/custom_royel_appbar.dart';
 import 'package:car_verify_app/core/components/custom_text/custom_text.dart';
@@ -11,45 +13,45 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-class BusinessViewReportScreen extends StatelessWidget {
-  BusinessViewReportScreen({super.key});
+class BusinessViewAllReportScreen extends StatelessWidget {
+  BusinessViewAllReportScreen({super.key});
 
   final controller = GetControllers.instance.getBusinessHomeController();
 
   @override
   Widget build(BuildContext context) {
     final item = const [
-      HistoryReportCard(
+      ReportCard(
         imageUrl: 'assets/images/ongoingcar.png',
         regNo: '12545206',
         model: 'Landcruiser',
         inspectedOn: '25,Feb 2025',
         damageText: '2 damage found',
-        isDamage: true,
+        isDamage: true, inspectedBy: 'Mr. Jubayed',
       ),
-      HistoryReportCard(
+      ReportCard(
         imageUrl: 'assets/images/ongoingcar.png',
         regNo: '12545206',
         model: 'Landcruiser',
         inspectedOn: '25,Feb 2025',
         damageText: 'No damages found',
-        isDamage: false,
+        isDamage: false, inspectedBy: 'Mr. Jubayed',
       ),
-      HistoryReportCard(
+      ReportCard(
         imageUrl: 'assets/images/ongoingcar.png',
         regNo: '12545206',
         model: 'Landcruiser',
         inspectedOn: '25,Feb 2025',
         damageText: '2 damage found',
-        isDamage: true,
+        isDamage: true, inspectedBy: 'Mr. Jubayed',
       ),
-      HistoryReportCard(
+      ReportCard(
         imageUrl: 'assets/images/ongoingcar.png',
         regNo: '12545206',
         model: 'Landcruiser',
         inspectedOn: '25,Feb 2025',
         damageText: '2 damage found',
-        isDamage: true,
+        isDamage: true, inspectedBy: 'Mr. Jubayed',
       ),
     ];
 
@@ -154,6 +156,145 @@ class BusinessViewReportScreen extends StatelessWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+class ReportCard extends StatelessWidget {
+  final String imageUrl;
+  final String regNo;
+  final String model;
+  final String inspectedOn;
+  final String inspectedBy;
+  final String damageText;
+  final bool isDamage;
+
+  const ReportCard({
+    super.key,
+    required this.imageUrl,
+    required this.regNo,
+    required this.model,
+    required this.inspectedOn,
+    required this.damageText,
+    required this.isDamage,
+    required this.inspectedBy,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 6),
+      padding: EdgeInsets.only(left: 10,right: 10,top: 6,bottom: 6),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(12),
+        boxShadow: [
+          BoxShadow(
+            color: AppColors.black.withAlpha(70),
+            blurRadius: 18,
+            offset: const Offset(0, 48),
+          ),
+        ],
+      ),
+      child: Row(
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(8),
+            child: CustomImage(imageSrc:
+            imageUrl,
+              fit: BoxFit.cover,
+            ),
+          ),
+          SizedBox(width: 12.w),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    Expanded(
+                      flex: 0,
+                      child: const CustomText(
+                        text: 'Registration no : ',
+                        fontSize: 13,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    Expanded(
+                      flex: 2,
+                      child: CustomText(
+                        text: regNo,
+                        fontSize: 13,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.blue,
+                      ),
+                    ),
+                  ],
+                ),
+                CustomText(
+                  top: 4,
+                  text: 'Model :  $model',
+                  fontSize: 13,
+                  fontWeight: FontWeight.w500,
+                  left: 2,
+                  bottom: 4,
+                ),
+
+                CustomText(
+                  text: 'Inspected on:  $inspectedOn',
+                  fontSize: 13,
+                  fontWeight: FontWeight.w500,
+                  left: 2,
+                  bottom: 4,
+                ),
+
+                CustomText(
+                  text: 'Inspected by:  $inspectedBy',
+                  fontSize: 13,
+                  fontWeight: FontWeight.w500,
+                  left: 2,
+                  bottom: 4,
+                ),
+                Row(
+                  children: [
+                    Expanded(
+                      flex: 0,
+                      child: const CustomText(
+                        text: 'Damage : ',
+                        fontSize: 13,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    Expanded(
+                      flex: 2,
+                      child: CustomText(
+                        text: damageText,
+                        fontSize: 13,
+                        fontWeight: FontWeight.w600,
+                        color: isDamage ? Colors.red : Colors.green,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 8),
+                SizedBox(
+                  height: 30,
+                  child:  CustomGradientButton(
+                    text: "View Report",
+                    onPressed: () {
+                      Get.toNamed(AppRoutes.businessViewReportsScreen);
+                    },
+                    width: 100,
+                    hight: 30.h,
+                    size: 14,
+                    fontWeight: FontWeight.w400,
+                  ),
+                )
+              ],
+            ),
+          ),
+
+        ],
       ),
     );
   }

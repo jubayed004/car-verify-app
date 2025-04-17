@@ -1,12 +1,12 @@
 
 import 'package:flutter/material.dart';
 
-class InfoRow extends StatelessWidget {
+class BusinessInfoRow extends StatelessWidget {
   final String title;
   final String value;
   final bool isLink;
 
-  const InfoRow({
+  const BusinessInfoRow({
     super.key,
     required this.title,
     required this.value,

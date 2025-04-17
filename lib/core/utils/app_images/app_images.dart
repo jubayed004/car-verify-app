@@ -44,6 +44,8 @@ class AppImages {
   static const String unSeletedHome = "$basePath/unseletedhome.svg";
   static const String unprofile = "$basePath/unprofile.svg";
   static const String scanIcon = "$basePath/scanicon.svg";
+  static const String captureDamageImage = "$basePath/capture_damage_image.png";
+  static const String imageCaptureIcon = "$basePath/imagecaptureicon.png";
 
 
   ///============= User Profile  ============///

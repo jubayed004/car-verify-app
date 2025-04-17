@@ -1,14 +1,19 @@
+import 'package:car_verify_app/core/app_routes/app_routes.dart';
 import 'package:car_verify_app/core/components/custom_button/custom_gradient_button.dart';
 import 'package:car_verify_app/core/components/custom_image/custom_image.dart';
+import 'package:car_verify_app/core/components/custom_netwrok_image/custom_network_image.dart';
 import 'package:car_verify_app/core/components/custom_royel_appbar/custom_royel_appbar.dart';
 import 'package:car_verify_app/core/components/custom_text/custom_text.dart';
+import 'package:car_verify_app/core/dependency/get_controllers.dart';
 import 'package:car_verify_app/core/utils/app_colors/app_colors.dart';
 import 'package:car_verify_app/core/utils/app_images/app_images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class ScanNowScreen extends StatelessWidget {
-  const ScanNowScreen({super.key});
+  ScanNowScreen({super.key});
+
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +26,10 @@ class ScanNowScreen extends StatelessWidget {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: SizedBox(
-        width: MediaQuery.of(context).size.width / 1.3,
+        width: MediaQuery
+            .of(context)
+            .size
+            .width / 1.3,
         child: FloatingActionButton(
           onPressed: () {},
           backgroundColor: AppColors.appColors,
@@ -34,61 +42,63 @@ class ScanNowScreen extends StatelessWidget {
         ),
       ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.symmetric(vertical: 56,horizontal: 20),
+        padding: EdgeInsets.symmetric(vertical: 56, horizontal: 20),
         child: Center(
           child: SizedBox(
-            width: 300.w,
-            height: 550.h,
+            width: 350.w,
+            height: 580.h,
             child: Stack(
               alignment: Alignment.center,
               children: [
                 // Car Image
-               CustomImage(imageSrc: AppImages.scanNowCar),
+                CustomImage(imageSrc: AppImages.scanNowCar),
                 // Top Camera
-                const Positioned(
+                 Positioned(
                   top: 0,
                   child: _CameraButton(),
                 ),
+
                 // Bottom Camera
-                const Positioned(
+                 Positioned(
                   bottom: 0,
                   child: _CameraButton(),
                 ),
 
                 // Left Center
-                const Positioned(
+                 Positioned(
                   left: 0,
                   child: _CameraButton(),
                 ),
 
                 // Right Center
-                const Positioned(
+                 Positioned(
                   right: 0,
                   child: _CameraButton(),
                 ),
 
                 // Top Left
-                const Positioned(
+                 Positioned(
                   top: 100,
                   left: 0,
+
                   child: _CameraButton(),
                 ),
 
                 // Top Right
-                const Positioned(
+                 Positioned(
                   top: 100,
                   right: 0,
                   child: _CameraButton(),
                 ),
 
                 // Bottom Left
-                const Positioned(
+                Positioned(
                   bottom: 100,
                   left: 0,
                   child: _CameraButton(),
                 ),
                 // Bottom Right
-                const Positioned(
+                Positioned(
                   bottom: 100,
                   right: 0,
                   child: _CameraButton(),
@@ -101,27 +111,36 @@ class ScanNowScreen extends StatelessWidget {
     );
   }
 }
+
 class _CameraButton extends StatelessWidget {
-  const _CameraButton();
+   _CameraButton();
+
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 45,
-      height: 45,
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [Color(0xff4C9CE5), Color(0xff70C8CD)],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-        ),
-        borderRadius: BorderRadius.circular(22),
-        border: Border.all(width: 2,color: AppColors.textFieldColor)
-      ),
-      child: Icon(
-        Icons.camera_alt,
-        color: Colors.white,
-        size: 24.sp,
-      ),
+    return GestureDetector(
+      onTap: () {
+        Get.toNamed(AppRoutes.captureDamageScreen);
+      },
+      child:  Container(
+          width: 45.w,
+          height: 45.h,
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [Color(0xff4C9CE5), Color(0xff70C8CD)],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+              borderRadius: BorderRadius.circular(22.r),
+              border: Border.all(width: 2.w, color: AppColors.textFieldColor)
+          ),
+          child: Icon(
+            Icons.camera_alt,
+            color: Colors.white,
+            size: 24.sp,
+          ),
+        )
+
     );
   }
 }

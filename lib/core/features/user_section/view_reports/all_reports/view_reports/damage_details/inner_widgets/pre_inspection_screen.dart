@@ -56,7 +56,7 @@ class PreInspectionTab extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                IconText(icon: Icons.calendar_today, text: '25,Feb 2025'),
+                IconText(icon: Icons.calendar_today, text: '25,Feb 2025',),
                 SizedBox(width: 12),
                 IconText(icon: Icons.access_time, text: '10:30 pm'),
               ],
@@ -77,18 +77,20 @@ class PreInspectionTab extends StatelessWidget {
             SizedBox(height: 18.h),
             Container(
               padding: EdgeInsets.only(
-                  left: 10.h, right: 10.w, bottom: 40.h, top: 10.h),
+                  left: 10.h, right: 10.w, bottom: 20.h, top: 20.h),
               decoration: BoxDecoration(
                 color: Colors.blue.withOpacity(0.1),
                 borderRadius: BorderRadius.circular(8),
               ),
-              child: CustomText(
-                text: 'Major Dent on front bumper right side ',
-                fontSize: 16.sp,
-                color: Colors.green,
-                fontWeight: FontWeight.w400,
-                maxLines: 6,
-                textAlign: TextAlign.start,
+              child: Center(
+                child: CustomText(
+                  text: 'Major Dent on front bumper right side ',
+                  fontSize: 16.sp,
+                  color: Colors.green,
+                  fontWeight: FontWeight.w400,
+                  maxLines: 6,
+                  textAlign: TextAlign.start,
+                ),
               ),
             ),
             SizedBox(height: 16.h),

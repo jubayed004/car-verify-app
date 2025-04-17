@@ -1,6 +1,9 @@
 import 'package:car_verify_app/core/components/custom_button/custom_gradient_button.dart';
 import 'package:car_verify_app/core/components/custom_royel_appbar/custom_royel_appbar.dart';
 import 'package:car_verify_app/core/dependency/get_controllers.dart';
+import 'package:car_verify_app/core/features/business_section/business_view_details/inner_widgets/inforow.dart';
+import 'package:car_verify_app/core/features/business_section/business_view_details/inner_widgets/business_post_verification_tab.dart';
+import 'package:car_verify_app/core/features/business_section/business_view_details/inner_widgets/business_pre_verification_tab.dart';
 import 'package:car_verify_app/core/features/user_section/user_home/view_details/inner_widgets/inforow.dart';
 import 'package:car_verify_app/core/features/user_section/user_home/view_details/inner_widgets/post_verification_tab.dart';
 import 'package:car_verify_app/core/features/user_section/user_home/view_details/inner_widgets/pre_verification_tab.dart';
@@ -54,10 +57,12 @@ class BusinessViewDetailsScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 12),
-          const InfoRow(title: 'Registration no :', value: '12545206', isLink: true),
-          const InfoRow(title: 'Model :', value: 'Land cruiser'),
-          const InfoRow(title: 'Vehicle year :', value: '2022'),
-          const InfoRow(title: 'Make :', value: 'Toyota'),
+          const BusinessInfoRow(title: 'Registration no :', value: '12545206', isLink: true),
+          const BusinessInfoRow(title: 'Model :', value: 'Land cruiser'),
+          const BusinessInfoRow(title: 'Vehicle year :', value: '2022'),
+          const BusinessInfoRow(title: 'Make :', value: 'Toyota'),
+          const BusinessInfoRow(title: 'Inspected by : ', value: 'Mr. Jubayed'),
+          SizedBox(height: 14),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: Obx(() {
@@ -77,9 +82,9 @@ class BusinessViewDetailsScreen extends StatelessWidget {
           const SizedBox(height: 16),
           Obx(() {
             if (controller.selectedTabIndex.value == 0) {
-              return const PreVerificationTab();
+              return const BusinessPreVerificationTab();
             } else {
-              return PostVerificationTab();
+              return BusinessPostVerificationTab();
             }
           }),
 

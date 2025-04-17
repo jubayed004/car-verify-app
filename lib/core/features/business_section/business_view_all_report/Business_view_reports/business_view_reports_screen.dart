@@ -3,9 +3,9 @@ import 'package:car_verify_app/core/components/custom_button/custom_gradient_but
 import 'package:car_verify_app/core/components/custom_image/custom_image.dart';
 import 'package:car_verify_app/core/components/custom_royel_appbar/custom_royel_appbar.dart';
 import 'package:car_verify_app/core/components/custom_text/custom_text.dart';
-import 'package:car_verify_app/core/features/user_section/user_home/view_details/inner_widgets/Info_card.dart';
-import 'package:car_verify_app/core/features/user_section/user_home/view_details/inner_widgets/inforow.dart';
-import 'package:car_verify_app/core/features/user_section/view_reports/all_reports/view_reports/inner_widgets/info_row_report.dart';
+import 'package:car_verify_app/core/features/business_section/business_view_details/inner_widgets/Info_card.dart';
+import 'package:car_verify_app/core/features/business_section/business_view_details/inner_widgets/damagecard.dart';
+import 'package:car_verify_app/core/features/business_section/business_view_details/inner_widgets/inforow.dart';
 import 'package:car_verify_app/core/utils/app_colors/app_colors.dart';
 import 'package:car_verify_app/core/utils/app_images/app_images.dart';
 import 'package:car_verify_app/my_test_screen.dart';
@@ -14,8 +14,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
-class ViewReportsScreen extends StatelessWidget {
-  const ViewReportsScreen({super.key});
+import 'inner_widgets/info_row_report.dart';
+
+class BusinessViewReportsScreen extends StatelessWidget {
+  const BusinessViewReportsScreen({super.key});
 
 
 
@@ -43,36 +45,41 @@ class ViewReportsScreen extends StatelessWidget {
               horizontal: 16,
             ),
             const SizedBox(height: 12),
-            const InfoRow(
-                title: 'Registration no :', value: '12545206', isLink: true),
-            const InfoRow(title: 'Model :', value: 'Land cruiser'),
-            const InfoRow(title: 'Vehicle year :', value: '2022'),
-            const InfoRow(title: 'Make :', value: 'Toyota'),
-            const SizedBox(height: 14),
-            const InfoCard(),
-            const SizedBox(height: 14),
+            const BusinessInfoRowReport(
+                title: 'Registration no :', value: '12545206',color: AppColors.appColors, ),
+            const BusinessInfoRowReport(title: 'Model :', value: 'Land cruiser'),
+            const BusinessInfoRowReport(title: 'Vehicle year :', value: '2022'),
+            const BusinessInfoRowReport(title: 'Make :', value: 'Toyota'),
+            const BusinessInfoRowReport(title: 'Inspected by  :', value: 'Mr. Jubayed'),
+             SizedBox(height: 14.h),
+            const BusinessInfoCard(),
             Align(
                 alignment: AlignmentDirectional.topStart,
                 child: const CustomText(
+                  top: 24,
                   text: "Quick Overview:",
                   textAlign: TextAlign.start,
                   fontWeight: FontWeight.w600,
                   fontSize: 16,
                   left: 16,
+                  bottom: 14,
                 )),
-            const SizedBox(height: 14),
-            const InfoRowReport(
+            const BusinessInfoRowReport(
               title: 'Pre-handover condition : ',
+              fontWeight: FontWeight.w400,
               value: 'No damages found',
               color: AppColors.green,
             ),
-            const InfoRowReport(
+            const BusinessInfoRowReport(
+              fontWeight: FontWeight.w400,
               title: 'Post-Handover condition :',
               value: '2 damage found',
               color: Colors.red,
             ),
-            const InfoRowReport(
-                title: 'Existing damages :', value: 'Unchanged'),
+            const BusinessInfoRowReport(
+                title: 'Existing damages :',
+                fontWeight: FontWeight.w400,
+                value: 'Unchanged'),
             ListView(
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
@@ -85,22 +92,22 @@ class ViewReportsScreen extends StatelessWidget {
                   textAlign: TextAlign.start,
                 ),
                 SizedBox(height: 12),
-                DamageCard(
+                BusinessDamageCardTwo(
                   title: 'Front Bumper',
                   description: 'Major Dent on front bumper right side',
                   imageUrl: 'assets/images/bumperdamagecar.png',
                 ),
-                DamageCard(
+                BusinessDamageCardTwo(
                   title: 'Fenders (Left & Right)',
                   description: 'Major Dent on Fendars right side',
                   imageUrl: 'assets/images/bumperdamagecar.png',
                 ),
-                DamageCard(
+                BusinessDamageCardTwo(
                   title: 'Headlights',
                   description: 'Broken headlight right side',
                   imageUrl: 'assets/images/bumperdamagecar.png',
                 ),
-                DamageCard(
+                BusinessDamageCardTwo(
                   title: 'Grille',
                   description: 'No damage in grille',
                   imageUrl: 'assets/images/bumperdamagecar.png',
@@ -121,20 +128,15 @@ class ViewReportsScreen extends StatelessWidget {
       ),
     );
   }
-
-
-
-
 }
 
 
-
-class DamageCard extends StatelessWidget {
+class BusinessDamageCardTwo extends StatelessWidget {
   final String title;
   final String description;
   final String imageUrl;
 
-  const DamageCard({
+  const BusinessDamageCardTwo({
     super.key,
     required this.title,
     required this.description,

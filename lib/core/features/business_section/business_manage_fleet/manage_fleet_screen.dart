@@ -22,8 +22,27 @@ class BusinessManageFleetScreen extends StatelessWidget {
         colors: AppColors.appColors,
         rightIcon: Icon(Icons.search,color: AppColors.appColors,size: 26,),
         rightOnPressed: (){
-          Get.toNamed(AppRoutes.searchCarScreen);
+          Get.toNamed(AppRoutes.businessSearchCarScreen);
         },
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: SizedBox(
+        width: 0.75.sw,
+        child: Padding(
+          padding: const EdgeInsets.only(bottom: 20.0),
+          child: FloatingActionButton(
+            onPressed: () {
+              Get.toNamed(AppRoutes.businessAddCarScreen );
+            },
+            backgroundColor: AppColors.appColors,
+            child: CustomText(
+              text: "Add New Car",
+              color: Colors.white,
+              fontSize: 18.sp,
+              fontWeight: FontWeight.w700,
+            ),
+          ),
+        ),
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(
@@ -47,10 +66,7 @@ class BusinessManageFleetScreen extends StatelessWidget {
                     (index) => CarVerificationCard(),
               ),
             ),
-            SizedBox(height: 52.h,),
-            CustomGradientButton(text: "Add New Car", onPressed: (){
-              Get.toNamed(AppRoutes.businessAddCarScreen );
-            })
+
           ],
         ),
       ),

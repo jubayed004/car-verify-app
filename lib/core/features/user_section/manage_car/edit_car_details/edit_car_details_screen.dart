@@ -36,7 +36,10 @@ class EditCarDetailsScreen extends StatelessWidget {
             CustomText(text: "Make",fontWeight: FontWeight.w600,fontSize: 16,bottom: 8,),
             CustomTextField(hintText: "Type here....",fillColor: Colors.white,hintStyle: TextStyle(fontSize: 16),),
             SizedBox(height: MediaQuery.of(context).size.height/6,),
-            CustomGradientButton(text: "Save Changes", onPressed: (){
+            CustomGradientButton(
+                fontWeight: FontWeight.w700,
+                size: 18,
+                text: "Save Changes", onPressed: (){
               Get.back();
             })
 

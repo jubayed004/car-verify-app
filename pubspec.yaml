@@ -65,7 +65,6 @@ dependencies:
 
   # File Management
   file_picker: ^9.0.2
-
   permission_handler: ^11.3.1
   open_file: ^3.0.5
 

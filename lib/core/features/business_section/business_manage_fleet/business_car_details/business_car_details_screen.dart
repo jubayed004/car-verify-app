@@ -22,7 +22,7 @@ class BusinessCarDetailsScreen extends StatelessWidget {
         width: MediaQuery.of(context).size.width / 1.3,
         child: FloatingActionButton(
           onPressed: () {
-            Get.toNamed(AppRoutes.scanNowScreen);
+            Get.toNamed(AppRoutes.businessScanNowScreen);
           },
           backgroundColor: AppColors.appColors,
           child: CustomText(

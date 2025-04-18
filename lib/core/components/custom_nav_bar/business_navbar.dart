@@ -211,7 +211,7 @@ class _BusinessNavbarState extends State<BusinessNavbar> {
                     children: [
                       Flexible(
                         child: CustomButton(
-                          onTap: () => Get.toNamed(AppRoutes.allCarScreen),
+                          onTap: () => Get.toNamed(AppRoutes.businessAllCarScreen),
                           title: "Select car",
                           height: 50.h,
                           fillColor: AppColors.white,
@@ -227,10 +227,13 @@ class _BusinessNavbarState extends State<BusinessNavbar> {
                           child: CustomGradientButton(
                               text: "Add Car",
                               onPressed: () {
-                                Get.toNamed(AppRoutes.addCarScreen);
-                              })),
+                                Get.toNamed(AppRoutes.businessAddCarScreen);
+                              }
+                              )
+                      ),
                     ],
-                  ))
+                  )
+              )
             ],
           );
         });

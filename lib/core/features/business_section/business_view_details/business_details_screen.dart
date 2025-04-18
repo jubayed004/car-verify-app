@@ -35,60 +35,62 @@ class BusinessViewDetailsScreen extends StatelessWidget {
         colors: AppColors.appColors,
         leftIcon: true,
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          CustomImage(imageSrc: AppImages.detailsCar,horizontal: 16,),
-          SizedBox(height: 16.h),
-          Align(
-            alignment: Alignment.topRight,
-            child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
-              margin: EdgeInsets.only(right: 16),
-              decoration: BoxDecoration(
-                color: Colors.blue.shade100,
-                borderRadius: BorderRadius.circular(6),
-              ),
-              child: const CustomText(
-                fontSize: 12,
-                fontWeight: FontWeight.w400,
-                text: 'ongoing',
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            CustomImage(imageSrc: AppImages.detailsCar,horizontal: 16,),
+            SizedBox(height: 16.h),
+            Align(
+              alignment: Alignment.topRight,
+              child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+                margin: EdgeInsets.only(right: 16),
+                decoration: BoxDecoration(
+                  color: Colors.blue.shade100,
+                  borderRadius: BorderRadius.circular(6),
+                ),
+                child: const CustomText(
+                  fontSize: 12,
+                  fontWeight: FontWeight.w400,
+                  text: 'ongoing',
+                ),
               ),
             ),
-          ),
-          const SizedBox(height: 12),
-          const BusinessInfoRow(title: 'Registration no :', value: '12545206', isLink: true),
-          const BusinessInfoRow(title: 'Model :', value: 'Land cruiser'),
-          const BusinessInfoRow(title: 'Vehicle year :', value: '2022'),
-          const BusinessInfoRow(title: 'Make :', value: 'Toyota'),
-          const BusinessInfoRow(title: 'Inspected by : ', value: 'Mr. Jubayed'),
-          SizedBox(height: 14),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: Obx(() {
-              return CustomTabBar(
-                tabs: const ["Pre Verification", "Post Verification"],
-                fontSize: 14.sp,
-                selectedIndex: controller.selectedTabIndex.value,
-                onTabSelected: (index) =>
-                controller.selectedTabIndex.value = index,
-                selectedColor: AppColors.appColors,
-                unselectedColor: Colors.grey,
-                textColor: Colors.black,
-                isTextColorActive: true,
-              );
+            const SizedBox(height: 12),
+            const BusinessInfoRow(title: 'Registration no :', value: '12545206', isLink: true),
+            const BusinessInfoRow(title: 'Model :', value: 'Land cruiser'),
+            const BusinessInfoRow(title: 'Vehicle year :', value: '2022'),
+            const BusinessInfoRow(title: 'Make :', value: 'Toyota'),
+            const BusinessInfoRow(title: 'Inspected by : ', value: 'Mr. Jubayed'),
+            SizedBox(height: 14),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: Obx(() {
+                return CustomTabBar(
+                  tabs: const ["Pre Verification", "Post Verification"],
+                  fontSize: 14.sp,
+                  selectedIndex: controller.selectedTabIndex.value,
+                  onTabSelected: (index) =>
+                  controller.selectedTabIndex.value = index,
+                  selectedColor: AppColors.appColors,
+                  unselectedColor: Colors.grey,
+                  textColor: Colors.black,
+                  isTextColorActive: true,
+                );
+              }),
+            ),
+            const SizedBox(height: 16),
+            Obx(() {
+              if (controller.selectedTabIndex.value == 0) {
+                return const BusinessPreVerificationTab();
+              } else {
+                return BusinessPostVerificationTab();
+              }
             }),
-          ),
-          const SizedBox(height: 16),
-          Obx(() {
-            if (controller.selectedTabIndex.value == 0) {
-              return const BusinessPreVerificationTab();
-            } else {
-              return BusinessPostVerificationTab();
-            }
-          }),
-
-        ],
+        
+          ],
+        ),
       ),
     );
   }

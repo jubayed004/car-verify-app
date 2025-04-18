@@ -34,6 +34,8 @@ class BusinessViewReportsScreen extends StatelessWidget {
         ),
         rightOnPressed: () {
 
+            Get.to(VehicleDamageReportDownloadScreen());
+
         },
       ),
       body: SingleChildScrollView(

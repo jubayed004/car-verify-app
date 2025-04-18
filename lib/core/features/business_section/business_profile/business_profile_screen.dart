@@ -53,7 +53,6 @@ class BusinessProfileScreen extends StatelessWidget {
             // Implement logout logic here
           },
           onCancel: () {
-            Get.back();
             // Implement logout logic here
           },
         );

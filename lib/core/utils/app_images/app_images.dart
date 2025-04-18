@@ -32,6 +32,7 @@ class AppImages {
   static const String closeIcon = "$basePath/closeicon.svg";
   static const String subPlanRightIcon = "$basePath/subplanrighticon.svg";
   static const String profileImageOne = "$basePath/profileimage.png";
+  static const String fontBumperImage = "$basePath/fontbumperimage.png";
 
   ///============= nav bar ============///
   static const String homeIcon = "$basePath/homeicon.svg";

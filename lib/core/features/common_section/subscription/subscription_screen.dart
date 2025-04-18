@@ -35,8 +35,7 @@ class SubscriptionScreen extends StatelessWidget {
                 index: 0,
                 isSelected: controller.selectedColors[0],
                 onTap: () {
-                  controller.toggleCardColor(
-                      0); // Update selected color for this card
+                  controller.toggleCardColor(0); // Update selected color for this card
                 },
               ),
               SizedBox(height: 20.h),
@@ -55,10 +54,10 @@ class SubscriptionScreen extends StatelessWidget {
               SizedBox(height: 36.h),
 
               // Show Basic Plan container if selected
-              if (controller.selectedColors[0]) _buildBasicPlanContainer(),
+              if (controller.selectedColors[1]) _buildBasicPlanContainer(),
 
               // Show Pro Plan container if selected
-              if (controller.selectedColors[1]) _buildProPlanContainer(),
+              if (controller.selectedColors[0]) _buildProPlanContainer(),
 
               SizedBox(height: 52.h),
               CustomGradientButton(

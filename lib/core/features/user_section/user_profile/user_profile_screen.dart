@@ -57,7 +57,6 @@ class UserProfileScreen extends StatelessWidget {
             // Implement logout logic here
           },
           onCancel: (){
-            Get.back();
           }
 
         );

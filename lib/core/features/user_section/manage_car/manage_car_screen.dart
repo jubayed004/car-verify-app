@@ -31,9 +31,9 @@ class ManageCarScreen extends StatelessWidget {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: Padding(
-        padding: const EdgeInsets.only(bottom: 30),
+        padding: const EdgeInsets.only(bottom: 20),
         child: SizedBox(
-          width: MediaQuery.of(context).size.width-60,
+          width: MediaQuery.of(context).size.width-65,
 
           child: FloatingActionButton(
 

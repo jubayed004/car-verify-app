@@ -31,7 +31,7 @@ class ViewReportsScreen extends StatelessWidget {
           color: AppColors.appColors,
         ),
         rightOnPressed: () {
-
+          Get.to(VehicleDamageReportDownloadScreen());
         },
       ),
       body: SingleChildScrollView(

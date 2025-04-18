@@ -6,13 +6,15 @@ import 'package:car_verify_app/core/features/business_section/Business_manage_em
 import 'package:car_verify_app/core/features/business_section/Business_manage_employee/business_employee_details/business_employee_details_screen.dart';
 import 'package:car_verify_app/core/features/business_section/Business_manage_employee/business_search_employee/business_search_employee_screen.dart';
 import 'package:car_verify_app/core/features/business_section/business_add_car/business_add_car_screen.dart';
+import 'package:car_verify_app/core/features/business_section/business_all_car/business_all_car_screen.dart';
 import 'package:car_verify_app/core/features/business_section/business_manage_fleet/business_car_details/business_car_details_screen.dart';
+import 'package:car_verify_app/core/features/business_section/business_manage_fleet/business_search_car/business_search_car_screen.dart';
 import 'package:car_verify_app/core/features/business_section/business_notification/business_notification_screen.dart';
 import 'package:car_verify_app/core/features/business_section/business_profile/business_edit_profile/business_edit_profile_screen.dart';
 import 'package:car_verify_app/core/features/business_section/business_profile/business_settings/business_change_password/Business_change_password_screen.dart';
 import 'package:car_verify_app/core/features/business_section/business_profile/business_settings/business_setting_screen.dart';
+import 'package:car_verify_app/core/features/business_section/business_scan_now/business_scan_now_screen.dart';
 import 'package:car_verify_app/core/features/business_section/business_view_all_report/Business_view_reports/business_view_reports_screen.dart';
-import 'package:car_verify_app/core/features/business_section/business_view_all_report/business_view_all_report_screen.dart';
 import 'package:car_verify_app/core/features/business_section/business_view_details/business_details_screen.dart';
 import 'package:car_verify_app/core/features/common_section/auth/business_create_account_screen.dart';
 import 'package:car_verify_app/core/features/common_section/auth/create_new_password_screen.dart';
@@ -107,6 +109,11 @@ class AppRoutes {
   static const String businessCarDetailsScreen = "/BusinessCarDetailsScreen";
   static const String captureDamageScreen = "/CaptureDamageScreen";
   static const String businessViewReportsScreen = "/BusinessViewReportsScreen";
+  static const String businessScanNowScreen = "/BusinessScanNowScreen";
+  static const String businessAllCarScreen = "/BusinessAllCarScreen";
+  static const String businessViewAllReportScreen = "/BusinessViewAllReportScreen";
+  static const String businessSearchCarScreen = "/BusinessSearchCarScreen";
+
 
   static List<GetPage> routes = [
 
@@ -147,17 +154,23 @@ class AppRoutes {
     GetPage(name: businessViewDetailsScreen, page: () => BusinessViewDetailsScreen()),
 
     GetPage(name: businessViewReportsScreen, page: () => BusinessViewReportsScreen()),
+    GetPage(name: businessAddCarScreen, page: () => BusinessAddCarScreen()),
+    GetPage(name: businessScanNowScreen, page: () => BusinessScanNowScreen()),
 
     GetPage(name: businessNotificationScreen, page: () => BusinessNotificationScreen()),
     GetPage(name: subscriptionScreen, page: () => SubscriptionScreen()),
     GetPage(name: userSubscriptionScreen, page: () => UserSubscriptionScreen()),
     GetPage(name: userPaymentScreen, page: () => UserPaymentScreen()),
+    GetPage(name: businessAllCarScreen, page: () => BusinessAllCarScreen()),
+    GetPage(name: businessSearchCarScreen, page: () => BusinessSearchCarScreen()),
+
+
     ///=================> Business Profile ============////
     GetPage(name: businessEditProfileScreen, page: () => BusinessEditProfileScreen()),
     GetPage(name: businessSettingScreen, page: () => BusinessSettingScreen()),
     GetPage(name: businessChangePasswordScreen, page: () => BusinessChangePasswordScreen()),
     ///=================> Business Manage Employee ============////
-    GetPage(name: businessAddCarScreen, page: () => BusinessAddCarScreen()),
+
     GetPage(name: businessEmployeeDetailsScreen, page: () => BusinessEmployeeDetailsScreen()),
     GetPage(name: businessAddNewEmployeeScreen, page: () => BusinessAddNewEmployeeScreen()),
     GetPage(name: businessEditEmployeeDetailsScreen, page: () => BusinessEditEmployeeDetailsScreen()),

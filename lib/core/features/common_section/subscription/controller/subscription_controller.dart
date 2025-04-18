@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
 class SubscriptionController extends GetxController {
-  RxList<bool> selectedColors = [false, false].obs; // Track selected state for each card
+  RxList<bool> selectedColors = [false, true].obs; // Track selected state for each card
   RxString subscriptionType = 'monthly'.obs; // Track the selected subscription type (monthly/yearly)
 
   // Toggle the selected state for a particular card

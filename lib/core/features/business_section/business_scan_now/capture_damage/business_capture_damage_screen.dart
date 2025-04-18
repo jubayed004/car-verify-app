@@ -11,8 +11,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-class CaptureDamageScreen extends StatelessWidget {
-  CaptureDamageScreen({super.key});
+class BusinessCaptureDamageScreen extends StatelessWidget {
+  BusinessCaptureDamageScreen({super.key});
   final controller = GetControllers.instance.getUserProfileController();
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class CaptureDamageScreen extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8.0),
         child: Obx(
-          () =>controller.selectedImages.isEmpty? Center(child: Text("Empty Image"),):  Column(
+              () =>controller.selectedImages.isEmpty? Center(child: Text("Empty Image"),):  Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Expanded(
@@ -56,7 +56,7 @@ class CaptureDamageScreen extends StatelessWidget {
                             );
                           },
                           child:
-                              CustomImage(imageSrc: AppImages.imageCaptureIcon),
+                          CustomImage(imageSrc: AppImages.imageCaptureIcon),
                         )),
                   ],
                 ),
@@ -77,24 +77,24 @@ class CaptureDamageScreen extends StatelessWidget {
                         child: Container(
                           padding: EdgeInsets.all(1.5),
                           decoration: BoxDecoration(
-                            border: Border.all(color: controller.selectedIndex.value==i?Colors.blueAccent:Colors.transparent)
+                              border: Border.all(color: controller.selectedIndex.value==i?Colors.blueAccent:Colors.transparent)
                           ),
                           child: Stack(
-                                children: [
-                                  Image.file(width: 120,
-                                      File(controller.selectedImages[i]!.path),fit: BoxFit.cover,),
-                                  Positioned(
-                                      top: 0,
-                                      right: 0,
-                                      child: IconButton(
-                                          onPressed: () =>
-                                              controller.removeImage(i),
-                                          icon: Icon(
-                                            Icons.delete_forever_rounded,
-                                            color: Colors.red,
-                                          )))
-                                ],
-                              ),
+                            children: [
+                              Image.file(width: 120,
+                                File(controller.selectedImages[i]!.path),fit: BoxFit.cover,),
+                              Positioned(
+                                  top: 0,
+                                  right: 0,
+                                  child: IconButton(
+                                      onPressed: () =>
+                                          controller.removeImage(i),
+                                      icon: Icon(
+                                        Icons.delete_forever_rounded,
+                                        color: Colors.red,
+                                      )))
+                            ],
+                          ),
                         ),
                       )),
                 ),

@@ -137,6 +137,21 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                   ],
                 ),
+                // Email Section
+                CustomText(
+                  text: "Email Address",
+                  top: 14,
+                  bottom: 8,
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w600,
+                ),
+                CustomTextField(
+                  prefixIcon: Icon(Icons.email_outlined, color: AppColors.appColors),
+                  fieldBorderColor: AppColors.textFiledBorderColor,
+                  fieldBorderRadius: 10,
+                  fillColor: Colors.white,
+                  keyboardType: TextInputType.emailAddress,
+                ),
                 // Contact Section for Business
                 CustomText(
                   text: "Contact",
@@ -248,7 +263,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   fieldBorderColor: AppColors.textFiledBorderColor,
                   fieldBorderRadius: 10,
                   fillColor: Colors.white,
-                  keyboardType: TextInputType.emailAddress,
+                  keyboardType: TextInputType.text,
+                  isPassword: true,
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Password is required';
@@ -270,7 +286,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   fieldBorderColor: AppColors.textFiledBorderColor,
                   fieldBorderRadius: 10,
                   fillColor: Colors.white,
-                  keyboardType: TextInputType.phone,
+                  keyboardType: TextInputType.text,
+                  isPassword: true,
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Please confirm your password';
@@ -375,11 +392,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   fontWeight: FontWeight.w600,
                 ),
                 CustomTextField(
-                  suffixIcon: Icon(Icons.remove_red_eye_outlined),
+
                   fieldBorderColor: AppColors.textFiledBorderColor,
                   fieldBorderRadius: 10,
                   fillColor: Colors.white,
-                  keyboardType: TextInputType.emailAddress,
+                  keyboardType: TextInputType.text,
+                  isPassword: true,
                 ),
                 // Confirm Password Section
                 CustomText(
@@ -390,11 +408,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   fontWeight: FontWeight.w600,
                 ),
                 CustomTextField(
-                  suffixIcon: Icon(Icons.remove_red_eye_outlined),
+
                   fieldBorderColor: AppColors.textFiledBorderColor,
                   fieldBorderRadius: 10,
                   fillColor: Colors.white,
-                  keyboardType: TextInputType.emailAddress,
+                  keyboardType: TextInputType.text,
+                  isPassword: true,
                 ),
                 SizedBox(height: 20),
 

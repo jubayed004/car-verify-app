@@ -13,8 +13,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 
-class ScanNowScreen extends StatelessWidget {
-  ScanNowScreen({super.key});
+class BusinessScanNowScreen extends StatelessWidget {
+  BusinessScanNowScreen({super.key});
   final controller = GetControllers.instance.getUserProfileController();
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ class ScanNowScreen extends StatelessWidget {
             .width / 1.3,
         child: FloatingActionButton(
           onPressed: () {
-            Get.offAllNamed(AppRoutes.userNavbar,arguments: 0);
+            Get.offAllNamed(AppRoutes.businessNavbar,arguments: 1);
           },
           backgroundColor: AppColors.appColors,
           child: CustomText(
@@ -56,31 +56,31 @@ class ScanNowScreen extends StatelessWidget {
                 // Car Image
                 CustomImage(imageSrc: AppImages.scanNowCar),
                 // Top Camera
-                 Positioned(
+                Positioned(
                   top: 0,
                   child: _CameraButton(),
                 ),
 
                 // Bottom Camera
-                 Positioned(
+                Positioned(
                   bottom: 0,
                   child: _CameraButton(),
                 ),
 
                 // Left Center
-                 Positioned(
+                Positioned(
                   left: 0,
                   child: _CameraButton(),
                 ),
 
                 // Right Center
-                 Positioned(
+                Positioned(
                   right: 0,
                   child: _CameraButton(),
                 ),
 
                 // Top Left
-                 Positioned(
+                Positioned(
                   top: 100,
                   left: 0,
 
@@ -88,7 +88,7 @@ class ScanNowScreen extends StatelessWidget {
                 ),
 
                 // Top Right
-                 Positioned(
+                Positioned(
                   top: 100,
                   right: 0,
                   child: _CameraButton(),

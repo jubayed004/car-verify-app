@@ -31,7 +31,7 @@ class BusinessManageEmployeeScreen extends StatelessWidget {
       floatingActionButton: SizedBox(
         width: 0.75.sw,
         child: Padding(
-          padding: const EdgeInsets.only(bottom: 30.0),
+          padding: const EdgeInsets.only(bottom: 20.0),
           child: FloatingActionButton(
             onPressed: () {
               Get.toNamed(AppRoutes.businessAddNewEmployeeScreen);

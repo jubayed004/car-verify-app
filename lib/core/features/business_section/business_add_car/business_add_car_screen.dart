@@ -20,8 +20,7 @@ class BusinessAddCarScreen extends StatelessWidget {
         colors: AppColors.appColors,
         leftIcon: true,
         leftOnPressed: (){
-          //Get.offAllNamed(AppRoutes.userNavbar);
-          Get.back();
+          Get.offAllNamed(AppRoutes.businessNavbar);
         },
       ),
       body: SingleChildScrollView(
@@ -38,10 +37,15 @@ class BusinessAddCarScreen extends StatelessWidget {
             CustomTextField(
               isDens: true,
               hintText: "Type here....",
+              hintStyle: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w400,
+                  color: Color(0xff595D62)
+              ),
               fieldBorderColor: AppColors.textFiledBorderColor,
               fieldBorderRadius: 10.r,
               fillColor: Colors.white,
-              keyboardType: TextInputType.phone,
+
 
             ),
             SizedBox(height: 14.h),
@@ -54,10 +58,15 @@ class BusinessAddCarScreen extends StatelessWidget {
             CustomTextField(
               isDens: true,
               hintText: "Type here....",
+              hintStyle: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w400,
+                color: Color(0xff595D62)
+              ),
               fieldBorderColor: AppColors.textFiledBorderColor,
               fieldBorderRadius: 10.r,
               fillColor: Colors.white,
-              keyboardType: TextInputType.phone,
+
 
             ),
             SizedBox(height: 14.h),
@@ -70,10 +79,15 @@ class BusinessAddCarScreen extends StatelessWidget {
             CustomTextField(
               isDens: true,
               hintText: "Type here....",
+              hintStyle: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w400,
+                  color: Color(0xff595D62)
+              ),
               fieldBorderColor: AppColors.textFiledBorderColor,
               fieldBorderRadius: 10.r,
               fillColor: Colors.white,
-              keyboardType: TextInputType.phone,
+
 
             ),
             SizedBox(height: 14.h),
@@ -86,10 +100,14 @@ class BusinessAddCarScreen extends StatelessWidget {
             CustomTextField(
               isDens: true,
               hintText: "Type here....",
+              hintStyle: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w400,
+                  color: Color(0xff595D62)
+              ),
               fieldBorderColor: AppColors.textFiledBorderColor,
               fieldBorderRadius: 10.r,
               fillColor: Colors.white,
-              keyboardType: TextInputType.phone,
 
             ),
             SizedBox(height: 14.h,),
@@ -103,10 +121,15 @@ class BusinessAddCarScreen extends StatelessWidget {
               prefixIcon: Icon(Icons.image_outlined),
               isDens: true,
               hintText: "Image",
+              hintStyle: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w400,
+                  color: Color(0xff595D62)
+              ),
               fieldBorderColor: AppColors.textFiledBorderColor,
               fieldBorderRadius: 10.r,
               fillColor: Colors.white,
-              keyboardType: TextInputType.phone,
+              keyboardType: TextInputType.url,
 
             ),
             SizedBox(height: 14.h,),
@@ -122,12 +145,16 @@ class BusinessAddCarScreen extends StatelessWidget {
               fieldBorderColor: AppColors.textFiledBorderColor,
               fieldBorderRadius: 10.r,
               fillColor: Colors.white,
-              keyboardType: TextInputType.phone,
+              keyboardType: TextInputType.text,
               suffixIcon: Icon(Icons.search,size: 24,color: AppColors.appColors,),
             ),
-            SizedBox(height:MediaQuery.of(context).size.height/10),
-            CustomGradientButton(text: "Save & Scan ", onPressed: (){
-              Get.toNamed(AppRoutes.scanNowScreen);
+            SizedBox(height:MediaQuery.of(context).size.height/14 ),
+            CustomGradientButton(
+              fontWeight: FontWeight.w700,
+                size: 18,
+                text: "Save Car & Scan ",
+                onPressed: (){
+              Get.toNamed(AppRoutes.businessScanNowScreen);
             })
           ],
         ),

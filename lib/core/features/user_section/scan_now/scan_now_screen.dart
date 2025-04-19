@@ -119,13 +119,14 @@ class ScanNowScreen extends StatelessWidget {
 class _CameraButton extends StatelessWidget {
   _CameraButton();
 
-
+  final controller = GetControllers.instance.getUserProfileController();
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () async {
-        // Show a dialog to pick between Camera and Gallery
-        await _showPickImageDialog(context);
+   // Close the dialogc
+        await controller.pickImageOfSource(ImageSource.camera);
+
       },
       child: Container(
         width: 45.w,
@@ -148,9 +149,9 @@ class _CameraButton extends StatelessWidget {
     );
   }
 
-  // Function to show the dialog for picking Camera or Gallery
+/*  // Function to show the dialog for picking Camera or Gallery
   Future<void> _showPickImageDialog(BuildContext context) async {
-    final controller = GetControllers.instance.getUserProfileController();
+
 
     showDialog(
       context: context,
@@ -163,8 +164,7 @@ class _CameraButton extends StatelessWidget {
               ListTile(
                 title: Text('Camera'),
                 onTap: () async {
-                  Navigator.pop(context); // Close the dialogc
-                  controller.pickImageOfSource(ImageSource.camera);
+
                 },
               ),
               ListTile(
@@ -179,6 +179,6 @@ class _CameraButton extends StatelessWidget {
         );
       },
     );
-  }
+  }*/
 
 }

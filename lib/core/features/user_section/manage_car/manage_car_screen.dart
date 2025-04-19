@@ -114,7 +114,7 @@ class CarVerificationCard extends StatelessWidget {
                 CustomText(text: "Making year : 2022", bottom: 6),
                 CustomText(text: "Brand : Toyota", bottom: 10),
                 CustomGradientButton(
-                  text: "View details",
+                  text: "Car details",
                   onPressed: () {
                     //Get.toNamed(AppRoutes.viewDetailsScreen);
                     Get.toNamed(AppRoutes.carDetailsScreen);

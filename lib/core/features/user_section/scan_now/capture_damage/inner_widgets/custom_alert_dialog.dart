@@ -1,9 +1,12 @@
+import 'dart:io';
+
 import 'package:car_verify_app/core/app_routes/app_routes.dart';
 import 'package:car_verify_app/core/components/custom_button/custom_button.dart';
 import 'package:car_verify_app/core/components/custom_button/custom_gradient_button.dart';
 import 'package:car_verify_app/core/components/custom_image/custom_image.dart';
 import 'package:car_verify_app/core/components/custom_text/custom_text.dart';
 import 'package:car_verify_app/core/components/custom_text_field/custom_text_field.dart';
+import 'package:car_verify_app/core/dependency/get_controllers.dart';
 import 'package:car_verify_app/core/utils/app_colors/app_colors.dart';
 import 'package:car_verify_app/core/utils/app_images/app_images.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +14,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class CaptureCustomAlertDialog extends StatefulWidget {
-  const CaptureCustomAlertDialog({super.key});
+  CaptureCustomAlertDialog({super.key});
+
+
 
   @override
   _CaptureCustomAlertDialogState createState() =>
@@ -29,6 +34,7 @@ class _CaptureCustomAlertDialogState extends State<CaptureCustomAlertDialog> {
 
   @override
   Widget build(BuildContext context) {
+
     return Dialog(
       insetPadding: EdgeInsets.all(26),
       shape: RoundedRectangleBorder(
@@ -41,6 +47,9 @@ class _CaptureCustomAlertDialogState extends State<CaptureCustomAlertDialog> {
   }
 
   Widget _buildDialogContent(BuildContext context) {
+    final controller = GetControllers.instance.getUserProfileController();
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
     return Container(
       margin: EdgeInsets.zero,
       padding: EdgeInsets.only(left: 14, right: 14, bottom: 20),
@@ -49,8 +58,8 @@ class _CaptureCustomAlertDialogState extends State<CaptureCustomAlertDialog> {
         borderRadius: BorderRadius.circular(10.r),
       ),
       child: SingleChildScrollView(
-        child: SingleChildScrollView(
-          child: Column(
+        child: Obx(() {
+          return Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -67,7 +76,13 @@ class _CaptureCustomAlertDialogState extends State<CaptureCustomAlertDialog> {
                 fontWeight: FontWeight.bold,
                 bottom: 10,
               ),
-              CustomImage(imageSrc: AppImages.fontBumperImage),
+              Image.file(
+                File(controller.selectedImages[controller.selectedIndex.value]!
+                    .path),
+                height: height/2.9,
+                width: width,
+                fit: BoxFit.cover,
+              ),
               SizedBox(height: 10.h),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -98,7 +113,7 @@ class _CaptureCustomAlertDialogState extends State<CaptureCustomAlertDialog> {
               ),
               SizedBox(height: 14.h),
               Align(
-                alignment: AlignmentDirectional.topStart,
+                  alignment: AlignmentDirectional.topStart,
                   child: CustomText(
                       text: "Add damage Manually",
                       fontWeight: FontWeight.w500,
@@ -108,7 +123,7 @@ class _CaptureCustomAlertDialogState extends State<CaptureCustomAlertDialog> {
                 textEditingController: _searchController,
                 hintText: "Type here.......",
                 inputTextStyle: TextStyle(
-                  color: Colors.black
+                    color: Colors.black
                 ),
 
                 fillColor: Colors.white,
@@ -132,7 +147,7 @@ class _CaptureCustomAlertDialogState extends State<CaptureCustomAlertDialog> {
                     height: 12.h,
                   ),
                   CustomGradientButton(
-                    fontWeight: FontWeight.w700,
+                      fontWeight: FontWeight.w700,
                       size: 18,
                       text: "Save",
                       onPressed: () {
@@ -141,8 +156,8 @@ class _CaptureCustomAlertDialogState extends State<CaptureCustomAlertDialog> {
                 ],
               )
             ],
-          ),
-        ),
+          );
+        }),
       ),
     );
   }

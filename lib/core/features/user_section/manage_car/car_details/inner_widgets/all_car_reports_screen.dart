@@ -99,7 +99,7 @@ class AllReportsCard extends StatelessWidget {
                         text: "View Report",
                         onPressed: () {
                           //Get.toNamed(AppRoutes.viewDetailsScreen);
-                          Get.toNamed(AppRoutes.carDetailsScreen);
+                          Get.toNamed(AppRoutes.viewReportsScreen);
                         },
                         width: 100.w,
                         hight: 30.h,

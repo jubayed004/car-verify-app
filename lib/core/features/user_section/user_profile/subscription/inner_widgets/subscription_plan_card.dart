@@ -69,7 +69,7 @@ class SubscriptionPlanCard extends StatelessWidget {
                       value: 'monthly',
                       groupValue: controller.subscriptionType.value, // Group value is bound to controller
                       onChanged: (value) {
-                        controller.updateSubscriptionType(value!); // Update the subscription type to 'monthly'
+                        controller.subscriptionType(value!); // Update the subscription type to 'monthly'
                       },
                       activeColor: AppColors.appColors, // Customize active color
                     ),
@@ -89,7 +89,7 @@ class SubscriptionPlanCard extends StatelessWidget {
                       value: 'yearly',
                       groupValue: controller.subscriptionType.value, // Group value is bound to controller
                       onChanged: (value) {
-                        controller.updateSubscriptionTypeTow(value!); // Update the subscription type to 'yearly'
+                        controller.subscriptionType(value!); // Update the subscription type to 'yearly'
                       },
                       activeColor: AppColors.appColors, // Customize active color
                     ),

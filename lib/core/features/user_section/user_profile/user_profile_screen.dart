@@ -120,13 +120,14 @@ class UserProfileScreen extends StatelessWidget {
                     child: GestureDetector(
                       onTap: controller.pickImageFromGallery,
                       child: Container(
-                        height: 30,
-                        width: 30,
-                        decoration: const BoxDecoration(
-                          color: AppColors.servicePrimary,
+                        height: 30.h,
+                        width: 30.w,
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Color(0xffC2C2C2,),width: 1.w),
+                          color: AppColors.white,
                           shape: BoxShape.circle,
                         ),
-                        child: const Icon(Icons.camera_alt, size: 18, color: AppColors.white),
+                        child:  Icon(Icons.camera_alt_outlined, size: 18.sp, color: AppColors.appColors),
                       ),
                     ),
                   ),
@@ -135,7 +136,7 @@ class UserProfileScreen extends StatelessWidget {
             ),
             SizedBox(height: 20.h),
             const CustomText(
-              text: 'Abner Cruz',
+              text: 'Jubayed Islam',
               fontSize: 20,
               fontWeight: FontWeight.w600,
             ),

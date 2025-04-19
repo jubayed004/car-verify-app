@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class InfoRow extends StatelessWidget {
   final String title;
@@ -17,7 +18,8 @@ class InfoRow extends StatelessWidget {
   Widget build(BuildContext context) {
     final textStyle = TextStyle(
       color: isLink ? Colors.blue[700] : Colors.black,
-      fontWeight: FontWeight.w500,
+      fontWeight: FontWeight.w400,
+      fontSize: 16.sp
     );
 
     return Padding(
@@ -32,12 +34,9 @@ class InfoRow extends StatelessWidget {
               style: const TextStyle(fontWeight: FontWeight.bold),
             ),
           ),
-          Expanded(
-            flex: 2,
-            child: Text(
-              value,
-              style: textStyle,
-            ),
+          Text(
+            value,
+            style: textStyle,
           ),
         ],
       ),

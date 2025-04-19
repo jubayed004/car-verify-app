@@ -82,7 +82,7 @@ class CaptureDamageScreen extends StatelessWidget {
                           child: Stack(
                                 children: [
                                   Image.file(width: 120,
-                                      File(controller.selectedImages[i]!.path),fit: BoxFit.cover,),
+                                      File(controller.selectedImages[i]!.path ),fit: BoxFit.cover,),
                                   Positioned(
                                       top: 0,
                                       right: 0,

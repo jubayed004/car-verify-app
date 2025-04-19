@@ -8,6 +8,7 @@ import 'package:car_verify_app/core/features/business_section/Business_manage_em
 import 'package:car_verify_app/core/features/business_section/business_add_car/business_add_car_screen.dart';
 import 'package:car_verify_app/core/features/business_section/business_all_car/business_all_car_screen.dart';
 import 'package:car_verify_app/core/features/business_section/business_manage_fleet/business_car_details/business_car_details_screen.dart';
+import 'package:car_verify_app/core/features/business_section/business_manage_fleet/business_edit_car_details/business_edit_car_details_screen.dart';
 import 'package:car_verify_app/core/features/business_section/business_manage_fleet/business_search_car/business_search_car_screen.dart';
 import 'package:car_verify_app/core/features/business_section/business_notification/business_notification_screen.dart';
 import 'package:car_verify_app/core/features/business_section/business_profile/business_edit_profile/business_edit_profile_screen.dart';
@@ -113,6 +114,7 @@ class AppRoutes {
   static const String businessAllCarScreen = "/BusinessAllCarScreen";
   static const String businessViewAllReportScreen = "/BusinessViewAllReportScreen";
   static const String businessSearchCarScreen = "/BusinessSearchCarScreen";
+  static const String businessEditCarDetailsScreen = "/BusinessEditCarDetailsScreen";
 
 
   static List<GetPage> routes = [
@@ -159,7 +161,7 @@ class AppRoutes {
 
     GetPage(name: businessNotificationScreen, page: () => BusinessNotificationScreen()),
     GetPage(name: subscriptionScreen, page: () => SubscriptionScreen()),
-    GetPage(name: userSubscriptionScreen, page: () => UserSubscriptionScreen()),
+    //GetPage(name: userSubscriptionScreen, page: () => UserSubscriptionScreen()),
     GetPage(name: userPaymentScreen, page: () => UserPaymentScreen()),
     GetPage(name: businessAllCarScreen, page: () => BusinessAllCarScreen()),
     GetPage(name: businessSearchCarScreen, page: () => BusinessSearchCarScreen()),
@@ -176,6 +178,7 @@ class AppRoutes {
     GetPage(name: businessEditEmployeeDetailsScreen, page: () => BusinessEditEmployeeDetailsScreen()),
     GetPage(name: businessSearchEmployeeScreen, page: () => BusinessSearchEmployeeScreen()),
     GetPage(name: businessCarDetailsScreen, page: () => BusinessCarDetailsScreen()),
+    GetPage(name: businessEditCarDetailsScreen, page: () => BusinessEditCarDetailsScreen()),
 
     ///=================> Employee Profile ============////
     GetPage(name: employeeEditProfileScreen, page: () => EmployeeEditProfileScreen()),

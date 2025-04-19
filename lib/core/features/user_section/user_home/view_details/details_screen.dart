@@ -59,7 +59,7 @@ class ViewDetailsScreen extends StatelessWidget {
           const InfoRow(title: 'Vehicle year :', value: '2022'),
           const InfoRow(title: 'Make :', value: 'Toyota'),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            padding: const EdgeInsets.only(left:16,right:16,top: 14),
             child: Obx(() {
               return CustomTabBar(
                 tabs: const ["Pre Verification", "Post Verification"],

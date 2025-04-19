@@ -40,7 +40,7 @@ class BusinessCarDetailsScreen extends StatelessWidget {
         actions: [
           GestureDetector(
             onTap: () {
-              Get.toNamed(AppRoutes.editCarDetailsScreen);
+              Get.toNamed(AppRoutes.businessEditCarDetailsScreen);
             },
             child: CustomImage(
               imageSrc: AppImages.editIcon,

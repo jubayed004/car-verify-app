@@ -10,6 +10,8 @@ import 'package:car_verify_app/core/features/user_section/user_profile/controlle
 import 'package:car_verify_app/core/features/user_section/view_reports/all_reports/view_reports/damage_details/controller/damage_details_controller.dart';
 import 'package:get/get.dart';
 
+import '../features/user_section/manage_car/car_details/controller/car_details_controller.dart';
+
 
 
 class GetControllers {
@@ -95,6 +97,14 @@ class GetControllers {
       return Get.put(EmployeeProfileController());
     }
     return Get.find<EmployeeProfileController>();
+  }
+
+
+  CarDetailsController getCarDetailsController() {
+    if (!Get.isRegistered<CarDetailsController>()) {
+      return Get.put(CarDetailsController());
+    }
+    return Get.find<CarDetailsController>();
   }
 
 

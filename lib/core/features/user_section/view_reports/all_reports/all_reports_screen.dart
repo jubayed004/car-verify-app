@@ -36,7 +36,7 @@ class AllReportsScreen extends StatelessWidget {
             damageText: '2 damage found',
             isDamage: true,
           ),
-          HistoryReportCard(
+         HistoryReportCard(
             imageUrl: 'assets/images/ongoingcar.png',
             regNo: '12545206',
             model: 'Landcruiser',
@@ -44,7 +44,7 @@ class AllReportsScreen extends StatelessWidget {
             damageText: 'No damages found',
             isDamage: false,
           ),
-          HistoryReportCard(
+    HistoryReportCard(
             imageUrl: 'assets/images/ongoingcar.png',
             regNo: '12545206',
             model: 'Landcruiser',
@@ -52,7 +52,7 @@ class AllReportsScreen extends StatelessWidget {
             damageText: '2 damage found',
             isDamage: true,
           ),
-          HistoryReportCard(
+       HistoryReportCard(
             imageUrl: 'assets/images/ongoingcar.png',
             regNo: '12545206',
             model: 'Landcruiser',
@@ -89,15 +89,15 @@ class HistoryReportCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 6),
-      padding: const EdgeInsets.all(12),
+      padding: const EdgeInsets.all(8),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.08),
-            blurRadius: 6,
-            offset: const Offset(0, 2),
+            color: Colors.black.withAlpha(70),
+            blurRadius: 48,
+            offset:  Offset(0, 18),
           ),
         ],
       ),
@@ -105,8 +105,8 @@ class HistoryReportCard extends StatelessWidget {
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(8),
-            child: CustomImage(imageSrc:
-              imageUrl,
+            child: CustomImage(
+              imageSrc: imageUrl,
               fit: BoxFit.cover,
             ),
           ),
@@ -123,31 +123,34 @@ class HistoryReportCard extends StatelessWidget {
                         text: 'Registration no : ',
                         fontSize: 13,
                         fontWeight: FontWeight.w500,
+                        bottom: 4,
                       ),
                     ),
                     Expanded(
-                      flex: 2,
                       child: CustomText(
                         text: regNo,
                         fontSize: 13,
                         fontWeight: FontWeight.w600,
                         color: Colors.blue,
+                        bottom: 4,
                       ),
                     ),
                   ],
                 ),
                 CustomText(
-                  text: 'Model :  $model',
+                  text: 'Model :                 $model',
                   fontSize: 13,
                   fontWeight: FontWeight.w500,
                   left: 2,
+                  bottom: 4,
                 ),
 
                 CustomText(
-                  text: 'Inspected on:  $inspectedOn',
+                  text: 'Inspected on:     $inspectedOn',
                   fontSize: 13,
                   fontWeight: FontWeight.w500,
                   left: 2,
+                  bottom: 4,
                 ),
                 Row(
                   children: [
@@ -157,6 +160,7 @@ class HistoryReportCard extends StatelessWidget {
                         text: 'Damage : ',
                         fontSize: 13,
                         fontWeight: FontWeight.w500,
+                        bottom: 4,
                       ),
                     ),
                     Expanded(
@@ -172,15 +176,15 @@ class HistoryReportCard extends StatelessWidget {
                 ),
                 const SizedBox(height: 8),
                 SizedBox(
-                  height: 30,
+                  height: 24,
                   child:  CustomGradientButton(
                     text: "View Report",
                     onPressed: () {
                       Get.toNamed(AppRoutes.viewReportsScreen);
                     },
-                    width: 100,
-                    hight: 30.h,
-                    size: 14,
+                    borderRadius: BorderRadius.circular(6),
+                    width: 100.w,
+                    size: 12,
                     fontWeight: FontWeight.w400,
                   ),
                 )

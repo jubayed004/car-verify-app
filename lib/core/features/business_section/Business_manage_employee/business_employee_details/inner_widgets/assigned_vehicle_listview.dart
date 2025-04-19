@@ -51,7 +51,7 @@ class _AssignedVehicleListViewState extends State<AssignedVehicleListView> {
         color: Colors.white,
         boxShadow: [
           BoxShadow(
-            color: const Color(0xffD7D7D7),
+            color: Colors.black.withAlpha(70),
             blurRadius: 48.r,
             offset: Offset(0, 18.h),
           ),
@@ -63,7 +63,7 @@ class _AssignedVehicleListViewState extends State<AssignedVehicleListView> {
             borderRadius: BorderRadius.circular(8.r),
             child: CustomImage(
               imageSrc: AppImages.detailsCar,
-              width: 99,
+              width: 100,
               height: 100,
               fit: BoxFit.fill,
             ),
@@ -116,26 +116,23 @@ class _AssignedVehicleListViewState extends State<AssignedVehicleListView> {
                 SizedBox(height: 4.h),
                 CustomText(
                     text: 'Model : Landcruiser',
-                    fontSize: 13.sp,
+                    fontSize: 14.sp,
                     color: Colors.black),
                 CustomText(
                     text: 'Making year : 2022',
-                    fontSize: 13.sp,
+                    fontSize: 14.sp,
                     color: Colors.black),
-                SizedBox(height: 6.h),
-                SizedBox(
-                  height: 30.h,
-                  child: SizedBox(
-                      width: 110.w,
-                      child: CustomGradientButton(
-                        text: "View details",
-                        onPressed: () {
-                          Get.toNamed(AppRoutes.carDetailsScreen);
-                        },
-                        fontWeight: FontWeight.w400,
-                        size: 14.sp,
-                      )
-                  ),
+                SizedBox(height: 16.h),
+                CustomGradientButton(
+                  text: "Car details",
+                  onPressed: () {
+                    Get.toNamed(AppRoutes.carDetailsScreen);
+                  },
+                  hight: 26.h,
+                  width: 100.w,
+                  borderRadius: BorderRadius.circular(6),
+                  fontWeight: FontWeight.w400,
+                  size: 12.sp,
                 ),
               ],
             ),

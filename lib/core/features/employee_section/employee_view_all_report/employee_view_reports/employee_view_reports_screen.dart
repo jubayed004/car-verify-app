@@ -14,8 +14,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
-class ViewReportsScreen extends StatelessWidget {
-  const ViewReportsScreen({super.key});
+class EmployeeViewReportsScreen extends StatelessWidget {
+  const EmployeeViewReportsScreen({super.key});
 
 
 
@@ -43,10 +43,12 @@ class ViewReportsScreen extends StatelessWidget {
               horizontal: 16,
             ),
             const SizedBox(height: 12),
-            const InfoRow(title: 'Registration no :', value: '12545206', isLink: true),
+            const InfoRow(
+                title: 'Registration no :', value: '12545206', isLink: true),
             const InfoRow(title: 'Model :', value: 'Land cruiser'),
             const InfoRow(title: 'Vehicle year :', value: '2022'),
             const InfoRow(title: 'Make :', value: 'Toyota'),
+            const InfoRow(title: 'Inspected by :', value: 'You'),
             const SizedBox(height: 14),
             const InfoCard(),
             const SizedBox(height: 14),
@@ -150,9 +152,9 @@ class DamageCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withAlpha(70),
-            blurRadius: 48,
-            offset: const Offset(0, 18),
+            color: Colors.black.withOpacity(0.05),
+            blurRadius: 6,
+            offset: const Offset(0, 3),
           ),
         ],
       ),
@@ -167,44 +169,44 @@ class DamageCard extends StatelessWidget {
                   fontSize: 15,
                   fontWeight: FontWeight.w600,
                 ),
-                const SizedBox(height: 4),
+                 SizedBox(height: 4.h),
                 CustomText(
                   text: description,
-                  fontSize: 13,
+                  fontSize: 13.sp,
                   fontWeight: FontWeight.w400,
                   color: AppColors.red,
                 ),
-                const SizedBox(height: 10),
+                 SizedBox(height: 10.h),
                 CustomGradientButton(
                   text: "Report details",
                   onPressed: () {
                     //Get.toNamed(AppRoutes.viewDetailsScreen);
                     Get.toNamed(AppRoutes.damageDetailsScreen);
                   },
-                  borderRadius: BorderRadius.circular(6),
-                  width: 100,
+                  borderRadius: BorderRadius.circular(6.r),
+                  width: 100.w,
                   hight: 26.h,
-                  size: 12,
+                  size: 12.sp,
                   fontWeight: FontWeight.w400,
                 ),
               ],
             ),
           ),
-          const SizedBox(width: 12),
+           SizedBox(width: 12.w),
           Stack(
             alignment: Alignment.center,
             children: [
               ClipRRect(
-                borderRadius: BorderRadius.circular(8),
+                borderRadius: BorderRadius.circular(8.r),
                 child: Image.asset(imageUrl,
-                    width: 70, height: 70, fit: BoxFit.cover),
+                    width: 70.w, height: 70.h, fit: BoxFit.cover),
               ),
               Container(
-                width: 70,
-                height: 70,
+                width: 70.w,
+                height: 70.h,
                 decoration: BoxDecoration(
-                  color: Colors.black.withOpacity(0.4),
-                  borderRadius: BorderRadius.circular(8),
+
+                  borderRadius: BorderRadius.circular(8.r),
                 ),
                 alignment: Alignment.center,
                 child: const CustomText(

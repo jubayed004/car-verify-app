@@ -15,23 +15,20 @@ class AllCarReportsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      padding: EdgeInsets.symmetric( horizontal: 16.w),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
 
-          // all Report Cards
-          Column(
-              children: List.generate(20, (index)=> AllReportsCard(
-                inspectionDate: '25, Feb 2025',
-                damageStatus: 'No damages found',
-                buttonText: 'View Report',
-                hasDamages: false,
-              ),)
-          ),
-        ],
-      ),
+        // all Report Cards
+        Column(
+            children: List.generate(20, (index)=> AllReportsCard(
+              inspectionDate: '25, Feb 2025',
+              damageStatus: 'No damages found',
+              buttonText: 'View Report',
+              hasDamages: false,
+            ),)
+        ),
+      ],
     );
   }
 }

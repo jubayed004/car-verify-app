@@ -26,34 +26,38 @@ class _EmployeeAccessCardState extends State<EmployeeAccessCard> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
           children: [
-            Expanded(
-              child: CustomText(
-                text: 'Mr. Jubayed',
-                fontSize: 16.sp,
-                fontWeight: FontWeight.w600,
-                color: Colors.black,
-              ),
+            CustomText(
+              text: 'Mr. Jubayed',
+              fontSize: 16.sp,
+              fontWeight: FontWeight.w600,
+              color: Colors.black,
             ),
-            Container(
-                width: 8.w,
-                height: 8.h,
-                decoration: const BoxDecoration(
-                    color: Colors.green, shape: BoxShape.circle)),
-            SizedBox(width: 4.w),
-            CustomText(text: 'Active', fontSize: 12.sp, color: AppColors.n2),
+            Row(
+              children: [
+                Container(
+                    width: 8.w,
+                    height: 8.h,
+                    decoration: const BoxDecoration(
+                        color: Colors.green, shape: BoxShape.circle)),
+                SizedBox(width: 4.w),
+                CustomText(text: 'Active', fontSize: 12.sp, color: AppColors.n2),
+              ],
+            ),
           ],
         ),
-        SizedBox(height: 10.h),
+        SizedBox(height: 14.h),
         _infoRow(Icons.email_outlined, 'mommadjubayed.islam97@@gmail.com'),
-        SizedBox(height: 6.h),
+        SizedBox(height: 8.h),
         _infoRow(Icons.phone_outlined, '+971265505694'),
-        SizedBox(height: 6.h),
+        SizedBox(height: 8.h),
         CustomText(
             text: 'Joining on 02/05/2025',
             fontSize: 16.sp,
             color: AppColors.n2),
-        SizedBox(height: 6.h),
+        SizedBox(height: 8.h),
         Row(
           children: [
             CustomText(
@@ -106,8 +110,8 @@ class _EmployeeAccessCardState extends State<EmployeeAccessCard> {
     return Row(
       children: [
         Icon(icon, size: 20.sp, color: AppColors.n2),
-        SizedBox(width: 6.w),
-        CustomText(text: value, fontSize: 16.sp, color: AppColors.n2),
+        SizedBox(width: 8.w),
+        CustomText(text: value, fontSize: 16.sp,fontWeight: FontWeight.w400, color: AppColors.n2),
       ],
     );
   }

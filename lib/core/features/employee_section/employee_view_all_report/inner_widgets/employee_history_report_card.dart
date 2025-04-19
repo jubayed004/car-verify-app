@@ -1,7 +1,9 @@
+import 'package:car_verify_app/core/app_routes/app_routes.dart';
 import 'package:car_verify_app/core/components/custom_button/custom_gradient_button.dart';
 import 'package:car_verify_app/core/components/custom_text/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class EmployeeHistoryReportCard extends StatelessWidget {
   final String imageUrl;
@@ -25,15 +27,15 @@ class EmployeeHistoryReportCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 6),
-      padding: const EdgeInsets.all(12),
+      padding: const EdgeInsets.all(8),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.08),
-            blurRadius: 6,
-            offset: const Offset(0, 2),
+            color: Colors.black.withAlpha(70),
+            blurRadius: 48,
+            offset: const Offset(0, 18),
           ),
         ],
       ),
@@ -59,10 +61,10 @@ class EmployeeHistoryReportCard extends StatelessWidget {
                         text: 'Registration no : ',
                         fontSize: 13.sp,
                         fontWeight: FontWeight.w500,
+
                       ),
                     ),
                     Expanded(
-                      flex: 2,
                       child: CustomText(
                         text: regNo,
                         fontSize: 13.sp,
@@ -73,17 +75,21 @@ class EmployeeHistoryReportCard extends StatelessWidget {
                   ],
                 ),
                 CustomText(
-                  text: 'Model :  $model',
+                  text: 'Model :                    $model',
                   fontSize: 13.sp,
                   fontWeight: FontWeight.w500,
                   left: 2,
+                  bottom: 4,
+                  top: 4,
+
                 ),
 
                 CustomText(
-                  text: 'Inspected on:  $inspectedOn',
+                  text: 'Inspected on:        $inspectedOn',
                   fontSize: 13.sp,
                   fontWeight: FontWeight.w500,
                   left: 2,
+                  bottom: 4,
                 ),
                 Row(
                   children: [
@@ -96,7 +102,6 @@ class EmployeeHistoryReportCard extends StatelessWidget {
                       ),
                     ),
                     Expanded(
-                      flex: 2,
                       child: CustomText(
                         text: damageText,
                         fontSize: 13.sp,
@@ -108,15 +113,15 @@ class EmployeeHistoryReportCard extends StatelessWidget {
                 ),
                  SizedBox(height: 8.h),
                 SizedBox(
-                  height: 30.h,
+                  height: 26.h,
                   child:  CustomGradientButton(
                     text: "View details",
                     onPressed: () {
                       //Get.toNamed(AppRoutes.viewDetailsScreen);
-                      //Get.toNamed(AppRoutes.viewReportsScreen);
+                      Get.toNamed(AppRoutes.employeeViewReportsScreen);
                     },
+                    borderRadius: BorderRadius.circular(6),
                     width: 100.w,
-                    hight: 30.h,
                     size: 14.sp,
                     fontWeight: FontWeight.w400,
                   ),

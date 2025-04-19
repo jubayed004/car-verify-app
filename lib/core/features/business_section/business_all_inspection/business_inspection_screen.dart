@@ -60,9 +60,7 @@ class BusinessInspectionScreen extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(horizontal: 16),
                         itemCount: inspections.length,
                         itemBuilder: (context, index) {
-                          final data = inspections[index];
                           return BusinessInspectionCard(
-                            data: data,
                             status: controller.selectedTabIndex.value == 0 ? 'Ongoing' : 'Completed',
                           );
                         },

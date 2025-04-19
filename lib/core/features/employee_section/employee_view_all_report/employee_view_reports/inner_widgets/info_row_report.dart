@@ -15,26 +15,31 @@ class InfoRowReport extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 4,horizontal: 16),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Expanded(
+            flex: 6,
             child: CustomText(
               text: title,
               fontSize: 14,
               fontWeight: FontWeight.w500,
               textAlign: TextAlign.start,
+
             ),
           ),
           Expanded(
+            flex: 2,
             child: CustomText(
               text: value,
               fontSize: 14,
               fontWeight: FontWeight.w500,
               color: color?? Colors.black,
-              textAlign: TextAlign.end,
+              textAlign: TextAlign.start,
 
             ),
 

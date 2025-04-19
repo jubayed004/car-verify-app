@@ -1,8 +1,12 @@
+import 'dart:io';
+
 import 'package:car_verify_app/core/app_routes/app_routes.dart';
 import 'package:car_verify_app/core/components/custom_image/custom_image.dart';
+import 'package:car_verify_app/core/components/custom_netwrok_image/custom_network_image.dart';
 import 'package:car_verify_app/core/components/custom_pop_up/custom_pop_up.dart';
 import 'package:car_verify_app/core/components/custom_royel_appbar/custom_royel_appbar.dart';
 import 'package:car_verify_app/core/components/custom_text/custom_text.dart';
+import 'package:car_verify_app/core/dependency/get_controllers.dart';
 import 'package:car_verify_app/core/features/user_section/manage_car/car_details/inner_widgets/all_car_reports_screen.dart';
 import 'package:car_verify_app/core/features/user_section/user_home/view_details/inner_widgets/inforow.dart';
 import 'package:car_verify_app/core/utils/app_colors/app_colors.dart';
@@ -10,10 +14,12 @@ import 'package:car_verify_app/core/utils/app_images/app_images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 
 class CarDetailsScreen extends StatelessWidget {
-  const CarDetailsScreen({super.key});
+    CarDetailsScreen({super.key});
 
+    final controller = GetControllers.instance.getCarDetailsController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -77,14 +83,49 @@ class CarDetailsScreen extends StatelessWidget {
         ],
       ),
       body: SingleChildScrollView(
+        padding: EdgeInsets.symmetric(horizontal: 16,vertical: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CustomImage(
-              imageSrc: AppImages.detailsCar,
-              horizontal: 16,
-              vertical: 20,
+            Stack(
+              children: [
+              Obx((){
+                final image = controller.selectedImage.value?.path;
+              return image != null && image.isNotEmpty
+                  ? ClipRRect(
+                borderRadius: BorderRadius.circular(6),
+                    child: Image.file(
+                    File(controller.selectedImage.value?.path?? ""),
+                    height: 156.h,
+                    width: MediaQuery.of(context).size.width,
+                      fit: BoxFit.cover,),
+                  )
+                  :CustomNetworkImage(
+                imageUrl: "https://img.freepik.com/free-psd/red-isolated-car_23-2151852884.jpg",
+                height: 156.h,
+                width: MediaQuery.of(context).size.width
+              );
+              }),
+                Positioned(
+                  bottom: 5,
+                  right: 0,
+                  child: GestureDetector(
+                    onTap: controller.pickImageFromCamera,
+                    child: Container(
+                      height: 30.h,
+                      width: 30.w,
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Color(0xffC2C2C2,),width: 1.w),
+                        color: AppColors.white,
+                        shape: BoxShape.circle,
+                      ),
+                      child:  Icon(Icons.camera_alt_outlined, size: 18.sp, color: AppColors.appColors),
+                    ),
+                  ),
+                ),
+              ],
             ),
+            SizedBox(height: 14),
             const InfoRow(
                 title: 'Registration no :', value: '12545206', isLink: true),
             const InfoRow(title: 'Model :', value: 'Land cruiser'),

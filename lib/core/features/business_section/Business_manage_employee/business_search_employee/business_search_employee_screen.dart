@@ -73,7 +73,7 @@ class DriverCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(12.r),
         boxShadow: [
           BoxShadow(
-            color: const Color(0xffD7D7D7),
+            color: Colors.black.withAlpha(70),
             blurRadius: 48.r,
             offset: Offset(0, 18.h),
           ),

@@ -53,52 +53,122 @@ class SearchCarScreen extends StatelessWidget {
           color: Colors.white,
           elevation: 1,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
+            borderRadius: BorderRadius.circular(8),
           ),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CustomImage(
-                  height: 150.h,
                   imageSrc: AppImages.oongoingcar,
                   fit: BoxFit.fill),
-              const SizedBox(width: 12),
+               SizedBox(width: 12.w),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    CustomText(
-                        top: 10,
-                        textAlign: TextAlign.start,
-                        text: "Registration no : 12545206",
-                        fontWeight: FontWeight.bold,
-                        maxLines: 2,
-                        bottom: 6),
-                    CustomText(
-                      text: "Model : Landcruiser ",
-                      bottom: 6,
+                    Row(
+                      children: [
+                        CustomText(
+                          top: 6,
+                          textAlign: TextAlign.start,
+                          text: "Registration no : ",
+                          fontWeight: FontWeight.w400,
+                          fontSize: 14.sp,
+                          maxLines: 2,
+
+                          bottom: 4,
+                        ),
+
+                        Flexible(
+                          child: CustomText(
+                            top: 6,
+                            textAlign: TextAlign.start,
+                            text: "1234524564256",
+                            fontWeight: FontWeight.w400,
+                            fontSize: 14.sp,
+                            color: AppColors.n2,
+                            overflow: TextOverflow.ellipsis,
+                            bottom: 4,
+                            left: 4,
+                          ),
+                        ),
+                      ],
                     ),
-                    CustomText(text: "Making year : 2022", bottom: 6),
-                    CustomText(text: "Brand : Toyota", bottom: 10),
+                    Row(
+                      children: [
+                        CustomText(
+                          text: "Model : ",
+                          fontWeight: FontWeight.w400,
+                          fontSize: 14.sp,
+                          bottom: 4,
+                          color: Colors.black,
+                        ),
+                        CustomText(
+                          text: "Landcruiser",
+                          bottom: 4,
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w400,
+                          color: AppColors.n2,
+                          left: 4,
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        CustomText(
+                          text: "Making year : ",
+                          fontWeight: FontWeight.w400,
+                          fontSize: 14.sp,
+                          bottom: 4,
+                          color: Colors.black,
+                        ),
+                        CustomText(
+                          text: "2022",
+                          bottom: 4,
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w400,
+                          color: AppColors.n2,
+                          left: 4,
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        CustomText(
+                          text: "Brand : ",
+                          fontWeight: FontWeight.w400,
+                          fontSize: 14.sp,
+                          bottom: 8,
+                          color: Colors.black,
+                        ),
+                        CustomText(
+                          text: "Toyota",
+                          bottom: 8,
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w400,
+                          color: AppColors.n2,
+                          left: 4,
+                        ),
+                      ],
+                    ),
                     CustomGradientButton(
                       text: "Car details",
                       onPressed: () {
                         //Get.toNamed(AppRoutes.viewDetailsScreen);
                         Get.toNamed(AppRoutes.carDetailsScreen);
                       },
+                      borderRadius: BorderRadius.circular(6),
                       width: 100.w,
-                      hight: 30.h,
-                      size: 14,
+                      hight: 24.h,
+                      size: 12,
                       fontWeight: FontWeight.w400,
                     ),
-                    SizedBox(
-                      height: 8,
-                    )
+
                   ],
                 ),
               ),
-              const SizedBox(width: 8),
+
 
             ],
           ),

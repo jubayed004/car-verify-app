@@ -70,17 +70,10 @@ class _CustomAlertDialogState extends State<CustomAlertDialog> {
               textEditingController: _searchController,
               hintText: "Search to select Car",
               fillColor: Colors.white,
-              suffixIcon: Icon(Icons.search),
+              suffixIcon: Icon(Icons.search,color: AppColors.appColors,),
             ),
           ),
-          /* TextField(
-            controller: _searchController,
-            decoration: InputDecoration(
-              hintText: 'Search to select Car',
-              suffixIcon: Icon(Icons.search),
-              border: OutlineInputBorder(),
-            ),
-          ),*/
+
           SizedBox(height: 20),
           Padding(
             padding: const EdgeInsets.only(right: 14.0),
@@ -93,7 +86,7 @@ class _CustomAlertDialogState extends State<CustomAlertDialog> {
                   child: CustomButton(
                     onTap: () => Get.back(),
                     title: "Cancel",
-                    height: 50.h,
+                    height: 56.h,
                     fillColor: AppColors.white,
                     textColor: AppColors.appColors,
                     isBorder: true,

@@ -7,7 +7,7 @@ import 'package:car_verify_app/core/features/employee_section/employee_all_inspe
 import 'package:car_verify_app/core/features/employee_section/employee_home/employee_home_screen.dart';
 import 'package:car_verify_app/core/features/employee_section/employee_manage_car/employee_manage_car_screen.dart';
 import 'package:car_verify_app/core/features/employee_section/employee_profile/employee_profile_screen.dart';
-import 'package:car_verify_app/core/features/employee_section/employee_view_all_report/employee_view_report_screen.dart';
+import 'package:car_verify_app/core/features/employee_section/employee_view_all_report/employee_view_all_report_screen.dart';
 
 import 'package:car_verify_app/core/utils/app_colors/app_colors.dart';
 import 'package:car_verify_app/core/utils/app_images/app_images.dart';
@@ -57,7 +57,7 @@ class _EmployeeNavbarState extends State<EmployeeNavbar> {
   final allWidgets = [
     EmployeeHomeScreen(),
     EmployeeInspectionScreen(),
-    EmployeeViewReportScreen(),
+    EmployeeViewAllReportScreen(),
     EmployeeManageCarScreen(),
     EmployeeProfileScreen()
   ];

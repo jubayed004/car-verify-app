@@ -12,15 +12,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-class EmployeeViewReportScreen extends StatelessWidget {
-  EmployeeViewReportScreen({super.key});
+import 'inner_widgets/employee_history_report_card.dart';
+
+class EmployeeViewAllReportScreen extends StatelessWidget {
+  EmployeeViewAllReportScreen({super.key});
 
   final controller = GetControllers.instance.getEmployeeHomeController();
 
   @override
   Widget build(BuildContext context) {
     final item = const [
-      HistoryReportCard(
+      EmployeeHistoryReportCard(
         imageUrl: 'assets/images/ongoingcar.png',
         regNo: '12545206',
         model: 'Landcruiser',
@@ -28,7 +30,7 @@ class EmployeeViewReportScreen extends StatelessWidget {
         damageText: '2 damage found',
         isDamage: true,
       ),
-      HistoryReportCard(
+      EmployeeHistoryReportCard(
         imageUrl: 'assets/images/ongoingcar.png',
         regNo: '12545206',
         model: 'Landcruiser',
@@ -36,7 +38,7 @@ class EmployeeViewReportScreen extends StatelessWidget {
         damageText: 'No damages found',
         isDamage: false,
       ),
-      HistoryReportCard(
+      EmployeeHistoryReportCard(
         imageUrl: 'assets/images/ongoingcar.png',
         regNo: '12545206',
         model: 'Landcruiser',
@@ -44,7 +46,7 @@ class EmployeeViewReportScreen extends StatelessWidget {
         damageText: '2 damage found',
         isDamage: true,
       ),
-      HistoryReportCard(
+      EmployeeHistoryReportCard(
         imageUrl: 'assets/images/ongoingcar.png',
         regNo: '12545206',
         model: 'Landcruiser',
@@ -143,7 +145,7 @@ class EmployeeViewReportScreen extends StatelessWidget {
               ),
             ),
             SliverPadding(
-              padding: EdgeInsets.symmetric(horizontal: 20),
+              padding: EdgeInsets.symmetric(horizontal: 16),
               sliver: SliverList(
                 delegate: SliverChildBuilderDelegate(
                       (BuildContext context, int index) {

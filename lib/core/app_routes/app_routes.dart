@@ -31,6 +31,8 @@ import 'package:car_verify_app/core/features/employee_section/employee_notificat
 import 'package:car_verify_app/core/features/employee_section/employee_profile/employee_edit_profile/employee_edit_profile_screen.dart';
 import 'package:car_verify_app/core/features/employee_section/employee_profile/employee_settings/employee_change_password/employee_change_password_screen.dart';
 import 'package:car_verify_app/core/features/employee_section/employee_profile/employee_settings/employee_setting_screen.dart';
+import 'package:car_verify_app/core/features/employee_section/employee_view_all_report/employee_view_all_report_screen.dart';
+import 'package:car_verify_app/core/features/employee_section/employee_view_all_report/employee_view_reports/employee_view_reports_screen.dart';
 import 'package:car_verify_app/core/features/user_section/add_car/add_car_screen.dart';
 import 'package:car_verify_app/core/features/user_section/manage_car/car_details/car_details_screen.dart';
 import 'package:car_verify_app/core/features/user_section/manage_car/edit_car_details/edit_car_details_screen.dart';
@@ -115,6 +117,8 @@ class AppRoutes {
   static const String businessViewAllReportScreen = "/BusinessViewAllReportScreen";
   static const String businessSearchCarScreen = "/BusinessSearchCarScreen";
   static const String businessEditCarDetailsScreen = "/BusinessEditCarDetailsScreen";
+  static const String employeeViewReportsScreen = "/EmployeeViewReportsScreen";
+  static const String employeeViewAllReportScreen = "/EmployeeViewAllReportScreen";
 
 
   static List<GetPage> routes = [
@@ -188,6 +192,9 @@ class AppRoutes {
     ///=================> Employee ============////
     GetPage(name: employeeNotificationScreen, page: () => EmployeeNotificationScreen()),
     GetPage(name: employeeAddCarScreen, page: () => EmployeeAddCarScreen()),
+    GetPage(name: employeeViewReportsScreen, page: () => EmployeeViewReportsScreen()),
+    GetPage(name: employeeViewAllReportScreen, page: () => EmployeeViewAllReportScreen()),
+
 
 
   ];

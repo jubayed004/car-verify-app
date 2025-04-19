@@ -24,7 +24,7 @@ class BusinessManageEmployeeScreen extends StatelessWidget {
         colors: AppColors.appColors,
         rightIcon: Icon(Icons.search, color: AppColors.appColors, size: 26.sp),
         rightOnPressed: (){
-          Get.toNamed(AppRoutes.searchCarScreen);
+              Get.toNamed(AppRoutes.businessSearchEmployeeScreen);
         },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,

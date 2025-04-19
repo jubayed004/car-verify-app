@@ -121,15 +121,22 @@ class CarVerificationCard extends StatelessWidget {
   const CarVerificationCard({super.key});
   @override
   Widget build(BuildContext context) {
-    return Card(
-      color: Colors.white,
-      elevation: 1,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(12),
+    return Container(
+      margin: EdgeInsets.only(bottom: 12.h),
+      padding: EdgeInsets.all(8.r),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(8.r),
+        color: Colors.white,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withAlpha(70),
+            blurRadius: 48.r,
+            offset: Offset(0, 18),
+          ),
+        ],
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
-
         children: [
           CustomImage(
               imageSrc: AppImages.oongoingcar,
@@ -139,19 +146,92 @@ class CarVerificationCard extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                CustomText(
-                    top: 8,
-                    textAlign: TextAlign.start,
-                    text: "Registration no : 12545206",
-                    fontWeight: FontWeight.bold,
-                    maxLines: 2,
-                    bottom: 4),
-                CustomText(
-                  text: "Model : Landcruiser ",
-                  bottom: 4,
+                Row(
+                  children: [
+                    CustomText(
+                      top: 6,
+                      textAlign: TextAlign.start,
+                      text: "Registration no : ",
+                      fontWeight: FontWeight.w400,
+                      fontSize: 14.sp,
+                      maxLines: 2,
+
+                      bottom: 4,
+                    ),
+
+                    Flexible(
+                      child: CustomText(
+                        top: 6,
+                        textAlign: TextAlign.start,
+                        text: "1234524564256",
+                        fontWeight: FontWeight.w400,
+                        fontSize: 14.sp,
+                        color: AppColors.appColors,
+                        overflow: TextOverflow.ellipsis,
+                        bottom: 4,
+                        left: 4,
+                      ),
+                    ),
+                  ],
                 ),
-                CustomText(text: "Making year : 2022", bottom: 4),
-                CustomText(text: "Brand : Toyota", bottom: 10),
+                Row(
+                  children: [
+                    CustomText(
+                      text: "Model : ",
+                      fontWeight: FontWeight.w400,
+                      fontSize: 14.sp,
+                      bottom: 4,
+                      color: Colors.black,
+                    ),
+                    CustomText(
+                      text: "Landcruiser",
+                      bottom: 4,
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w400,
+                      color: AppColors.n2,
+                      left: 4,
+                    ),
+                  ],
+                ),
+                Row(
+                  children: [
+                    CustomText(
+                      text: "Making year : ",
+                      fontWeight: FontWeight.w400,
+                      fontSize: 14.sp,
+                      bottom: 4,
+                      color: Colors.black,
+                    ),
+                    CustomText(
+                      text: "2022",
+                      bottom: 4,
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w400,
+                      color: AppColors.n2,
+                      left: 4,
+                    ),
+                  ],
+                ),
+                Row(
+                  children: [
+                    CustomText(
+                      text: "Brand : ",
+                      fontWeight: FontWeight.w400,
+                      fontSize: 14.sp,
+                      bottom: 8,
+                      color: Colors.black,
+                    ),
+                    CustomText(
+                      text: "Toyota",
+                      bottom: 8,
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w400,
+                      color: AppColors.n2,
+                      left: 4,
+                    ),
+                  ],
+                ),
+
                 Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,

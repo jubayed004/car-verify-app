@@ -184,15 +184,15 @@ class ReportCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 6),
-      padding: EdgeInsets.only(left: 10,right: 10,top: 6,bottom: 6),
+      padding: EdgeInsets.only(left: 8,right: 8,top: 6,bottom: 6),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(8),
         boxShadow: [
           BoxShadow(
             color: AppColors.black.withAlpha(70),
-            blurRadius: 18,
-            offset: const Offset(0, 48),
+            blurRadius: 48,
+            offset: const Offset(0, 18),
           ),
         ],
       ),
@@ -205,7 +205,7 @@ class ReportCard extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-          SizedBox(width: 12.w),
+          SizedBox(width: 10.w),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -233,7 +233,7 @@ class ReportCard extends StatelessWidget {
                 ),
                 CustomText(
                   top: 4,
-                  text: 'Model :  $model',
+                  text: 'Model :              $model',
                   fontSize: 13,
                   fontWeight: FontWeight.w500,
                   left: 2,
@@ -277,18 +277,16 @@ class ReportCard extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 8),
-                SizedBox(
-                  height: 30,
-                  child:  CustomGradientButton(
-                    text: "View Report",
-                    onPressed: () {
-                      Get.toNamed(AppRoutes.businessViewReportsScreen);
-                    },
-                    width: 100,
-                    hight: 30.h,
-                    size: 14,
-                    fontWeight: FontWeight.w400,
-                  ),
+                CustomGradientButton(
+                  text: "View Report",
+                  onPressed: () {
+                    Get.toNamed(AppRoutes.businessViewReportsScreen);
+                  },
+                  borderRadius: BorderRadius.circular(6),
+                  width: 100,
+                  hight: 26.h,
+                  size: 12,
+                  fontWeight: FontWeight.w400,
                 )
               ],
             ),

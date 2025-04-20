@@ -1,6 +1,7 @@
 import 'package:car_verify_app/core/components/custom_royel_appbar/custom_royel_appbar.dart';
 import 'package:car_verify_app/core/components/custom_tab_selected/custom_tab_bar.dart';
 import 'package:car_verify_app/core/dependency/get_controllers.dart';
+import 'package:car_verify_app/core/features/employee_section/employee_view_all_report/employee_view_reports/damage_details/inner_widgets/post_inspect_screen.dart';
 import 'package:car_verify_app/core/features/user_section/view_reports/all_reports/view_reports/damage_details/controller/damage_details_controller.dart';
 import 'package:car_verify_app/core/features/user_section/view_reports/all_reports/view_reports/damage_details/inner_widgets/change_detected_screen.dart';
 import 'package:car_verify_app/core/features/user_section/view_reports/all_reports/view_reports/damage_details/inner_widgets/post_inspect_screen.dart';
@@ -9,6 +10,9 @@ import 'package:car_verify_app/core/utils/app_colors/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+
+import 'inner_widgets/change_detected_screen.dart';
+import 'inner_widgets/pre_inspection_screen.dart';
 
 class DamageDetailsScreen extends StatelessWidget {
    DamageDetailsScreen({super.key});
@@ -45,12 +49,12 @@ class DamageDetailsScreen extends StatelessWidget {
           const SizedBox(height: 16),
           Obx(() {
             if (controller.selectedTabIndex.value == 0) {
-              return const ChangeDetectedTab();
+              return const ChangeDetectedTab1();
             } else if(controller.selectedTabIndex.value == 1){
-              return PreInspectionTab();
+              return PreInspectionTab1();
             }else{
               return
-                PostInspectTab();
+                PostInspectTab1();
             }
           }),
         ],

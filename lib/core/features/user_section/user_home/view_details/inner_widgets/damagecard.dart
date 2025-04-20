@@ -22,13 +22,13 @@ class DamageCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(bottom: 12),
-      padding: const EdgeInsets.all(12),
+      padding:  EdgeInsets.all(10.r),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(8.r),
         boxShadow: [
           BoxShadow(
-            color: const Color(0xffD7D7D7),
+            color: Colors.black.withAlpha(70),
             blurRadius: 48.r,
             offset: Offset(0, 18.h),
           ),
@@ -45,13 +45,13 @@ class DamageCard extends StatelessWidget {
                   fontSize: 15,
                   fontWeight: FontWeight.w600,
                 ),
-                const SizedBox(height: 4),
+                 SizedBox(height: 4.h),
                 CustomText(
                   text: description,
                   fontSize: 13,
                   fontWeight: FontWeight.w400,
                 ),
-                const SizedBox(height: 10),
+                 SizedBox(height: 10.h),
                 CustomGradientButton(
                   text: 'View details',
                   onPressed: () {
@@ -62,23 +62,24 @@ class DamageCard extends StatelessWidget {
                       },
                     );
                   },
-                  hight: 30,
+                  borderRadius: BorderRadius.circular(6.r),
+                  hight: 26.h,
                   width: 100.w,
                   size: 12,
                 )
               ],
             ),
           ),
-          const SizedBox(width: 12),
+           SizedBox(width: 12.w),
           Stack(
             alignment: Alignment.center,
             children: [
               ClipRRect(
-                borderRadius: BorderRadius.circular(8),
+                borderRadius: BorderRadius.circular(8.r),
                 child: CustomImage(
                     imageSrc: imageUrl,
-                    width: 70,
-                    height: 70,
+                    width: 70.w,
+                    height: 70.h,
                     fit: BoxFit.cover),
               ),
               CustomText(

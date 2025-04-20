@@ -28,6 +28,8 @@ class SearchCarScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             CustomTextField(
+              fieldBorderColor: AppColors.appColors,
+              fieldBorderRadius: 16.r,
               hintText: "12344",
               fillColor: Color(0xffE5F4FF),
               isDens: true,
@@ -42,12 +44,24 @@ class SearchCarScreen extends StatelessWidget {
                 color: AppColors.appColors,
               ),
             ),
-            CustomText(
-              text: "Search result for “1234”",
-              fontWeight: FontWeight.w600,
-              fontSize: 18.sp,
-              top: 24,
-              bottom: 24,
+            Row(
+              children: [
+                CustomText(
+                  text: "Search result for ",
+                  fontWeight: FontWeight.w600,
+                  fontSize: 18.sp,
+                  top: 24,
+                  bottom: 24,
+                ),
+                CustomText(
+                  text: "“1234”",
+                  fontWeight: FontWeight.w600,
+                  fontSize: 18.sp,
+                  top: 24,
+                  bottom: 24,
+                  color: AppColors.appColors,
+                ),
+              ],
             ),
             Card(
           color: Colors.white,

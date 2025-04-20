@@ -40,7 +40,7 @@ class AddCarScreen extends StatelessWidget {
               fieldBorderColor: AppColors.textFiledBorderColor,
               fieldBorderRadius: 10.r,
               fillColor: Colors.white,
-              keyboardType: TextInputType.phone,
+
 
             ),
             SizedBox(height: 14.h),
@@ -56,7 +56,7 @@ class AddCarScreen extends StatelessWidget {
               fieldBorderColor: AppColors.textFiledBorderColor,
               fieldBorderRadius: 10.r,
               fillColor: Colors.white,
-              keyboardType: TextInputType.phone,
+              keyboardType: TextInputType.number,
 
             ),
             SizedBox(height: 14.h),

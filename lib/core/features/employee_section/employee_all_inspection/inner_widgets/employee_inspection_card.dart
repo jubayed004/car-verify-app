@@ -8,10 +8,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-class BusinessInspectionCard extends StatelessWidget {
+class EmployeeInspectionCard extends StatelessWidget {
   final String status;
 
-  const BusinessInspectionCard({super.key, required this.status});
+  const EmployeeInspectionCard({super.key, required this.status});
 
   @override
   Widget build(BuildContext context) {
@@ -69,92 +69,80 @@ class BusinessInspectionCard extends StatelessWidget {
                       ),
                     ),
                     Container(
-                        margin: EdgeInsets.only(top: 4, right: 2),
-                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                        decoration: BoxDecoration(
-                          color: status == 'Completed' ? Colors.green.shade100 : Colors.blue.shade100,
-                          borderRadius: BorderRadius.circular(4),
-                        ),
-                        child: CustomText(
-                          text: status,
-                          color: AppColors.black,
-                          fontSize: 12,
-                        ),
-                    ),
-                  ],
-                ),
-                Row(
-                  children: [
-                    Expanded(
-                      child: CustomText(
-                        textAlign: TextAlign.start,
-                        text: "Model : ",
-                        fontWeight: FontWeight.w400,
-                        fontSize: 14.sp,
-                        bottom: 4,
-                        color: Colors.black,
+                      margin: EdgeInsets.only(top: 4, right: 2),
+                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                      decoration: BoxDecoration(
+                        color: status == 'Completed' ? Colors.green.shade100 : Colors.blue.shade100,
+                        borderRadius: BorderRadius.circular(4),
                       ),
-                    ),
-                    Expanded(
                       child: CustomText(
-                        textAlign: TextAlign.start,
-                        text: "Landcruiser",
-                        bottom: 4,
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.w400,
-                        color: AppColors.n2,
-                        left: 4,
+                        text: status,
+                        color: AppColors.black,
+                        fontSize: 12,
                       ),
                     ),
                   ],
                 ),
                 Row(
                   children: [
-                    Expanded(
-                      child: CustomText(
-                        textAlign: TextAlign.start,
-                        text: "Making year : ",
-                        fontWeight: FontWeight.w400,
-                        fontSize: 14.sp,
-                        bottom: 4,
-                        color: Colors.black,
-                      ),
+                    CustomText(
+                      textAlign: TextAlign.start,
+                      text: "Model : ",
+                      fontWeight: FontWeight.w400,
+                      fontSize: 14.sp,
+                      bottom: 4,
+                      color: Colors.black,
                     ),
-                    Expanded(
-                      child: CustomText(
-                        textAlign: TextAlign.start,
-                        text: "2022",
-                        bottom: 4,
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.w400,
-                        color: AppColors.n2,
-                        left: 4,
-                      ),
+                    CustomText(
+                      textAlign: TextAlign.start,
+                      text: "Landcruiser",
+                      bottom: 4,
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w400,
+                      color: AppColors.n2,
+                      left: 4,
                     ),
                   ],
                 ),
                 Row(
                   children: [
-                    Expanded(
-                      child: CustomText(
-                        textAlign: TextAlign.start,
-                        text: "Brand : ",
-                        fontWeight: FontWeight.w400,
-                        fontSize: 14.sp,
-                        bottom: 8,
-                        color: Colors.black,
-                      ),
+                    CustomText(
+                      textAlign: TextAlign.start,
+                      text: "Making year : ",
+                      fontWeight: FontWeight.w400,
+                      fontSize: 14.sp,
+                      bottom: 4,
+                      color: Colors.black,
                     ),
-                    Expanded(
-                      child: CustomText(
-                        textAlign: TextAlign.start,
-                        text: "Toyota",
-                        bottom: 8,
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.w400,
-                        color: AppColors.n2,
-                        left: 4,
-                      ),
+                    CustomText(
+                      textAlign: TextAlign.start,
+                      text: "2025",
+                      bottom: 4,
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w400,
+                      color: AppColors.n2,
+                      left: 4,
+                    ),
+                  ],
+                ),
+                Row(
+                  children: [
+                    CustomText(
+                      textAlign: TextAlign.start,
+                      text: "Brand : ",
+                      fontWeight: FontWeight.w400,
+                      fontSize: 14.sp,
+                      bottom: 8,
+                      color: Colors.black,
+                    ),
+                    CustomText(
+                      textAlign: TextAlign.start,
+                      text: "Toyota",
+                      bottom: 8,
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w400,
+                      color: AppColors.n2,
+                      left: 4,
                     ),
                   ],
                 ),
@@ -163,13 +151,12 @@ class BusinessInspectionCard extends StatelessWidget {
                   child: CustomGradientButton(
                     text: "View details",
                     onPressed: () {
-                      //Get.toNamed(AppRoutes.viewDetailsScreen);
-                      Get.toNamed(AppRoutes.businessViewDetailsScreen);
+                      Get.toNamed(AppRoutes.employeeViewDetailsScreen);
                     },
                     borderRadius: BorderRadius.circular(6),
                     width: 100,
                     hight: 26.h,
-                    size: 14,
+                    size: 12,
                     fontWeight: FontWeight.w400,
                   ),
                 ),

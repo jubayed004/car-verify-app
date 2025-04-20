@@ -37,7 +37,7 @@ class BusinessPostVerificationTab extends StatelessWidget {
                 top: 100,
           )),
           CustomGradientButton(text: "Scan Now", onPressed: (){
-            Get.toNamed(AppRoutes.scanNowScreen);
+            Get.toNamed(AppRoutes.businessScanNowScreen);
           },fontWeight: FontWeight.w700,size: 18,),
           SizedBox(height: 70.h,)
         ],

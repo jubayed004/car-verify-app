@@ -68,9 +68,9 @@ class _AssignEmployeeCustomAlertDialogState extends State<AssignEmployeeCustomAl
             padding: const EdgeInsets.only(right: 14.0),
             child: CustomTextField(
               textEditingController: _searchController,
-              hintText: "Search to select Car",
+              hintText: "Search to select employee",
               fillColor: Colors.white,
-              suffixIcon: Icon(Icons.search),
+              suffixIcon: Icon(Icons.search,color: AppColors.appColors,),
             ),
           ),
           /* TextField(

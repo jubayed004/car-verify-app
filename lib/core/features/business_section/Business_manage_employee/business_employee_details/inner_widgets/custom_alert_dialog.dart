@@ -105,35 +105,7 @@ class _CustomAlertDialogState extends State<CustomAlertDialog> {
               ],
             ),
           )
-        /*  Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              CustomGradientButton(
-                text: "Cancel",
-                onPressed: () {
-                  // Handle submit action
-                  Navigator.pop(context);
-                },
-                width: 150.w,
 
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  // Handle submit action
-                  Navigator.pop(context);
-                },
-                style: ElevatedButton.styleFrom(
-                  foregroundColor: Colors.white,
-                  backgroundColor: Colors.blue,
-                  padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5),
-                  ),
-                ),
-                child: Text('Submit'),
-              ),
-            ],
-          ),*/
         ],
       ),
     );

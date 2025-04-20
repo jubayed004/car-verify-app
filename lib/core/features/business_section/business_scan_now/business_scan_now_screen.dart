@@ -33,7 +33,7 @@ class BusinessScanNowScreen extends StatelessWidget {
             .width / 1.3,
         child: FloatingActionButton(
           onPressed: () {
-            Get.offAllNamed(AppRoutes.businessNavbar,arguments: 1);
+            Get.offAllNamed(AppRoutes.businessNavbar,arguments: 0);
           },
           backgroundColor: AppColors.appColors,
           child: CustomText(

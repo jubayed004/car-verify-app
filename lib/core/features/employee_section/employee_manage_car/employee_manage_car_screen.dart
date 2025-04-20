@@ -3,8 +3,8 @@ import 'package:car_verify_app/core/components/custom_button/custom_gradient_but
 import 'package:car_verify_app/core/components/custom_royel_appbar/custom_royel_appbar.dart';
 import 'package:car_verify_app/core/components/custom_tab_selected/custom_tab_bar.dart';
 import 'package:car_verify_app/core/dependency/get_controllers.dart';
-import 'package:car_verify_app/core/features/business_section/business_all_inspection/inner_widgets/inspection_card.dart';
-import 'package:car_verify_app/core/features/employee_section/employee_all_inspection/inner_widgets/inspection_card.dart';
+import 'package:car_verify_app/core/features/business_section/business_all_inspection/inner_widgets/business_inspection_card.dart';
+import 'package:car_verify_app/core/features/employee_section/employee_all_inspection/inner_widgets/employee_inspection_card.dart';
 import 'package:car_verify_app/core/features/employee_section/employee_manage_car/inner_widgets/employee_inspection_card.dart';
 import 'package:car_verify_app/core/utils/app_colors/app_colors.dart';
 import 'package:flutter/material.dart';
@@ -20,16 +20,15 @@ class EmployeeManageCarScreen extends StatelessWidget {
       appBar: CustomRoyelAppbar(
         titleName: "Manage car",
         colors: AppColors.appColors,
-
         rightIcon: Icon(Icons.search,size: 28.sp,color: AppColors.appColors,),
         rightOnPressed: (){
-          Get.toNamed(AppRoutes.searchCarScreen);
+          Get.toNamed(AppRoutes.employeeSearchCarScreen);
         },
       ),
 
       body: Column(
         children: [
-          SizedBox(height: 20),
+          SizedBox(height: 20.h),
           // TabBar for Switching between Ongoing/Completed Inspections
           Obx(() => Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
@@ -45,7 +44,7 @@ class EmployeeManageCarScreen extends StatelessWidget {
             ),
           ),
           ),
-          const SizedBox(height: 16), // Spacing below TabBar
+          SizedBox(height: 16.h), // Spacing below TabBar
 
           // Inspection List (Ongoing or Completed)
           Expanded(
@@ -54,7 +53,6 @@ class EmployeeManageCarScreen extends StatelessWidget {
                 final inspections = controller.selectedTabIndex.value == 0
                     ? controller.ongoingInspections
                     : controller.completedInspections;
-
                 return Column(
                   children: [
                     // Inspection List (Ongoing or Completed)
@@ -63,9 +61,7 @@ class EmployeeManageCarScreen extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(horizontal: 16),
                         itemCount: inspections.length,
                         itemBuilder: (context, index) {
-
                           return EmployeeInspectionCardTwo(
-
                           );
                         },
                       ),
@@ -75,10 +71,10 @@ class EmployeeManageCarScreen extends StatelessWidget {
                       Padding(
                           padding: EdgeInsets.only(left: 32,right: 32,bottom: 44),
                           child: CustomGradientButton(text: "Add New Car",
-                                   fontWeight: FontWeight.w700,
+                              fontWeight: FontWeight.w700,
                               size: 18.sp,
                               onPressed: (){
-                           // Get.toNamed(AppRoutes.businessViewReportScreen);
+                         Get.toNamed(AppRoutes.employeeAddCarScreen);
                           })
                       ),
                   ],

@@ -4,26 +4,26 @@ import 'package:car_verify_app/core/utils/app_colors/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'inner_widgets/car_verify_card.dart';
+import 'inner_widgets/employee_car_verify_card.dart';
 
-class AllCarScreen extends StatelessWidget {
-  const AllCarScreen({super.key});
+class EmployeeAllCarScreen extends StatelessWidget {
+  const EmployeeAllCarScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: CustomRoyelAppbar(
-        titleName: "All Car",
+        titleName: "All Cars",
         colors: AppColors.appColors,
         leftIcon: true,
        leftOnPressed: (){
-          Get.offAllNamed(AppRoutes.userNavbar);
+          Get.offAllNamed(AppRoutes.employeeNavbar);
        },
       actions: [
         IconButton(
             onPressed: (){
-              Get.toNamed(AppRoutes.searchCarScreen);
+              Get.toNamed(AppRoutes.employeeSearchCarScreen);
             },
             icon: Icon(Icons.search,color: AppColors.appColors,))
       ],
@@ -33,7 +33,7 @@ class AllCarScreen extends StatelessWidget {
         child: Column(
           children:List.generate(
                 30, // Number of cars you want to display
-                (index) => CarVerifyCard(),
+                (index) => EmployeeCarVerifyCard(),
           ),
         ),
       ),

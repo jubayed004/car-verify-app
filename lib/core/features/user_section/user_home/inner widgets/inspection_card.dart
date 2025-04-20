@@ -16,68 +16,154 @@ class InspectionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      margin: EdgeInsets.only(bottom: 14),
-      color: Colors.white,
-      elevation: 1,
-      shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-
+    return Container(
+      margin: EdgeInsets.only(bottom: 12.h),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(12.r),
+        border: Border.all(width: 1, color: Color(0xffD7D7D7)),
+        color: Colors.white,
+        boxShadow: [
+          BoxShadow(
+            color: const Color(0xffD7D7D7),
+            blurRadius: 48.r,
+            offset: Offset(0, 18.h),
+          ),
+        ],
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          CustomImage(
-              height: 150.h,
-              imageSrc: AppImages.oongoingcar,
-              fit: BoxFit.fill),
+          CustomImage(imageSrc: AppImages.oongoingcar, fit: BoxFit.fill),
           const SizedBox(width: 12),
           Expanded(
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                CustomText(
-                    top: 6,
-                    textAlign: TextAlign.start,
-                    text: "Registration no : ${data['regNo']}",
-                    fontWeight: FontWeight.bold,
-                    maxLines: 2,
-                    bottom: 4),
-                CustomText(
-                  text: "Model : ${data['model']}",
-                  bottom: 4,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Flexible(
+                      child: Row(
+                        children: [
+                          CustomText(
+                            top: 6,
+                            textAlign: TextAlign.start,
+                            text: "Registration no: ",
+                            fontWeight: FontWeight.w500,
+                            fontSize: 12.sp,
+                            maxLines: 2,
+                            bottom: 4,
+                          ),
+                          Flexible(
+                            child: CustomText(
+                              top: 6,
+                              textAlign: TextAlign.start,
+                              text: "1234524564256",
+                              fontWeight: FontWeight.w400,
+                              fontSize: 12.sp,
+                              color: AppColors.n2,
+                              overflow: TextOverflow.ellipsis,
+                              bottom: 4,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(top: 4, right: 2),
+                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                      decoration: BoxDecoration(
+                        color: status == 'Completed' ? Colors.green.shade100 : Colors.blue.shade100,
+                        borderRadius: BorderRadius.circular(4),
+                      ),
+                      child: CustomText(
+                        text: status,
+                        color: AppColors.black,
+                        fontSize: 12,
+                      ),
+                    ),
+                  ],
                 ),
-                CustomText(text: "Making year : ${data['year']}", bottom: 4),
-                CustomText(text: "Brand : ${data['brand']}", bottom: 4),
-                CustomGradientButton(
-                  text: "View details",
-                  onPressed: () {
-                    //Get.toNamed(AppRoutes.viewDetailsScreen);
-                    Get.toNamed(AppRoutes.viewDetailsScreen);
-                  },
-                  hight: 30.h,
-                  size: 14,
-                  fontWeight: FontWeight.w400,
+                Row(
+                  children: [
+                    CustomText(
+                      textAlign: TextAlign.start,
+                      text: "Model : ",
+                      fontWeight: FontWeight.w400,
+                      fontSize: 14.sp,
+                      bottom: 4,
+                      color: Colors.black,
+                    ),
+                    CustomText(
+                      textAlign: TextAlign.start,
+                      text: "Landcruiser",
+                      bottom: 4,
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w400,
+                      color: AppColors.n2,
+                      left: 4,
+                    ),
+                  ],
+                ),
+                Row(
+                  children: [
+                    CustomText(
+                      textAlign: TextAlign.start,
+                      text: "Making year : ",
+                      fontWeight: FontWeight.w400,
+                      fontSize: 14.sp,
+                      bottom: 4,
+                      color: Colors.black,
+                    ),
+                    CustomText(
+                      textAlign: TextAlign.start,
+                      text: "2025",
+                      bottom: 4,
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w400,
+                      color: AppColors.n2,
+                      left: 4,
+                    ),
+                  ],
+                ),
+                Row(
+                  children: [
+                    CustomText(
+                      textAlign: TextAlign.start,
+                      text: "Brand : ",
+                      fontWeight: FontWeight.w400,
+                      fontSize: 14.sp,
+                      bottom: 8,
+                      color: Colors.black,
+                    ),
+                    CustomText(
+                      textAlign: TextAlign.start,
+                      text: "Toyota",
+                      bottom: 8,
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w400,
+                      color: AppColors.n2,
+                      left: 4,
+                    ),
+                  ],
+                ),
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: CustomGradientButton(
+                    text: "View details",
+                    onPressed: () {
+                      Get.toNamed(AppRoutes.viewDetailsScreen);
+                    },
+                    borderRadius: BorderRadius.circular(6),
+                    width: 100,
+                    hight: 26.h,
+                    size: 12,
+                    fontWeight: FontWeight.w400,
+                  ),
                 ),
               ],
             ),
           ),
-          const SizedBox(width: 8),
-          Container(
-              margin: EdgeInsets.only(top: 6, right: 4),
-              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-              decoration: BoxDecoration(
-                color: status == 'Completed'
-                    ? Colors.green.shade100
-                    : Colors.blue.shade100,
-                borderRadius: BorderRadius.circular(8),
-              ),
-              child: CustomText(
-                text: status,
-                color: AppColors.black,
-                fontSize: 12,
-              ))
         ],
       ),
     );

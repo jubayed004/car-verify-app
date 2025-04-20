@@ -17,7 +17,7 @@ class BusinessSearchEmployeeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomRoyelAppbar(
-        titleName: "Search reports",
+        titleName: "Search Employee",
         leftIcon: true,
         colors: AppColors.appColors,
       ),
@@ -27,8 +27,10 @@ class BusinessSearchEmployeeScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(left: 16.0,right: 16,top: 20,bottom: 20),
             child: CustomTextField(
-              hintText: "12344",
+              hintText: "Mr. J",
               fillColor: Color(0xffE5F4FF),
+              fieldBorderRadius: 16.r,
+              fieldBorderColor: AppColors.appColors,
               isDens: true,
               prefixIcon: Icon(
                 Icons.search,
@@ -42,12 +44,23 @@ class BusinessSearchEmployeeScreen extends StatelessWidget {
               ),
             ),
           ),
-          CustomText(
-            text: "Search result for “1234”",
-            fontWeight: FontWeight.w600,
-            fontSize: 18.sp,
+          Row(
+            children: [
+              CustomText(
+                text: "Search result for",
+                fontWeight: FontWeight.w600,
+                fontSize: 18.sp,
 
-            left: 16,
+                left: 16,
+              ),
+              CustomText(
+                text: "“1234”",
+                fontWeight: FontWeight.w600,
+                fontSize: 18.sp,
+                color: AppColors.appColors,
+                left: 16,
+              ),
+            ],
           ),
           Expanded(
             child: ListView.builder(

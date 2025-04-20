@@ -155,9 +155,9 @@ class BusinessDamageCardTwo extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
-            blurRadius: 6,
-            offset: const Offset(0, 3),
+            color: Colors.black.withAlpha(70),
+            blurRadius: 48,
+            offset: const Offset(0, 18),
           ),
         ],
       ),
@@ -183,12 +183,13 @@ class BusinessDamageCardTwo extends StatelessWidget {
                 CustomGradientButton(
                   text: "View details",
                   onPressed: () {
-                    //Get.toNamed(AppRoutes.viewDetailsScreen);
+
                     Get.toNamed(AppRoutes.damageDetailsScreen);
                   },
+                  borderRadius: BorderRadius.circular(6.r),
                   width: 100,
-                  hight: 30.h,
-                  size: 14,
+                  hight: 26.h,
+                  size: 12,
                   fontWeight: FontWeight.w400,
                 ),
               ],
@@ -203,20 +204,11 @@ class BusinessDamageCardTwo extends StatelessWidget {
                 child: Image.asset(imageUrl,
                     width: 70, height: 70, fit: BoxFit.cover),
               ),
-              Container(
-                width: 70,
-                height: 70,
-                decoration: BoxDecoration(
-                  color: Colors.black.withOpacity(0.4),
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                alignment: Alignment.center,
-                child: const CustomText(
-                  text: '+2 image',
-                  fontSize: 14,
-                  fontWeight: FontWeight.w600,
-                  color: Colors.white,
-                ),
+              const CustomText(
+                text: '+2 image',
+                fontSize: 14,
+                fontWeight: FontWeight.w600,
+                color: Colors.white,
               ),
             ],
           ),

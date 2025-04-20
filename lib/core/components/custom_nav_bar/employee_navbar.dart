@@ -205,7 +205,7 @@ class _EmployeeNavbarState extends State<EmployeeNavbar> {
                     children: [
                       Flexible(
                         child: CustomButton(
-                          onTap: () => Get.toNamed(AppRoutes.allCarScreen),
+                          onTap: () => Get.toNamed(AppRoutes.employeeAllCarScreen),
                           title: "Select car",
                           height: 50.h,
                           fillColor: AppColors.white,

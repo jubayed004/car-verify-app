@@ -45,6 +45,7 @@ final TextEditingController _confirmPassword =TextEditingController();
               fieldBorderRadius: 10,
               fillColor: Colors.white,
               keyboardType: TextInputType.emailAddress,
+              isPassword: true,
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'Password is required';
@@ -66,6 +67,7 @@ final TextEditingController _confirmPassword =TextEditingController();
               fieldBorderRadius: 10,
               fillColor: Colors.white,
               keyboardType: TextInputType.phone,
+              isPassword: true,
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'Please confirm your password';

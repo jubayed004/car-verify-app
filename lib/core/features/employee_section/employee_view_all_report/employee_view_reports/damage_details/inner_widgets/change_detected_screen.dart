@@ -6,8 +6,8 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class ChangeDetectedTab extends StatelessWidget {
-  const ChangeDetectedTab({super.key});
+class ChangeDetectedTab1 extends StatelessWidget {
+  const ChangeDetectedTab1({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +56,7 @@ class ChangeDetectedTab extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                IconText(icon: Icons.calendar_today, text: '25,Feb 2025'),
+                IconText(icon: Icons.calendar_month_outlined, text: '25,Feb 2025'),
                 SizedBox(width: 12),
                 IconText(icon: Icons.access_time, text: '10:30 pm'),
               ],

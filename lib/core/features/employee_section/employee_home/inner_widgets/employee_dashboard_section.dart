@@ -43,7 +43,7 @@ class EmployeeDashboardSection extends StatelessWidget {
         fontWeight: FontWeight.w700,
             size: 18.sp,
             onPressed: (){
-
+                  Get.toNamed(AppRoutes.employeeScanNowScreen);
             })
       ],
     );
@@ -61,7 +61,7 @@ class _BusinessDashboardCard extends StatelessWidget {
     } else if (title == 'All Inspection') {
      Get.offAllNamed(AppRoutes.employeeNavbar,arguments: 1);// ✅ All Inspection screen
     }else if (title == 'All Cars') {
-      Get.toNamed(AppRoutes.allCarScreen);// ✅ All Car screen
+      Get.toNamed(AppRoutes.employeeAllCarScreen);// ✅ All Car screen
     }
   }
 

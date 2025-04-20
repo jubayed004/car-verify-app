@@ -26,13 +26,20 @@ import 'package:car_verify_app/core/features/common_section/auth/verify_code_scr
 import 'package:car_verify_app/core/features/common_section/subscription/payment/payment_screen.dart';
 import 'package:car_verify_app/core/features/common_section/subscription/subscription_screen.dart';
 import 'package:car_verify_app/core/features/common_section/terms_&_conditions/terms_and_condition_screen.dart';
+import 'package:car_verify_app/core/features/common_section/wellcome/wellcome_screen.dart';
+import 'package:car_verify_app/core/features/employee_section/car_list/employee_all_car_screen.dart';
 import 'package:car_verify_app/core/features/employee_section/employee_add_car/employee_add_car_screen.dart';
+import 'package:car_verify_app/core/features/employee_section/employee_all_inspection/employee_inspection_screen.dart';
+import 'package:car_verify_app/core/features/employee_section/employee_manage_car/employee_car_details/employee_car_details_screen.dart';
 import 'package:car_verify_app/core/features/employee_section/employee_notification/employee_notification_screen.dart';
 import 'package:car_verify_app/core/features/employee_section/employee_profile/employee_edit_profile/employee_edit_profile_screen.dart';
 import 'package:car_verify_app/core/features/employee_section/employee_profile/employee_settings/employee_change_password/employee_change_password_screen.dart';
 import 'package:car_verify_app/core/features/employee_section/employee_profile/employee_settings/employee_setting_screen.dart';
+import 'package:car_verify_app/core/features/employee_section/employee_scan_now/employee_scan_now_screen.dart';
+import 'package:car_verify_app/core/features/employee_section/employee_search_car/employee_search_car_screen.dart';
 import 'package:car_verify_app/core/features/employee_section/employee_view_all_report/employee_view_all_report_screen.dart';
 import 'package:car_verify_app/core/features/employee_section/employee_view_all_report/employee_view_reports/employee_view_reports_screen.dart';
+import 'package:car_verify_app/core/features/employee_section/employee_view_details/employee_details_screen.dart';
 import 'package:car_verify_app/core/features/user_section/add_car/add_car_screen.dart';
 import 'package:car_verify_app/core/features/user_section/manage_car/car_details/car_details_screen.dart';
 import 'package:car_verify_app/core/features/user_section/manage_car/edit_car_details/edit_car_details_screen.dart';
@@ -118,7 +125,13 @@ class AppRoutes {
   static const String businessSearchCarScreen = "/BusinessSearchCarScreen";
   static const String businessEditCarDetailsScreen = "/BusinessEditCarDetailsScreen";
   static const String employeeViewReportsScreen = "/EmployeeViewReportsScreen";
-  static const String employeeViewAllReportScreen = "/EmployeeViewAllReportScreen";
+  static const String animatedSplashScreen = "/AnimatedSplashScreen";
+  static const String employeeScanNowScreen = "/EmployeeScanNowScreen";
+  static const String employeeCarDetailsScreen = "/EmployeeCarDetailsScreen";
+  static const String employeeAllCarScreen = "/EmployeeAllCarScreen";
+  static const String employeeSearchCarScreen = "/EmployeeSearchCarScreen";
+  static const String employeeViewDetailsScreen = "/EmployeeViewDetailsScreen";
+
 
 
   static List<GetPage> routes = [
@@ -134,6 +147,7 @@ class AppRoutes {
     GetPage(name: termsAndConditionScreen, page: () => TermsAndConditionScreen()),
     GetPage(name: privacyPolicyScreen, page: () => PrivacyPolicyScreen()),
     GetPage(name: captureDamageScreen, page: () => CaptureDamageScreen()),
+    GetPage(name: animatedSplashScreen, page: () => AnimatedSplashScreen()),
 
     ///=================> User Section ============////
     GetPage(name: userNavbar, page: () => UserNavbar(currentIndex: Get.arguments??0,)),
@@ -193,7 +207,13 @@ class AppRoutes {
     GetPage(name: employeeNotificationScreen, page: () => EmployeeNotificationScreen()),
     GetPage(name: employeeAddCarScreen, page: () => EmployeeAddCarScreen()),
     GetPage(name: employeeViewReportsScreen, page: () => EmployeeViewReportsScreen()),
-    GetPage(name: employeeViewAllReportScreen, page: () => EmployeeViewAllReportScreen()),
+
+    GetPage(name: employeeScanNowScreen, page: () => EmployeeScanNowScreen()),
+    GetPage(name: employeeCarDetailsScreen, page: () => EmployeeCarDetailsScreen()),
+    GetPage(name: employeeAllCarScreen, page: () => EmployeeAllCarScreen()),
+    GetPage(name: employeeSearchCarScreen, page: () => EmployeeSearchCarScreen()),
+    GetPage(name: employeeViewDetailsScreen, page: () => EmployeeViewDetailsScreen()),
+
 
 
 

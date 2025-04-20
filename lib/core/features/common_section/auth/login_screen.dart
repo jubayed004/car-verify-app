@@ -55,6 +55,7 @@ class LoginScreen extends StatelessWidget {
               fieldBorderRadius: 10,
               fillColor: Colors.white,
               keyboardType: TextInputType.phone,
+              isPassword: true,
             ),
             SizedBox(
               height: 14.h,

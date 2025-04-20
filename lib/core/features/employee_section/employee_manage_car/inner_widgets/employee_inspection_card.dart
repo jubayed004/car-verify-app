@@ -123,11 +123,12 @@ class EmployeeInspectionCardTwo extends StatelessWidget {
                 ),
 
                 CustomGradientButton(
-                  text: "View details",
+                  text: "Car details",
                   onPressed: () {
                     //Get.toNamed(AppRoutes.viewDetailsScreen);
-                    //Get.toNamed(AppRoutes.employeeCarDetailsScreen);
+                    Get.toNamed(AppRoutes.employeeCarDetailsScreen);
                   },
+                  borderRadius: BorderRadius.circular(6),
                   width: 100.w,
                   hight: 24.h,
                   size: 12,

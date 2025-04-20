@@ -56,7 +56,7 @@ class PostInspectTab extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                IconText(icon: Icons.calendar_today, text: '25,Feb 2025'),
+                IconText(icon: Icons.calendar_month_outlined, text: '25,Feb 2025'),
                 SizedBox(width: 12),
                 IconText(icon: Icons.access_time, text: '10:30 pm'),
               ],

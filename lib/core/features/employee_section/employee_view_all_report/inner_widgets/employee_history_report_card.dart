@@ -115,7 +115,7 @@ class EmployeeHistoryReportCard extends StatelessWidget {
                 SizedBox(
                   height: 26.h,
                   child:  CustomGradientButton(
-                    text: "View details",
+                    text: "Report details",
                     onPressed: () {
                       //Get.toNamed(AppRoutes.viewDetailsScreen);
                       Get.toNamed(AppRoutes.employeeViewReportsScreen);

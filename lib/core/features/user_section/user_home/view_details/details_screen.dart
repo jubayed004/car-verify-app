@@ -32,58 +32,60 @@ class ViewDetailsScreen extends StatelessWidget {
         colors: AppColors.appColors,
         leftIcon: true,
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          CustomImage(imageSrc: AppImages.detailsCar,horizontal: 16,),
-          SizedBox(height: 16.h),
-          Align(
-            alignment: Alignment.topRight,
-            child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
-              margin: EdgeInsets.only(right: 16),
-              decoration: BoxDecoration(
-                color: Colors.blue.shade100,
-                borderRadius: BorderRadius.circular(6),
-              ),
-              child: const CustomText(
-                fontSize: 12,
-                fontWeight: FontWeight.w400,
-                text: 'ongoing',
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            CustomImage(imageSrc: AppImages.detailsCar,horizontal: 16,),
+            SizedBox(height: 16.h),
+            Align(
+              alignment: Alignment.topRight,
+              child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+                margin: EdgeInsets.only(right: 16),
+                decoration: BoxDecoration(
+                  color: Colors.blue.shade100,
+                  borderRadius: BorderRadius.circular(6),
+                ),
+                child: const CustomText(
+                  fontSize: 12,
+                  fontWeight: FontWeight.w400,
+                  text: 'ongoing',
+                ),
               ),
             ),
-          ),
-          const SizedBox(height: 12),
-          const InfoRow(title: 'Registration no :', value: '12545206', isLink: true),
-          const InfoRow(title: 'Model :', value: 'Land cruiser'),
-          const InfoRow(title: 'Vehicle year :', value: '2022'),
-          const InfoRow(title: 'Make :', value: 'Toyota'),
-          Padding(
-            padding: const EdgeInsets.only(left:16,right:16,top: 14),
-            child: Obx(() {
-              return CustomTabBar(
-                tabs: const ["Pre Verification", "Post Verification"],
-                fontSize: 14.sp,
-                selectedIndex: controller.selectedTabIndex.value,
-                onTabSelected: (index) =>
-                controller.selectedTabIndex.value = index,
-                selectedColor: AppColors.appColors,
-                unselectedColor: Colors.grey,
-                textColor: Colors.black,
-                isTextColorActive: true,
-              );
+            const SizedBox(height: 12),
+            const InfoRow(title: 'Registration no :', value: '12545206', isLink: true),
+            const InfoRow(title: 'Model :', value: 'Land cruiser'),
+            const InfoRow(title: 'Vehicle year :', value: '2022'),
+            const InfoRow(title: 'Make :', value: 'Toyota'),
+            Padding(
+              padding: const EdgeInsets.only(left:16,right:16,top: 14),
+              child: Obx(() {
+                return CustomTabBar(
+                  tabs: const ["Pre Verification", "Post Verification"],
+                  fontSize: 14.sp,
+                  selectedIndex: controller.selectedTabIndex.value,
+                  onTabSelected: (index) =>
+                  controller.selectedTabIndex.value = index,
+                  selectedColor: AppColors.appColors,
+                  unselectedColor: Colors.grey,
+                  textColor: Colors.black,
+                  isTextColorActive: true,
+                );
+              }),
+            ),
+            const SizedBox(height: 16),
+            Obx(() {
+              if (controller.selectedTabIndex.value == 0) {
+                return const PreVerificationTab();
+              } else {
+                return PostVerificationTab();
+              }
             }),
-          ),
-          const SizedBox(height: 16),
-          Obx(() {
-            if (controller.selectedTabIndex.value == 0) {
-              return const PreVerificationTab();
-            } else {
-              return PostVerificationTab();
-            }
-          }),
 
-        ],
+          ],
+        ),
       ),
     );
   }

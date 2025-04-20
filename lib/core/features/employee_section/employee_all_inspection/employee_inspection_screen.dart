@@ -4,7 +4,8 @@ import 'package:car_verify_app/core/components/custom_royel_appbar/custom_royel_
 import 'package:car_verify_app/core/components/custom_tab_selected/custom_tab_bar.dart';
 import 'package:car_verify_app/core/components/custom_text/custom_text.dart';
 import 'package:car_verify_app/core/dependency/get_controllers.dart';
-import 'package:car_verify_app/core/features/business_section/business_all_inspection/inner_widgets/inspection_card.dart';
+import 'package:car_verify_app/core/features/business_section/business_all_inspection/inner_widgets/business_inspection_card.dart';
+import 'package:car_verify_app/core/features/employee_section/employee_all_inspection/inner_widgets/employee_inspection_card.dart';
 import 'package:car_verify_app/core/features/user_section/user_home/controller/user_home_controller.dart';
 import 'package:car_verify_app/core/features/user_section/user_home/inner%20widgets/inspection_card.dart';
 import 'package:car_verify_app/core/utils/app_colors/app_colors.dart';
@@ -62,7 +63,7 @@ class EmployeeInspectionScreen extends StatelessWidget {
                         itemCount: inspections.length,
                         itemBuilder: (context, index) {
 
-                          return BusinessInspectionCard(
+                          return EmployeeInspectionCard(
 
                             status: controller.selectedTabIndex.value == 0 ? 'Ongoing' : 'Completed',
                           );

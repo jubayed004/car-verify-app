@@ -2,17 +2,13 @@ import 'package:car_verify_app/core/app_routes/app_routes.dart';
 import 'package:car_verify_app/core/components/custom_button/custom_gradient_button.dart';
 import 'package:car_verify_app/core/components/custom_image/custom_image.dart';
 import 'package:car_verify_app/core/components/custom_text/custom_text.dart';
-import 'package:car_verify_app/core/utils/app_colors/app_colors.dart';
 import 'package:car_verify_app/core/utils/app_images/app_images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-class EmployeeInspectionCard extends StatelessWidget {
-  final Map<String, dynamic> data;
-  final String status;
-
-  const EmployeeInspectionCard({super.key, required this.data, required this.status});
+class EmployeeCarVerifyCard extends StatelessWidget {
+  const EmployeeCarVerifyCard({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,8 +17,7 @@ class EmployeeInspectionCard extends StatelessWidget {
       color: Colors.white,
       elevation: 1,
       shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-
+        borderRadius: BorderRadius.circular(12),
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -38,46 +33,37 @@ class EmployeeInspectionCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CustomText(
-                    top: 6,
+                    top: 10,
                     textAlign: TextAlign.start,
-                    text: "Registration no : ${data['regNo']}",
+                    text: "Registration no : 12545206",
                     fontWeight: FontWeight.bold,
                     maxLines: 2,
-                    bottom: 4),
+                    bottom: 6),
                 CustomText(
-                  text: "Model : ${data['model']}",
-                  bottom: 4,
+                  text: "Model : Landcruiser ",
+                  bottom: 6,
                 ),
-                CustomText(text: "Making year : ${data['year']}", bottom: 4),
-                CustomText(text: "Brand : ${data['brand']}", bottom: 4),
+                CustomText(text: "Making year : 2022", bottom: 6),
+                CustomText(text: "Brand : Toyota", bottom: 10),
                 CustomGradientButton(
-                  text: "View details",
+                  text: "Scan now",
                   onPressed: () {
-                    //Get.toNamed(AppRoutes.viewDetailsScreen);
-                    Get.toNamed(AppRoutes.businessViewDetailsScreen);
+
+                    Get.toNamed(AppRoutes.employeeScanNowScreen);
                   },
+                  width: 100.w,
                   hight: 30.h,
                   size: 14,
-                  fontWeight: FontWeight.w400,
+                  fontWeight: FontWeight.w600,
                 ),
+                SizedBox(
+                  height: 8,
+                )
               ],
             ),
           ),
-          const SizedBox(width: 8),
-          Container(
-              margin: EdgeInsets.only(top: 6, right: 4),
-              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-              decoration: BoxDecoration(
-                color: status == 'Completed'
-                    ? Colors.green.shade100
-                    : Colors.blue.shade100,
-                borderRadius: BorderRadius.circular(8),
-              ),
-              child: CustomText(
-                text: status,
-                color: AppColors.black,
-                fontSize: 12,
-              ))
+
+
         ],
       ),
     );

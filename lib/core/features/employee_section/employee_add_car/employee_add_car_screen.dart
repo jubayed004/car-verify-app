@@ -127,7 +127,7 @@ class EmployeeAddCarScreen extends StatelessWidget {
             ),
             SizedBox(height:MediaQuery.of(context).size.height/10),
             CustomGradientButton(text: "Save & Scan ", onPressed: (){
-              Get.toNamed(AppRoutes.scanNowScreen);
+              Get.toNamed(AppRoutes.employeeScanNowScreen);
             })
           ],
         ),

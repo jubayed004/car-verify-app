@@ -152,9 +152,9 @@ class DamageCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
-            blurRadius: 6,
-            offset: const Offset(0, 3),
+            color: Colors.black.withAlpha(70),
+            blurRadius: 48,
+            offset: const Offset(0, 18),
           ),
         ],
       ),
@@ -201,20 +201,11 @@ class DamageCard extends StatelessWidget {
                 child: Image.asset(imageUrl,
                     width: 70.w, height: 70.h, fit: BoxFit.cover),
               ),
-              Container(
-                width: 70.w,
-                height: 70.h,
-                decoration: BoxDecoration(
-
-                  borderRadius: BorderRadius.circular(8.r),
-                ),
-                alignment: Alignment.center,
-                child: const CustomText(
-                  text: '+2 image',
-                  fontSize: 14,
-                  fontWeight: FontWeight.w600,
-                  color: Colors.white,
-                ),
+              const CustomText(
+                text: '+2 image',
+                fontSize: 14,
+                fontWeight: FontWeight.w600,
+                color: Colors.white,
               ),
             ],
           ),

@@ -51,9 +51,10 @@ class CarVerifyCard extends StatelessWidget {
 
                     Get.toNamed(AppRoutes.scanNowScreen);
                   },
+                  borderRadius: BorderRadius.circular(6.r),
                   width: 100.w,
-                  hight: 30.h,
-                  size: 14,
+                  hight: 26.h,
+                  size: 12,
                   fontWeight: FontWeight.w600,
                 ),
                 SizedBox(

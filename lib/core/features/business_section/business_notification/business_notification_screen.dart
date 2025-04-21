@@ -18,14 +18,7 @@ class BusinessNotificationScreen extends StatelessWidget {
         titleName: "Notification",
         leftIcon: true,
         colors: AppColors.appColors,
-        rightIcon: Icon(
-          Icons.search,
-          color: AppColors.appColors,
-          size: 26,
-        ),
-        rightOnPressed: () {
-          Get.toNamed(AppRoutes.searchCarScreen);
-        },
+
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 24.h),

@@ -19,10 +19,16 @@ class UserProfileController extends GetxController {
 
   /// add new Image
   pickImageOfSource(ImageSource source)async{
+  try{
     final ImagePicker _picker = ImagePicker();
-    XFile?pickedFile = await _picker.pickImage(source: source);
-    selectedImages.add(pickedFile);
-    Get.toNamed(AppRoutes.captureDamageScreen);
+    XFile? pickedFile = await _picker.pickImage(source: source);
+   if(pickedFile?.path != null && pickedFile!.path.isNotEmpty){
+     selectedImages.add(pickedFile);
+     Get.toNamed(AppRoutes.captureDamageScreen);
+   }
+  }catch(e){
+    print("object");
+  }
   }
   /// remove Image
   removeImage(index)=>selectedImages.removeAt(index);

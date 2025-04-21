@@ -81,18 +81,26 @@ class CarVerificationCard extends StatelessWidget {
   const CarVerificationCard({super.key});
   @override
   Widget build(BuildContext context) {
-    return Card(
-      color: Colors.white,
-      elevation: 1,
-      shape: RoundedRectangleBorder(
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 6),
+      padding: const EdgeInsets.all(8),
+      decoration: BoxDecoration(
+        color: Colors.white,
         borderRadius: BorderRadius.circular(12),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withAlpha(70),
+            blurRadius: 48,
+            offset: const Offset(0, 18),
+          ),
+        ],
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           CustomImage(
-              height: 160.h,
+
               imageSrc: AppImages.oongoingcar,
               fit: BoxFit.fill),
           const SizedBox(width: 12),
@@ -119,18 +127,17 @@ class CarVerificationCard extends StatelessWidget {
                     //Get.toNamed(AppRoutes.viewDetailsScreen);
                     Get.toNamed(AppRoutes.carDetailsScreen);
                   },
+                  borderRadius: BorderRadius.circular(6),
                   width: 100.w,
-                  hight: 30.h,
-                  size: 14,
+                  hight: 26.h,
+                  size: 12,
                   fontWeight: FontWeight.w400,
                 ),
-                SizedBox(
-                  height: 8,
-                )
+
               ],
             ),
           ),
-          const SizedBox(width: 8),
+
 
         ],
       ),

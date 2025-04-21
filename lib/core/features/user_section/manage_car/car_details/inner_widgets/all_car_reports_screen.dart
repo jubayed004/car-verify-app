@@ -1,6 +1,7 @@
 import 'package:car_verify_app/core/app_routes/app_routes.dart';
 import 'package:car_verify_app/core/components/custom_button/custom_gradient_button.dart';
 import 'package:car_verify_app/core/components/custom_image/custom_image.dart';
+import 'package:car_verify_app/my_test_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:car_verify_app/core/components/custom_text/custom_text.dart';
@@ -98,16 +99,25 @@ class AllReportsCard extends StatelessWidget {
                           //Get.toNamed(AppRoutes.viewDetailsScreen);
                           Get.toNamed(AppRoutes.viewReportsScreen);
                         },
+                        borderRadius: BorderRadius.circular(6.r),
                         width: 100.w,
-                        hight: 30.h,
-                        size: 14,
+                        hight: 26.h,
+                        size: 12,
                         fontWeight: FontWeight.w400,
                       ),
                       Row(
                         children: [
-                          CustomImage(imageSrc: AppImages.downloadIcon),
+                          GestureDetector(
+                              onTap: (){
+                                Get.to(VehicleDamageReportDownloadScreen());
+                              },
+                              child: CustomImage(imageSrc: AppImages.downloadIcon)),
                           SizedBox(width: 10.w,),
-                          CustomImage(imageSrc: AppImages.shareIcon),
+                          GestureDetector(
+                              onTap: (){
+                                Get.to(VehicleDamageReportDownloadScreen());
+                              },
+                              child: CustomImage(imageSrc: AppImages.shareIcon)),
                         ],
                       ),
                     ],

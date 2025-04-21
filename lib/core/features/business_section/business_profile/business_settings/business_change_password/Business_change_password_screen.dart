@@ -78,7 +78,7 @@ class BusinessChangePasswordScreen extends StatelessWidget {
             ),
             GestureDetector(
               onTap: (){
-                //Get.toNamed(AppRoutes.forgetPasswordScreen);
+                Get.toNamed(AppRoutes.forgetPasswordScreen);
               },
               child: CustomText(
                 text: "Forgot password?",

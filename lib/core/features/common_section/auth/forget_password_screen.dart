@@ -47,7 +47,7 @@ class ForgetPasswordScreen extends StatelessWidget {
               fieldBorderColor: AppColors.textFiledBorderColor,
               fieldBorderRadius: 10,
               fillColor: Colors.white,
-              keyboardType: TextInputType.phone,
+              keyboardType: TextInputType.emailAddress,
             ),
             SizedBox(height: 32.h,),
             CustomGradientButton(text: "Submit", onPressed: (){

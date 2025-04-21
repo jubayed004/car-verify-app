@@ -179,7 +179,7 @@ class AppRoutes {
 
     GetPage(name: businessNotificationScreen, page: () => BusinessNotificationScreen()),
     GetPage(name: subscriptionScreen, page: () => SubscriptionScreen()),
-    //GetPage(name: userSubscriptionScreen, page: () => UserSubscriptionScreen()),
+    GetPage(name: userSubscriptionScreen, page: () => UserSubscriptionScreen()),
     GetPage(name: userPaymentScreen, page: () => UserPaymentScreen()),
     GetPage(name: businessAllCarScreen, page: () => BusinessAllCarScreen()),
     GetPage(name: businessSearchCarScreen, page: () => BusinessSearchCarScreen()),

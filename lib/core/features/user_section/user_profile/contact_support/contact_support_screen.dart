@@ -5,6 +5,7 @@ import 'package:car_verify_app/core/features/user_section/user_profile/contact_s
 import 'package:car_verify_app/core/utils/app_colors/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class ContactSupportScreen extends StatelessWidget {
   const ContactSupportScreen({super.key});
@@ -47,7 +48,9 @@ class ContactSupportScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: MediaQuery.of(context).size.height/10,),
-            CustomGradientButton(text: "Send", onPressed: (){})
+            CustomGradientButton(text: "Send", onPressed: (){
+              Get.back();
+            })
 
           ],
         ),
